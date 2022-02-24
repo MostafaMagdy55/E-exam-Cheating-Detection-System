@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+</head>
+<body>
+
+
+<a th:href="@{'/instructor/profile/'+${instructor.getId()}}" th:text="MyProfile"></a>
+<br>
+
+<a th:href="@{'/instructor/courses/'+${instructor.getId()}}" th:text="MyCourses"></a>
+<br>
+<a th:href="@{'/instructor/exams/'+${instructor.getId()}}" th:text="MyExams"></a>
+<br>
+
+<a th:href="@{'/instructor/set-exam/'+${instructor.getId()}}" th:text="SetExam"></a>
+<br>
+<a th:href="@{'/instructor/result/'+${instructor.getId()}}" th:text="Results"></a>
+<br>
+
+
+
+
+
+<!--<div th:each="course:${courses}">-->
+<!--    <div th:text="${course}"></div>-->
+
+<!--<a th:href="@{'/instructor/CreateExam/'}">CreateExam</a>-->
+<!--</div>-->
+</body>
+</html>

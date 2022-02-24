@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p th:text="${instructor.getName()}"></p>
+<p th:text="${instructor.getEmail()}"></p>
+<p th:text="${instructor.getPhone()}"></p>
+
+<!--<div th:each="image:${student.getImages()}">-->
+<!--    <img th:src="@{${'/images/'+student.name+'/'+image}}" th:width="100" th:height="100" />-->
+<!--    <br>-->
+<!--</div>-->
+
+</body>
+</html>

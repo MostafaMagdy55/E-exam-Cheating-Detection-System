@@ -1,0 +1,68 @@
+body{
+    background: linear-gradient(90deg,#11455D 50%, #FFF 50%);
+}
+
+.Forget{
+    position: relative;
+    background-color: #FFF;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    width: 550px;
+    height: 350px;
+    border-radius: 30px;
+    transform: translate(-50%,-50%);
+    box-shadow: 10px 4px 20px rgba(0,0,0,0.16);
+}
+
+header{
+    position:absolute;
+    background-color: #fff;
+    text-align: center;
+    left: 50%;
+    width: 150px;
+    /*border-top: 150px;*/
+    height: 230px;
+    border-radius: 10px 10px 70px 70px;
+    transform: translate(-50%, -59%);
+    box-shadow: 10px 10px 6px #cfcfcf ;
+}
+
+
+
+input{
+    width: 335;
+    margin: 10px 0;
+    background-color: #E2E0E0;
+    border-radius: 7px;
+    padding: 9px 59px 9px 23px;
+    border: none;
+    font-size: medium;
+}
+::placeholder{
+    color: #8d8d8d;
+}
+
+p{
+    padding-top: 119px;
+    padding-left: 30px;
+    color: #8d8d8d;
+    font-size: large;
+}
+
+.sub{
+    background-color: #11455D;
+    color: #fff;
+    border-radius: 7px;
+    border:none;
+    font-size: medium;
+    padding: 9px 117px 9px 117px ;
+}
+
+img{
+    width: 130px;
+    height: 130px;
+    border-radius: 50% ;
+    padding: 90px 0px 0px 0px;
+    
+}

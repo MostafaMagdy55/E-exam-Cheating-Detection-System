@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Exams</title>
+</head>
+<body>
+
+
+<div th:each="exam:${instructor.getExams()}">
+    <span th:text="${exam.getCourse().getName()}"></span>
+    <span th:text="${exam.getDate()}"></span>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>My Courses</title>
+</head>
+<body>
+<div th:each="course:${instructor.getCourses()}">
+    <span th:text="${course.getName()}"></span>
+    <br>
+    <div th:each="student,num:${course.getStudents()}">
+        <span th:text="${num.count}"></span>
+    </div>
+
+
+</div>
+
+<div th:text="${ins}"></div>
+</body>
+</html>

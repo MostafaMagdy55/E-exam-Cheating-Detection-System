@@ -1,0 +1,355 @@
+body 
+{
+	background-color: #151D30;
+}
+/*icon to open slide bar*/
+.menu-icons
+{
+	position: absolute;
+	color: #fff;
+	font-size: 27px;
+	margin-left:37px;
+	margin-top: 13px;
+	cursor: pointer;
+}
+/*div for navigation bar */
+.navbar
+{
+	background-color: #292F45;
+	width: 1361px;
+	height: 68px;
+	opacity: .7;
+	transition: 0.7s ease-out;	
+
+}
+/* added class to jquert for navigation bar */
+.navbaraddclass
+{
+	margin-left: 310px;
+	transition: 0.5s ease-in;	
+}
+/*search text field */
+.search_textfield
+{
+
+	margin-left: 915px;
+    margin-top: 14px;
+    width:240px; 
+    height: 39px;
+    border-radius:5px;
+    padding: 12px;
+    background-color: #4B5680;
+    border-color:#535E8C;
+    color: #fff;
+}
+/*added class to text box to jquery */
+.search_textfieldaddedclass
+{
+	margin-left: 600px;
+	width:210px; 
+    height: 39px;
+}
+/*to prevent focous on press the button  */
+input:focus{outline:0;}
+
+/*change placeholder color*/
+::placeholder
+{
+	color: #fff;
+}
+/* logout button */
+#Logout
+{
+	height: 38px;
+    width: 114px;
+    margin-left: 20px;
+    border-radius: 8px;
+    background-color: #4B5680;
+    border-color:#535E8C;
+    color: #fff;
+    font-weight:500;
+}
+/*the main div in slide bar */
+.side-bar
+{
+	z-index: 1;
+	background:rgba(255,255,255,0.1);
+	backdrop-filter: blur(15px);
+    width: 290px;
+    height: 700px;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    overflow-y:auto;
+    transition: 0.8s snap;
+    transition-property: left;
+}
+/*jquery class when silde bar is open */
+.side-bar.active
+{
+    left: 0;
+}
+/*menu*/
+.header
+{
+	position: absolute;
+	color: #fff;
+	left:0; 
+	margin-left:-230px;
+	margin-top: -3px;
+}
+
+/*course menu inside silde bar */
+.side-bar .menu 
+{
+	width: 100%;
+	margin-top:80px;
+
+}
+/*course menu item inside silde bar */
+.side-bar .menu .item
+{
+
+position: relative;
+cursor: pointer;
+} 
+/*course menu links inside silde bar */
+.side-bar .menu .item a 
+{
+	color: #fff;
+	font-size: 16px;
+	text-decoration:none;
+	display: block;
+	padding: 5px 30px;
+	line-height: 40px;
+}
+/*course menu backgroun while touch it inside silde bar */
+.side-bar .menu .item a:hover
+{
+	background-color: #7466F1;
+	transition:0.3s ease;
+} 
+.side-bar .menu .item i
+{
+	margin-right: 15px;
+}
+/*icons arrows */
+.side-bar .menu .item a .dropdown
+{
+	position: absolute;
+	right: 0;
+	margin-left: 20px;
+	margin-top:13px; 
+    transition:0.3s ease;
+}
+/*arrows icons while click */
+.rotate
+{
+	transform: rotate(90deg);
+} 
+/*design for inside menu */
+.side-bar .menu .item .sub-menu
+{
+	background:rgba(255,255,255,0.1);
+	display: none;
+}
+
+.side-bar .menu .item .sub-menu a 
+{
+	padding-left: 80px;
+}
+/*close icon in slider*/
+.close-btn
+{
+	position: absolute;
+	color: #fff;
+	font-size: 20px;
+	right: 0;
+	margin: 20px;
+	cursor: pointer;
+}
+/*central container div */
+.the-center-div
+{
+	position: relative;
+	background-color:#292F45;
+	width: 1300px;
+	height: 520px;
+	margin-left: 26px;
+	border-radius: 7px;
+	transition: 0.7s ease-out;	
+
+}
+/*added class for jquery for central container div */
+.the-center-divaddedClass
+{
+	
+	width: 1000px;
+	height: 520px;
+	margin-left:310px;
+	border-radius: 7px;
+	transition: 0.5s ease-in;	
+
+}
+
+.add{
+    position: absolute;
+    color:#fff;
+	font-weight: bold;
+    margin-left: 12%;
+	margin-top: 5%;
+	font-size: 31px;
+
+    
+}
+
+
+.info-Container
+{
+	position: absolute;
+	width: 48%;
+	height:59%;
+    top: 0%;
+    left: 35%;
+    transform: translate(-55%);
+    background-color: #cfcdcd69;
+    text-align: center;
+    padding-top: 3%;
+	margin-left: 31%;
+	margin-top: 11%;
+	border-radius: 5px;
+
+}
+
+/* img POP*/
+
+img{
+    transform: translate(1%);
+    width: 33%;
+    height: 171px;
+    border-radius: 20px;
+    margin-top: 1%;
+    float: left;
+}
+
+.info-Container div {
+    width: 91%;
+	text-align: center;
+	margin: 7px;
+	margin-top: 10px;
+}
+
+
+
+/*icons itself */
+.classpen ,.classeye
+{
+	color: #090344;
+	font-size: 15px;	
+}
+
+
+.overlay {
+	
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .overlay:target {
+	
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .popup {
+	
+    margin: 50px auto;
+    padding: 31px;
+    background-color:#292F45;
+	
+    border-radius: 5px;
+    width: 39%;
+	height: 55%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+  
+  .popup h2 {
+    margin-top: 0;
+    color: #fff;
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .close:hover {
+    color: red;
+  }
+  .popup .info-Containerx {
+    overflow: auto;
+	padding-bottom: 50px;
+	background: #cfcdcd69;
+  }
+
+
+  .info-Containerx label[for=CourseName]{
+	margin-left: 7%;
+	padding-right: 50px;
+	color: #fff;
+	font-size: large;
+	display: inline-block;
+    width: 100px;
+	font-size: 19px;
+    line-height: 25px;
+    font-weight: 400;
+	margin-top: 13px;
+	
+}
+
+.info-Containerx input[type=text]{
+    width: 199px;
+	border-radius: 5px;
+	border: none;
+	margin: 1px;
+	margin-left: 55px;
+	
+	background-color: #fff;
+	font-size: large;
+	padding: 3px 50px 3px 15px;
+}
+
+
+
+.info-Containerx input[type=submit] {
+	font-size: large;
+    background-color: #7466F1;
+    padding: 5px 39px 5px 39px;
+    color: #fff;
+    margin: 20px;
+	border-radius: 7px;
+	border: none;
+	margin-top: 31px;
+	margin-left: 30%;
+ 
+}
+  
+  @media screen and (max-width: 700px){
+    .box{
+      width: 70%;
+    }
+    .popup{
+      width: 70%;
+    }
+  }

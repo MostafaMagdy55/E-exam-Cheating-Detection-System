@@ -1,0 +1,50 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+  <title>the Cousres</title>
+    <div th:replace="Admin/base :: header"></div>
+  <link rel="stylesheet" type="text/css" href="/file/admin/CSS\Edit-Cousre-css.css">
+</head>
+<body>
+<!--sliderbar-->
+<div th:replace="Admin/base :: sliderbar"></div>
+<!--end sliderbar-->
+
+<!--nav bar-->
+<div th:replace="Admin/base :: navbar"></div>
+<!--end nav bar-->
+
+
+<!--center div -->
+<div class="the-center-div">
+
+
+  <h3 class="update"> Cousres</h3>
+  <table>
+    <thead>
+    <tr>
+<!--      <th>Course ID</th>-->
+      <th>Course Name</th>
+<!--      <th>Update</th>-->
+      <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="course,itr: ${CoursesList}">
+<!--      <td th:text="${course.id}"></td>-->
+      <td th:text="${course.CourseName}" name="Course-name"></td>
+<!--      <td><a th:href="@{'/admin/edit-course/'+${course.id}}">Edit</a></td>-->
+      <td><a th:href="@{'/admin/delete-course/'+${course.id}}" class="Delete">Delete</a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<!--POPUP-->
+<div th:replace="Admin/base :: POPUP"></div>
+
+
+<!--footer-->
+<div th:replace="Admin/base :: footer"></div>
+</body>
+</html>

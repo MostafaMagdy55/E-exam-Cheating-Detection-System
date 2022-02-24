@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<div th:each="course:${student.getCourses()}">
+    <span th:text="${course.getName()}"></span>
+
+    <div th:each="exam:${course.getExams()}">
+         <span th:text="${exam.getDate()}"></span>
+
+        <div th:each="question,num:${exam.getQuestions()}" >
+            <div th:if="${num.first == true}">
+<!--               <div th:if="${date.equals(exam.getDate()) }">-->
+
+
+                  <a th:href="@{'/student/enter-exam/'+ ${student.getId()}+ '/' +${exam.getId()}+ '/' +${question.getId()}}">enter exam</a>
+<!--               </div>-->
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

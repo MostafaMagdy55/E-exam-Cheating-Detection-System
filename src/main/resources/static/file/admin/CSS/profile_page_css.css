@@ -1,0 +1,491 @@
+body 
+{
+	background-color: #151D30;
+}
+/*icon to open slide bar*/
+.menu-icons
+{
+	position: absolute;
+	color: #fff;
+	font-size: 27px;
+	margin-left:37px;
+	margin-top: 13px;
+	cursor: pointer;
+}
+/*div for navigation bar */
+.navbar
+{
+	background-color: #292F45;
+	width: 1360px;
+	height: 68px;
+	opacity: .7;
+	transition: 0.7s ease-out;	
+
+}
+/* added class to jquert for navigation bar */
+.navbaraddclass
+{
+	margin-left: 310px;
+	width: 1055px;
+	transition: 0.5s ease-in;	
+}
+/*search text field */
+.search_textfield
+{
+
+	margin-left: 915px;
+    margin-top: 14px;
+    width:240px; 
+    height: 39px;
+    border-radius:5px;
+    padding: 12px;
+    background-color: #4B5680;
+    border-color:#535E8C;
+    color: #fff;
+}
+/*added class to text box to jquery */
+.search_textfieldaddedclass
+{
+	margin-left: 640px;
+	width:200px; 
+    height: 39px;
+}
+/*to prevent focous on press the button  */
+input:focus{outline:0;}
+
+/*change placeholder color*/
+::placeholder
+{
+	color: #fff;
+}
+/* logout button */
+#Logout
+{
+	height: 38px;
+    width: 114px;
+    margin-left: 10px;
+    border-radius: 8px;
+    background-color: #4B5680;
+    border-color:#535E8C;
+    color: #fff;
+    font-weight:500;
+}
+/*the main div in slide bar */
+.side-bar
+{
+	z-index: 1;
+	background:rgba(255,255,255,0.1);
+	backdrop-filter: blur(15px);
+    width: 290px;
+    height: 700px;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    overflow-y:auto;
+    transition: 0.8s snap;
+    transition-property: left;
+}
+/*jquery class when silde bar is open */
+.side-bar.active
+{
+    left: 0;
+}
+/*menu*/
+.header
+{
+	position: absolute;
+	color: #fff;
+	left:0; 
+	margin-left:-230px;
+	margin-top: -3px;
+}
+
+/*course menu inside silde bar */
+.side-bar .menu 
+{
+	width: 100%;
+	margin-top:80px;
+
+}
+/*course menu item inside silde bar */
+.side-bar .menu .item
+{
+
+position: relative;
+cursor: pointer;
+} 
+/*course menu links inside silde bar */
+.side-bar .menu .item a 
+{
+	color: #fff;
+	font-size: 16px;
+	text-decoration:none;
+	display: block;
+	padding: 5px 30px;
+	line-height: 40px;
+}
+/*course menu backgroun while touch it inside silde bar */
+.side-bar .menu .item a:hover
+{
+	background-color: #7466F1;
+	transition:0.3s ease;
+} 
+.side-bar .menu .item i
+{
+	margin-right: 15px;
+}
+/*icons arrows */
+.side-bar .menu .item a .dropdown
+{
+	position: absolute;
+	right: 0;
+	margin-left: 20px;
+	margin-top:13px; 
+    transition:0.3s ease;
+}
+/*arrows icons while click */
+.rotate
+{
+	transform: rotate(90deg);
+} 
+/*design for inside menu */
+.side-bar .menu .item .sub-menu
+{
+	background:rgba(255,255,255,0.1);
+	display: none;
+}
+.side-bar .menu .item .sub-menu a 
+{
+	padding-left: 80px;
+}
+/*show members drop down menu*/
+.side-bar .menu .item .sub-menuFor-Member
+{
+	background:rgba(255,255,255,0.1);
+	display: none;
+}
+.side-bar .menu .item .sub-menuFor-Member a 
+{
+	padding-left: 80px;
+}
+
+.side-bar .menu .item .sub-menuFor-addMember
+{
+	background:rgba(255,255,255,0.1);
+	display: none;
+}
+.side-bar .menu .item .sub-menuFor-addMember a 
+{
+	padding-left: 80px;
+}
+/*close icon in slider*/
+.side-bar .close-btn
+{
+	position: absolute;
+	color: #fff;
+	font-size: 20px;
+	right: 0;
+	margin: 20px;
+	cursor: pointer;
+}
+/*central container div */
+.the-center-div
+{
+	position: relative;
+	background-color:#292F45;
+	width: 1300px;
+	height: 520px;
+	margin-left: 26px;
+	border-radius: 7px;
+	transition: 0.7s ease-out;	
+
+}
+/*added class for jquery for central container div */
+.the-center-divaddedClass
+{
+	
+	width: 1000px;
+	height: 520px;
+	margin-left:310px;
+	border-radius: 7px;
+	transition: 0.5s ease-in;	
+
+}
+
+
+/*profile img container */
+.img-container
+{ 
+	position: absolute;
+	width: 18%;
+	height: 46%;
+	background-color: #fff;
+	margin-left:9%;
+	margin-top: 4%;
+}
+.img-containeraddclass
+{
+	    width: 23%;
+		height: 48%;		
+}
+/*Profile_img*/
+
+.Profile_img
+{
+	height: 100%;
+	width: 100%;
+
+}
+/*camere circile*/
+.change-img
+{
+	position: absolute;
+	width: 20%;
+	height: 19%;
+	border-radius: 50% 50%;
+	margin-top: 93%;
+	margin-left: 39%;
+	background-color: #7466F1;
+
+}
+.change-imgaddedclass
+{
+    height: 17%;
+	margin-top: 98%;
+	margin-left: 40%;
+}
+/*camera icons */
+.Camera
+{
+	color: #fff;
+	font-size: 20px;
+	margin-left: 28%;
+	margin-top: 28%;
+
+}
+/*user name */
+.admin-name
+{
+	position: absolute;
+  color:#fff;
+  font-weight: bold;
+  margin-left: 13%;
+  margin-top: 14%;
+
+}
+
+/*table */
+.info-Container
+{
+	position: absolute;
+	width: 57%;
+	height: 80%;
+	margin-left: 35%;
+	margin-top: 7%;
+	background-color: #868686;
+	border-radius: 5px;
+
+}
+/*inner table */
+.info-table
+{
+	border-collapse: collapse;
+	margin: 10% 17% ;
+	font-size: 126%;
+
+}
+/*the labels */
+.info-table tr .ID, .info-table tr .Name,.info-table tr .Email,.info-table tr .Password ,.info-table tr .Phone
+{
+	position: absolute;
+	color:#fff;
+
+}
+/* : */
+.info-table tr .ID .span
+{
+	position: absolute;
+	padding-left: 505%;
+}
+.info-table tr .Name .span2
+{
+	position: absolute;
+	padding-left: 130%;
+}
+.info-table tr .Email .span3
+{
+	position: absolute;
+	padding-left: 144%;
+}
+.info-table tr .Password .span4
+{
+	position: absolute;
+	padding-left: 40%;
+}
+.info-table tr .Phone .span5
+{
+	position: absolute;
+	padding-left: 116%;
+}
+
+/*text filed */
+.info-table td input 
+{
+width: 60%;
+margin-left: 140px;
+margin-right: 20px;
+margin-bottom: 27px;
+margin-top: -4px;
+color: #fff;
+background-color: #868686;
+border:none;
+}
+/*div of pen icons */
+.info-table tr td .pen-name ,.info-table tr td .pen-email,.info-table tr td .pen-phone 
+{
+	position: absolute;
+	margin-top:-4%;
+	margin-left: 7%;
+}
+/*div of pen beside eye*/
+.info-table tr td .pen-with-eye
+{
+ position: absolute;
+ margin-top: -4%;
+ margin-left: 7%;
+}
+
+/*eye icons */
+.info-table tr td .eye-password
+{
+	position: absolute;
+	margin-top: -3.3%;
+	margin-left: 2%;
+}
+
+.info-table tr td .open-eye-password
+{
+    position: absolute;
+	margin-top: -3.3%;
+	margin-left: 2%;
+    visibility: hidden;
+}
+
+
+/*icons itself */
+.classpen ,.classeye ,.classeyeopen
+{
+	color: #000;
+	font-size: 15px;	
+	cursor: pointer;
+}
+
+
+/*POPUP*/
+
+.overlay {
+	
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .overlay:target {
+	
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .popup {
+	
+    margin: 50px auto;
+    padding: 31px;
+    background-color:#292F45;
+	
+    border-radius: 9px;
+    width: 34%;
+	height: 46%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+  
+  .popup h2 {
+    margin-top: 15px;
+    color: #877DDC;
+	margin-left: 31%;
+	font-size: 31px;
+	font-style: bold;
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+  }
+  .popup .close:hover {
+    color: red;
+  }
+  .popup .info-Containerx {
+    overflow: auto;
+	padding-bottom: 50px;
+  }
+
+.info-Containerx input[type=text]{
+    width: 375px;
+	border-radius:2px;
+	border: none;
+	margin-left: 6%;
+	margin-top: 43px;
+	font-size:23px;
+	padding: 3px 50px 3px 15px;
+}
+
+
+.info-Containerx input[type=submit] {
+	font-size: 18px;
+    background-color: #7466F1;
+	width: 377px;
+    padding: 8px 19px 3px 19px;
+    color: #fff;	
+	border-radius:2px;
+	border: none;
+	margin-top: 20px;
+	margin-left: 6%;
+	text-align: center;
+ 
+}
+.info-Containerx input::placeholder{
+	color: #646369;
+	font-size: 16px;
+}
+  @media screen and (max-width: 600px){
+    .box{
+      width: 70%;
+    }
+    .popup{
+      width: 70%;
+    }
+  }
+
+
+#Sumbitbutton
+{
+	position: absolute;
+	width:18% ;
+	height: 9%;
+	background-color: #7466F1;
+	border-radius: 75px;
+	font-size: 90%;
+    margin-left:19%; 
+    margin-top: 0.3%;
+    box-shadow: 0 4px 8px 0 rgba(77, 67, 168 , 0.2), 0 6px 20px 0 rgba(77, 67, 168 , 0.19);
+}
