@@ -3,13 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <title>Admin</title>
+    <div th:replace="Admin/base :: header"></div>
+    <link rel="stylesheet" type="text/css" href="\file\admin\CSS\profile_page_css.css">
 </head>
 <body>
 
-<a th:href="@{'/admin/CreateStudent'}">CreateStudent</a>
-<br>
-<a th:href="@{'/admin/CreateInstructor/'}">CreateInstructor</a>
-<br>
-<a th:href="@{'create-course/'}">CreateCourse</a>
+<!--<a th:href="@{'/admin/CreateStudent'}">CreateStudent</a>-->
+<!--<br>-->
+<!--<a th:href="@{'/admin/CreateInstructor/'}">CreateInstructor</a>-->
+<!--<br>-->
+<!--<a th:href="@{'create-course/'}">CreateCourse</a>-->
+
+<!--sliderbar-->
+<div th:replace="Admin/base :: sliderbar"></div>
+<!--end sliderbar-->
+
+
+<!--navbar-->
+<div th:replace="Admin/base :: navbar"></div>
+<!--end nav bar-->
+
+
+<!--center div -->
+<div class="the-center-div">
+    <!--img div-->
+    <div class="img-container">
+        <div class="change-img"><i class="fas fa-camera Camera"></i></div>
+        <img src="\file\admin\Img\Profile_img.jpg" class="Profile_img">
+
+        <h3 class="admin-name">Admin</h3>
+    </div>
+    <div class="info-Container">
+        <table class="info-table">
+<!--            <tr >-->
+<!--                <td class="ID">ID  <span class="span">:</span></td>-->
+<!--                <td><input type="text" name="id" value="1" disabled></td>-->
+<!--            </tr>-->
+            <tr >
+                <td class="Name">Name  <span class="span2">:</span></td>
+                <td><input type="text" class ="Nametext" name="name" value="Admin"disabled></td>
+<!--                <td> <div class="pen-name"><i class="fas fa-pen classpen"></i></div></td>-->
+
+            </tr>
+<!--            <tr >-->
+<!--                <td class="Email">Email  <span class="span3">:</span></td>-->
+<!--                <td><input type="Email" class ="Emailtext" name="Email" value="Ahmed Aitallah@gmail.com"disabled></td>-->
+<!--&lt;!&ndash;                <td> <div class="pen-email"><i class="fas fa-pen classpen"></i></div></td>&ndash;&gt;-->
+<!--            </tr>-->
+            <tr >
+                <td class="Password">Password  <span class="span4">:</span></td>
+                <td><input type="Password" class ="Passwordtext" name="Password" value="admin" disabled></td>
+                <td><div class="eye-password"><i class="fas fa-eye classeye"></i></div></td>
+<!--                <td> <div class="pen-with-eye"><i class="fas fa-pen classpen"></i></div></td>-->
+                <td> <div class="open-eye-password"><i class="fas fa-eye-slash classeyeopen"></i></div></td>
+
+            </tr>
+            <tr >
+                <td class="Phone">Phone  <span class="span5">:</span></td>
+                <td><input type="Phone" class ="Phonetext" name="Phone" value="01117699022" disabled></td>
+                <td> <div class="pen-phone"><i class="fas fa-pen classpen"></i></div></td>
+            </tr>
+
+<!--            <tr >-->
+<!--                <td><input type="submit" id = "Sumbitbutton" name="submit" value="Save" ></td>-->
+<!--            </tr>-->
+
+        </table>
+    </div>
+
+</div>
+<!--POPUP-->
+<div th:replace="Admin/base :: POPUP"></div>
+
+
+
+<script type="text/javascript" src="\file\admin\Jquery\jquery-3.6.0.min.js"></script>
+<script src="\file\admin\Jquery\jquery.js"></script>
+<script type="text/javascript" src="file\admin\bootstrap-3.4.1-dist\js\bootstrap.min.js"></script>
 </body>
 </html>

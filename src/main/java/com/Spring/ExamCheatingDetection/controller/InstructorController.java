@@ -45,10 +45,10 @@ public class InstructorController {
     @Autowired
     StudentAnswerService studentAnswerService;
 
-    @RequestMapping("/index/{id}")
-    public String index(@PathVariable int id,Model model)
+    @RequestMapping("/index")
+    public String index(Model model)
     {
-        Instructor instructor=instructorService.findById(id);
+        Instructor instructor=instructorService.findById(userId());
         model.addAttribute("instructor",instructor);
         return "Instructor/index";
     }
@@ -56,39 +56,39 @@ public class InstructorController {
 
 
 
-    @RequestMapping("/profile/{id}")
-    public String profile(@PathVariable int id, Model model)
+    @RequestMapping("/profile")
+    public String profile( Model model)
     {
-        Instructor instructor=instructorService.findById(id);
+        Instructor instructor=instructorService.findById(userId());
         model.addAttribute("instructor",instructor);
         return "Instructor/profile";
     }
 
 
-    @RequestMapping("/exams/{id}")
-    public String exams(@PathVariable int id, Model model)
+    @RequestMapping("/exams")
+    public String exams( Model model)
     {
-        Instructor instructor=instructorService.findById(id);
+        Instructor instructor=instructorService.findById(userId());
         model.addAttribute("instructor",instructor);
         return "Instructor/myExams";
     }
 
 
 
-    @RequestMapping("/courses/{id}")
-    public String courses(@PathVariable int id, Model model)
+    @RequestMapping("/courses")
+    public String courses( Model model)
     {
-        Instructor instructor=instructorService.findById(id);
+        Instructor instructor=instructorService.findById(userId());
         model.addAttribute("instructor",instructor);
         return "Instructor/courses";
     }
 
 
 
-    @RequestMapping("/result/{id}")
-    public String result(@PathVariable int id, Model model)
+    @RequestMapping("/result")
+    public String result( Model model)
     {
-        Instructor instructor=instructorService.findById(id);
+        Instructor instructor=instructorService.findById(userId());
         model.addAttribute("instructor",instructor);
         return "Instructor/result";
     }
@@ -98,12 +98,12 @@ public class InstructorController {
 
 
 
-    @RequestMapping("set-exam/{id}")
-    public String createExaam(Model model,@PathVariable int id)
+    @RequestMapping("set-exam")
+    public String createExaam(Model model)
     {
         Exam exam=new Exam();
         model.addAttribute("exam",exam);
-        model.addAttribute("courses",instructorService.findById(id).getCourses());
+        model.addAttribute("courses",instructorService.findById(userId()).getCourses());
         return "Instructor/create-exam";
     }
 
@@ -229,6 +229,14 @@ public class InstructorController {
 
 
         return "Instructor/test_evaluate";
+    }
+    public  int userId()
+
+    {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        UserPrincipal user = (UserPrincipal)auth.getPrincipal();
+        int userId = user.getId();
+        return userId;
     }
 
 }

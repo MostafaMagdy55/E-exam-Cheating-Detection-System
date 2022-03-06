@@ -9,20 +9,19 @@
 
 
 <div th:each="course:${student.getCourses()}">
-    <span th:text="${course.getName()}"></span>
+    <span th:text="${course.getCourseName()}"></span>
 
     <div th:each="exam:${course.getExams()}">
          <span th:text="${exam.getDate()}"></span>
 
         <div th:each="question,num:${exam.getQuestions()}" >
             <div th:if="${num.first == true}">
-<!--               <div th:if="${date.equals(exam.getDate()) }">-->
-
-
-                  <a th:href="@{'/student/enter-exam/'+ ${student.getId()}+ '/' +${exam.getId()}+ '/' +${question.getId()}}">enter exam</a>
-<!--               </div>-->
+                <div th:if="${date.compareTo(exam.getDate())==0}">
+                    <div th:if="${student.getExams().contains(exam)==false}">
+                     <a th:href="@{'/student/enter-exam/' +${exam.getId()}+ '/' +${question.getId()}}">enter exam</a>
+                    </div>
+                </div>
             </div>
-
         </div>
     </div>
 </div>

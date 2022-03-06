@@ -24,8 +24,7 @@ public class StudentServiceIMP implements StudentService {
 
     @Autowired
     StudentRepository studentRepository;
-//    @Autowired
-//    private PasswordEncoder passwordEncoder;
+
     @Override
     public List<Student> findAll() {
         return studentRepository.findAll();
@@ -53,7 +52,7 @@ public class StudentServiceIMP implements StudentService {
     public void save(Student student,MultipartFile[] files) {
         String name=student.getName();
         List<String>image=new ArrayList<>();
-        File f=new File("D:\\Graduation Project   E-exam Cheating Detection System\\ExamCheatingDetection\\images\\"+name);
+        File f=new File("D:\\Graduation Project   E-exam Cheating Detection System\\E-exam-Cheating-Detection-System\\images\\"+name);
         f.mkdirs();
 
         if (f.exists())

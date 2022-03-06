@@ -1,9 +1,9 @@
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<html>
 <head>
-  <title>the Cousres</title>
+    <title>the Cousres</title>
     <div th:replace="Admin/base :: header"></div>
-  <link rel="stylesheet" type="text/css" href="/file/admin/CSS\Edit-Cousre-css.css">
+    <link rel="stylesheet" type="text/css" href="\file\admin\CSS\Edit-Cousre-css.css">
 </head>
 <body>
 <!--sliderbar-->
@@ -11,7 +11,20 @@
 <!--end sliderbar-->
 
 <!--nav bar-->
-<div th:replace="Admin/base :: navbar"></div>
+<!--<div th:replace="Admin/base :: navbar"></div>-->
+<div class="navbar" id="contant">
+    <form th:action="@{/logout}" method="post">
+        <!--forms-->
+        <div class="forms">
+            <div class="menu-icons">
+                <i class="fas fa-bars"></i>
+            </div>
+            <input type="search" class="search_textfield" placeholder="Search">
+            <input type="submit" value="Logout" id="Logout">
+        </div>
+    </form>
+</div>
+
 <!--end nav bar-->
 
 
@@ -23,17 +36,17 @@
   <table>
     <thead>
     <tr>
-<!--      <th>Course ID</th>-->
-      <th>Course Name</th>
-<!--      <th>Update</th>-->
-      <th>Delete</th>
+        <th>Course ID</th>
+        <th>Course Name</th>
+<!--        <th>Number of Exam</th>-->
+        <th>Delete</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="course,itr: ${CoursesList}">
-<!--      <td th:text="${course.id}"></td>-->
-      <td th:text="${course.CourseName}" name="Course-name"></td>
-<!--      <td><a th:href="@{'/admin/edit-course/'+${course.id}}">Edit</a></td>-->
+        <td><input type="text" class="ID" name="id" th:value="${course.id}" disabled></td>
+        <td><input type="text" class="Course-name"  name="Course-name"  th:value="${course.CourseName}" disabled></td>
+<!--        <td><input type="text" class="Instrucor-name" name="Instrucor-name"  th:value="${course.getInstructor().getName()}" disabled></td>-->
       <td><a th:href="@{'/admin/delete-course/'+${course.id}}" class="Delete">Delete</a></td>
     </tr>
     </tbody>
@@ -45,6 +58,8 @@
 
 
 <!--footer-->
-<div th:replace="Admin/base :: footer"></div>
+<script type="text/javascript" src="\file\admin\Jquery\jquery-3.6.0.min.js"></script>
+<script src="\file\admin\Jquery\jquery-For-Edit-Course.js"></script>
+<script type="text/javascript" src="\file\admin\bootstrap-3.4.1-dist\js\bootstrap.min.js"></script>
 </body>
 </html>

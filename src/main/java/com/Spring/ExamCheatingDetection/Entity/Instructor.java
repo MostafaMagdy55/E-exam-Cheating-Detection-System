@@ -4,16 +4,25 @@ package com.Spring.ExamCheatingDetection.Entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 @Setter
 @Getter
 @Entity
 public class Instructor extends Person{
+//
+//    @ElementCollection
+//    @CollectionTable(name="image", //defaults to student_images
+//            joinColumns = @JoinColumn(name="instructor_id"))
+//    @Column(name="file_name") //defaults to images
+//    private List<String> Images;
+
+
+    private String Image;
+
+
+
     public Instructor(String name, String email, String phone, String password, String roles, String permissions) {
         super(name, email, phone, password, roles/*, permissions*/);
     }
@@ -22,7 +31,7 @@ public class Instructor extends Person{
 
     }
 
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "instructor",cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.REMOVE})
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "instructor",cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH})
 
     List<Course>courses;
 

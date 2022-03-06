@@ -29,46 +29,20 @@ body
 	width: 1055px;
 	transition: 0.5s ease-in;	
 }
-/*search text field */
-.search_textfield
-{
 
-	margin-left: 915px;
-    margin-top: 14px;
-    width:240px; 
-    height: 39px;
-    border-radius:5px;
-    padding: 12px;
-    background-color: #4B5680;
-    border-color:#535E8C;
-    color: #fff;
-}
-/*added class to text box to jquery */
-.search_textfieldaddedclass
-{
-	margin-left: 640px;
-	width:200px; 
-    height: 39px;
-}
-/*to prevent focous on press the button  */
-input:focus{outline:0;}
-
-/*change placeholder color*/
-::placeholder
-{
-	color: #fff;
-}
 /* logout button */
 #Logout
 {
 	height: 38px;
     width: 114px;
-    margin-left: 10px;
+    margin-left: 87%;
     border-radius: 8px;
     background-color: #4B5680;
     border-color:#535E8C;
     color: #fff;
     font-weight:500;
+	margin-top: 17px;
+	border: none;
 }
 /*the main div in slide bar */
 .side-bar
@@ -449,6 +423,7 @@ img{
 	margin-top: 43px;
 	font-size:23px;
 	padding: 3px 50px 3px 15px;
+	color: #000;
 }
 
 

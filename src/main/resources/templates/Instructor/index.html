@@ -7,12 +7,12 @@
 <body>
 
 
-<a th:href="@{'/instructor/profile/'+${instructor.getId()}}" th:text="MyProfile"></a>
+<a th:href="@{'/instructor/profile'}" th:text="MyProfile"></a>
 <br>
 
-<a th:href="@{'/instructor/courses/'+${instructor.getId()}}" th:text="MyCourses"></a>
+<a th:href="@{'/instructor/courses'}" th:text="MyCourses"></a>
 <br>
-<a th:href="@{'/instructor/exams/'+${instructor.getId()}}" th:text="MyExams"></a>
+<a th:href="@{'/instructor/exams'}" th:text="MyExams"></a>
 <br>
 
 <a th:href="@{'/instructor/set-exam/'+${instructor.getId()}}" th:text="SetExam"></a>

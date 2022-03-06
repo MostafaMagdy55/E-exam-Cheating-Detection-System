@@ -9,8 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.io.File;
 import java.util.List;
@@ -31,9 +33,15 @@ public class AdminController {
   // private PasswordEncoder passwordEncoder;
 
     @RequestMapping("/index")
-    public String index()
-    {
-        return "Admin/index";
+//    public String index1(Model model)
+//    {
+//        model.addAttribute("course",new Course());
+//        return "Admin/index";
+//    }
+    public ModelAndView passParametersWithModelAndView() {
+        ModelAndView modelAndView = new ModelAndView("Admin/index");
+        modelAndView.addObject("course", new Course());
+        return modelAndView;
     }
 
 //////////////////////Student/////////////////
@@ -62,11 +70,12 @@ public class AdminController {
 
     @RequestMapping("/save-student")
 
-    public String saveStudent(@ModelAttribute Student student,@RequestParam("files") MultipartFile[] files)
+    public String saveStudent(@ModelAttribute Student student,@RequestParam("files") MultipartFile[] files,Model model)
     {
         student.addCourse(student.getCourses());
         studentService.save(student,files);
-        return "redirect:/admin/CreateStudent";
+        model.addAttribute("course",new Course());
+        return "redirect:/admin/show-student";
     }
 
     @RequestMapping("edit-student/{id}")
@@ -76,15 +85,17 @@ public class AdminController {
         List<Course> courses=courseService.findAll();
         model.addAttribute("student",cmd);
         model.addAttribute("courses",courses);
+        model.addAttribute("course",new Course());
         return "Admin/create_student";
     }
 
     @RequestMapping("/delete-student/{id}")
 
-    public String deleteStudent(@PathVariable int id)
+    public String deleteStudent(@PathVariable int id,Model model)
     {
         studentService.deleteById(id);
-        return "redirect:/admin/CreateStudent";
+        model.addAttribute("course",new Course());
+        return "redirect:/admin/show-student";
     }
 
 
@@ -107,21 +118,24 @@ public List<Student>getAllStudent(){
     }
 
     @RequestMapping("save-instructor")
-    public String saveInstructor(@ModelAttribute Instructor instructor) {
+    public String saveInstructor(@ModelAttribute Instructor instructor,@RequestParam("files") MultipartFile[] files,Model model) {
          List<Course> courses=instructor.getCourses();
         for (int i=0; i<courses.size(); i++)
         {
          instructor.addCourse(courses.get(i));
         }
-        instructorService.save(instructor);
-        return "redirect:/admin/CreateInstructor";
+
+        instructorService.save(instructor,files);
+        model.addAttribute("course",new Course());
+        return "redirect:/admin/show-instructor";
     }
 
     @RequestMapping("/delete-instructor/{id}")
-    public String deleteInstructor(@PathVariable int id)
+    public String deleteInstructor(@PathVariable int id,Model model)
     {
+        model.addAttribute("course",new Course());
         instructorService.deleteById(id);
-        return "redirect:/admin/CreateInstructor";
+        return "redirect:/admin/show-instructor";
     }
 
 
@@ -129,6 +143,8 @@ public List<Student>getAllStudent(){
     public String UpdateInstructor(@PathVariable int id ,Model model)
     {
         Instructor instructor =instructorService.findById(id);
+        model.addAttribute("course",new Course());
+        model.addAttribute("courses",courseService.findAll());
         model.addAttribute("instructor",instructor);
         return "Admin/create_instructor";
     }
@@ -164,7 +180,7 @@ public List<Student>getAllStudent(){
     {
      //   instructorRepository.save(course.getInstructor());
         courseService.save(course);
-        return "Admin/index";
+        return "redirect:/admin/show-course";
     }
 
 //    @RequestMapping("edit-instructor/{id}")
@@ -190,10 +206,11 @@ public List<Student>getAllStudent(){
 
 
     @RequestMapping("/delete-course/{id}")
-    public String deleteCourse(@PathVariable int id)
+    public String deleteCourse(@PathVariable int id,Model model)
     {
         courseService.deleteById(id);
-        return "redirect:/admin/show-courses";
+        model.addAttribute("course",new Course());
+        return "redirect:/admin/show-course";
     }
 
     @ModelAttribute("CoursesList")

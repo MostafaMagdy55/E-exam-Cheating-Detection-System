@@ -6,7 +6,7 @@
 </head>
 <body>
 <div th:each="course:${student.getCourses()}">
-    <span th:text="${course.getName()}"></span>
+    <span th:text="${course.getCourseName()}"></span>
     <br>
     <span th:text="${course.getInstructor().getName()}"></span>
 

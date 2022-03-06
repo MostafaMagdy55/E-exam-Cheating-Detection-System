@@ -28,7 +28,7 @@
         <label  class="col-sm-2 col-form-label">Course</label>
         <div class="col-sm-10">
     <select   class="form-control" th:field="*{course}">
-        <option th:each="i : ${courses}" th:value="${i.id}" th:text="${i.name}">
+        <option th:each="i : ${courses}" th:value="${i.id}" th:text="${i.getCourseName()}">
         </option>
     </select>
         </div>

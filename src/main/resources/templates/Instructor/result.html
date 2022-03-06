@@ -7,7 +7,7 @@
 <body>
 
 <div th:each="exam:${instructor.getExams()}">
-    <span th:text="${exam.getCourse().getName()}"></span>
+    <span th:text="${exam.getCourse().getCourseName()}"></span>
     <a th:href="@{'/instructor/evaluate-exam/'+${exam.getId()}}">evaluate</a>
 </div>
 

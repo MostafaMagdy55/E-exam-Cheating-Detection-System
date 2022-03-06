@@ -1,95 +1,13 @@
-<!--<!DOCTYPE html>-->
-<!--<html xmlns:th="http://www.thymeleaf.org">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>Title</title>-->
-<!--</head>-->
-<!--<body>-->
-
-
-<!--<form th:action="@{/admin/save-student}" th:object="${student}" enctype="multipart/form-data" method="post">-->
-<!--  <table border="1" width="90%" align="center" cellpadding="5">-->
-<!--    <tr>-->
-<!--      <td class="fheading" colspan="3">Enquiry Source</td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--      <td align="right">Enter Source-->
-<!--      </td>-->
-<!--      <td>-->
-<!--        name      <input type="text" th:field="*{name}" />-->
-<!--        email     <input type="text" th:field="*{email}" />-->
-<!--        phone     <input type="text" th:field="*{phone}" />-->
-<!--        password  <input type="password" th:field="*{password}"/>-->
-<!--                  <input type="hidden" th:field="*{id}" />-->
-<!--        <select   class="form-control" multiple="multiple" th:field="*{courses}" >-->
-<!--          <option th:each="i : ${courses}" th:value="${i.id}" th:text="${i.name}">-->
-<!--          </option>-->
-<!--        </select>-->
-<!--                 <input type="file" name="files" multiple>-->
-
-<!--        <span class="txt_small">Source for Enquiry like Google Search</span>-->
-<!--      </td>-->
-<!--      <td width="40%">-->
-<!--        <button >Save</button>-->
-<!--      </td>-->
-<!--    </tr>-->
-<!--  </table>-->
-<!--</form>-->
-
-
-<!--<br/>-->
-<!--<table border="1" width="90%" align="center" cellpadding="5">-->
-<!--  <tr>-->
-
-
-<!--    <th>Name</th>-->
-<!--    <th>Phone</th>-->
-<!--    <th>Email</th>-->
-<!--    <th>Password</th>-->
-<!--    <th>Images</th>-->
-<!--    <th>Courses</th>-->
-<!--    <th>Action</th>-->
-<!--  </tr>-->
-<!--  <tr th:each="student,itr: ${studentList}">-->
-<!--    <td th:text="${es.name}">ID</td>-->
-<!--    <td th:text="${es.phone}">SOURCE</td>-->
-<!--    <td th:text="${es.email}">SOURCE</td>-->
-<!--    <td th:text="${es.password}">SOURCE</td>-->
-<!--    <th th:each="image:${es.getImages()}">-->
-<!--      <img th:src="@{${'/images/'+es.name+'/'+image}}" th:width="100" th:height="100" />-->
-<!--    </th>-->
-
-
-<!--    <th th:each="course:${es.getCourses()}">-->
-<!--     <div th:text="${course}"></div>-->
-<!--    </th>-->
-
-<!--    <td> <a th:href="@{'/admin/edit-student/'+${es.id}}">Edit</a> | <a th:href="@{'/admin/delete-student/'+${es.id}}">Delete</a></td>-->
-
-<!--  </tr>-->
-<!--</table>-->
-<!--</body>-->
-<!--</html>-->
 
 
 
 
-
-
-
-
-
-
-
-
-
-
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <title>Add Student</title>
   <div th:replace="Admin/base :: header"></div>
-  <link rel="stylesheet" href="/file/admin/fontawesome-free-5.15.4-web/css/all.min.css">
-  <link rel="stylesheet" type="text/css" href="/file/admin/CSS/AddStudent.css">
+  <link rel="stylesheet" type="text/css" href="\file\admin\CSS\AddInstructor.css">
 </head>
 <body>
 
@@ -97,7 +15,8 @@
 <div th:replace="Admin/base :: sliderbar"></div>
 <!--end sliderbar-->
 
-<!--nav bar-->
+
+<!--navbar-->
 <div th:replace="Admin/base :: navbar"></div>
 <!--end nav bar-->
 
@@ -114,60 +33,76 @@
 
     <form th:action="@{/admin/save-student}" th:object="${student}" enctype="multipart/form-data" method="post">
       <div>
-        <!--                <label for="ID">ID</label>-->
-        <!--                <input id="ID" type="text" required>-->
-        <input type="hidden" th:field="*{id}" />
-      </div>
+        <div>
+          <!--                <label for="ID">ID</label>-->
+          <!--                <input id="ID" type="text" required>-->
+          <input type="hidden" th:field="*{id}" />
+        </div>
 
-      <div>
-        <label for="name">Name</label>
-        <!--                <input id="name" type="text" required>-->
-        <input type="text" th:field="*{name}"  id="name"required />
-      </div>
-      <div>
-        <label for="email">Email</label>
-        <!--                <input id="email" type="email" required>-->
-        <input id="email" type="email" th:field="*{email}" required />
-      </div>
-      <div>
-        <label for="pass">Password</label>
-        <!--                <input id="pass" type="password" required>-->
-        <input id="pass" type="password" th:field="*{password}" required />
-      </div>
+        <div>
+          <label for="name">Name</label>
+          <!--                <input id="name" type="text" required>-->
+          <input type="text" th:field="*{name}"  id="name"required />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <!--                <input id="email" type="email" required>-->
+          <input id="email" type="email" th:field="*{email}" required />
+        </div>
+        <div>
+          <label for="pass">Password</label>
+          <!--                <input id="pass" type="password" required>-->
+          <input id="pass" type="password" th:field="*{password}" required />
+        </div>
 
-      <div>
-        <label for="phone">Phone</label>
-        <!--                <input id="pass" type="number" required>-->
-        <input id="phone" type="text" th:field="*{phone}" required/>
-      </div>
+        <div>
+          <label for="phone">Phone</label>
+          <!--                <input id="pass" type="number" required>-->
+          <input id="phone" type="text" th:field="*{phone}" required/>
+        </div>
 
-      <div>
-        <label for="courses">Cources</label>
+        <!--            <div>-->
+        <!--                <label for="courses">Cources</label>-->
+        <!--                <select  id="courses" name="cours" multiple="multiple" th:field="*{courses}" placeholder="Select Courses" >-->
 
-        <!--                <select name="cours" placeholder="Select Course">-->
-
-        <!--                    <option value="Js">JS</option>-->
-        <!--                    <option value="php">php</option>-->
-        <!--                    <option value="html">HTML</option>-->
-        <!--                    <option value="css">CSS</option>-->
+        <!--                    <option th:each="i : ${courses}" th:value="${i.id}" th:text="${i.CourseName}">-->
+        <!--                    </option>-->
         <!--                </select>-->
+        <!--            </div>-->
 
-        <select  id="courses" name="cours" multiple="multiple" th:field="*{courses}" placeholder="Select Courses" >
+        <div class="CD" > <label for="courses">Courses</label>
+          <dl class="dropdown">
+            <dt>
+              <a href="#">
+                <span class="hida">Select Courses</span>
+                <p class="multiSel"></p>
+              </a>
+            </dt>
+            <dd>
+              <div class="mutliSelect" th:each="i : ${courses}">
+                <ul>
+                  <li>
+                    <input type="checkbox"th:field="*{courses}"  th:value="${i.id}" th:text="${i.CourseName}" /></li>
+                  </li>
 
-          <option th:each="i : ${courses}" th:value="${i.id}" th:text="${i.CourseName}">
-          </option>
+                </ul>
 
-        </select>
+
+
+
+              </div>
+            </dd>
+          </dl>
+        </div>
+
+        <div>
+          <label class="ph">Photo</label>
+          <input type="file" name="files" multiple required>
+        </div>
+
+
+        <input type="submit" value="Add">
       </div>
-
-      <div>
-        <label class="ph">Photo</label>
-        <input type="file" name="files" multiple required>
-      </div>
-
-
-      <input type="submit" value="Add">
-
     </form>​
 
   </div>
@@ -181,11 +116,7 @@
 
 <!--footer-->
 <div th:replace="Admin/base :: footer"></div>
-
-
-
+<script src="\file\admin\Jquery\ADDCourse.js"></script>
+<script src="\file\admin\Jquery/Alelt.js"></script>
 </body>
 </html>
-
-
-

@@ -35,67 +35,67 @@ public class StudentController {
 
 
 
-    @RequestMapping("/index/{id}")
-    public String index(@PathVariable int id, Model model)
+    @RequestMapping("/index")
+    public String index( Model model)
     {
-        Student student=studentService.findById(id);
+        Student student=studentService.findById(userId());
         model.addAttribute("student",student);
          return "Student/index";
     }
 
 
 
-    @RequestMapping("/profile/{id}")
-    public String profile(@PathVariable int id, Model model)
+    @RequestMapping("/profile")
+    public String profile( Model model)
     {
-        Student student=studentService.findById(id);
+        Student student=studentService.findById(userId());
         model.addAttribute("student",student);
         return "Student/profile";
     }
 
 
-    @RequestMapping("/exams/{id}")
-    public String exams(@PathVariable int id, Model model)
+    @RequestMapping("/exams")
+    public String exams( Model model)
     {
-        Student student=studentService.findById(id);
+        Student student=studentService.findById(userId());
         model.addAttribute("student",student);
-        model.addAttribute("date",java.time.LocalDate.now());
+        model.addAttribute("date",java.time.LocalDate.now().toString());
         return "Student/myExams";
     }
 
 
 
-    @RequestMapping("/courses/{id}")
-    public String courses(@PathVariable int id, Model model)
+    @RequestMapping("/courses")
+    public String courses( Model model)
     {
-        Student student=studentService.findById(id);
+        Student student=studentService.findById( userId());
         model.addAttribute("student",student);
         return "Student/courses";
     }
 
 
 
-    @RequestMapping("/result/{id}")
-    public String result(@PathVariable int id, Model model)
+    @RequestMapping("/result")
+    public String result( Model model)
     {
-        Student student=studentService.findById(id);
+        Student student=studentService.findById(userId());
         model.addAttribute("student",student);
         return "Student/result";
     }
 
 
 
-    @RequestMapping("enter-exam/{studentId}/{examId}/{questionId}")
-    public String enterExam(Model model,@PathVariable int studentId ,@PathVariable int examId,@PathVariable int questionId) {
+    @RequestMapping("enter-exam/{examId}/{questionId}")
+    public String enterExam(Model model ,@PathVariable int examId,@PathVariable int questionId) {
 
-        Student student=studentService.findById(studentId);
-        Exam exam=examService.findById(examId);
-        if(student.getExams().contains(exam))
-        {
-            return "Student/submitSucessfully";
-        }
-        else
-        {
+       Student student=studentService.findById(userId());
+       Exam exam=examService.findById(examId);
+//        if(student.getExams().contains(exam))
+//        {
+//            return "Student/submitSucessfully";
+//        }
+//        else
+//        {
 
             student.addExam(exam);
             List<Question>question= exam.getQuestions();
@@ -112,17 +112,13 @@ public class StudentController {
 
 
 
-    }
+
 
     @RequestMapping("/save-exam/{examId}/{questionId}")
     public String saveExam(Model model, @ModelAttribute StudentAnswer answer,@PathVariable int examId,@PathVariable int questionId){
 
-        //for test/////
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        UserPrincipal user = (UserPrincipal)auth.getPrincipal();
-        int userId = user.getId();
-        //////////////
-        Student student=studentService.findById(userId);
+
+        Student student=studentService.findById(userId());
         answer.setStudent(student);
 
             if(counter<size && answer==null)
@@ -154,8 +150,8 @@ public class StudentController {
         {
             studentAnswerService.save(answer);
             counter=1;
-            evaluateExam(userId,examId);
-            model.addAttribute("student",userId);
+            evaluateExam(userId(),examId);
+            model.addAttribute("student",userId());
             model.addAttribute("exam",examId);
             return "Student/submitSucessfully";
         }
@@ -192,5 +188,12 @@ public class StudentController {
 
  }
 
+public  int userId()
 
+{
+    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+    UserPrincipal user = (UserPrincipal)auth.getPrincipal();
+    int userId = user.getId();
+    return userId;
+}
 }

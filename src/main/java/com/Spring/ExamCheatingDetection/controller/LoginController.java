@@ -1,9 +1,11 @@
 package com.Spring.ExamCheatingDetection.controller;
 
 import com.Spring.ExamCheatingDetection.config.UserPrincipal;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -15,9 +17,20 @@ import java.io.IOException;
 @Controller
 public class LoginController {
 
+//    @GetMapping("/login")
+//    String login() {
+//        return "login";
+//    }
+
     @GetMapping("/login")
-    String login() {
-        return "login";
+    public String showLoginForm() {
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
+            return "login";
+        }
+
+        return "redirect:/";
     }
 
 
@@ -39,12 +52,12 @@ public class LoginController {
             response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/admin/index"));
         }
         else if(role.contains("ROLE_INSTRUCTOR")) {
-            response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/instructor/index/"+userId));
+            response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/instructor/index/"));
         }
         else
         {
 
-            response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/student/index/"+userId));
+            response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/student/index/"));
         }
     }
 

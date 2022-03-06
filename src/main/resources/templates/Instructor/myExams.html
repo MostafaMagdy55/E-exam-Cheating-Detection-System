@@ -8,7 +8,7 @@
 
 
 <div th:each="exam:${instructor.getExams()}">
-    <span th:text="${exam.getCourse().getName()}"></span>
+    <span th:text="${exam.getCourse().getCourseName()}"></span>
     <span th:text="${exam.getDate()}"></span>
 
 

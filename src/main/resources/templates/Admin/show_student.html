@@ -11,7 +11,18 @@
 <!--end sliderbar-->
 
 <!--nav bar-->
-<div th:replace="Admin/base :: navbar"></div>
+<div class="navbar" id="contant">
+    <form th:action="@{/logout}" method="post">
+        <!--forms-->
+        <div class="forms">
+            <div class="menu-icons">
+                <i class="fas fa-bars"></i>
+            </div>
+            <input type="search" class="search_textfield" placeholder="Search">
+            <input type="submit" value="Logout" id="Logout">
+        </div>
+    </form>
+</div>
 <!--end nav bar-->
 
 <div class="the-center-div">
@@ -28,19 +39,19 @@
         </thead>
         <tbody>
         <tr th:each="student,itr: ${studentList}">
-            <td><img class="img-class" src="/file/admin/Img\Profile_img.jpg"></td>
+
+               <td><img class="img-class" th:src="@{${'/images/'+student.name+'/'+student.getImages().get(0)+'/'}}"></td>
+
+<!--            <td><img class="img-class" th:src="@{${'/images/'+student.name+'/'+image}}"></td>-->
             <td><input type="text" class="Name"  name="student-name" th:value="${student.name}" disabled></td>
             <td><input type="text" class="Email" name="Email" th:value="${student.email}" disabled></td>
             <td><input type="Phone" class ="Phone" name="Phone" th:value="${student.phone}" disabled></td>
-            <td><i class="fas fa-user-edit classedit"></i><span>/</span><i class="fas fa-user-times classdelete"></i></td>
+            <td>  <a th:href="@{'/admin/edit-student/'+${student.id}}" class="fas fa-user-edit classedit"></a>
+                <span>/</span>
+                <a th:href="@{'/admin/delete-student/'+${student.id}}" class="fas fa-user-times classdelete"></a>
+            </td>
         </tr>
-        <tr>
-            <td><img class="img-class" src="Img\Profile_img.jpg"></td>
-            <td><input type="text" class="Name"  name="student-name" value="manar aitallah" disabled></td>
-            <td><input type="text" class="Email" name="Email" value="Manaraitallah@gmail.com" disabled></td>
-            <td><input type="Phone" class ="Phone" name="Phone" value="01117699022" disabled></td>
-            <td><i class="fas fa-user-edit classedit"></i><span>/</span><i class="fas fa-user-times classdelete"></i></td>
-        </tr>
+
 <!--        <tr>-->
 <!--            <td><img class="img-class" src="Img\Profile_img.jpg"></td>-->
 <!--            <td><input type="text" class="Name"  name="student-name" value="manar aitallah" disabled></td>-->
@@ -85,9 +96,11 @@
 
 
 <!--footer-->
-<div th:replace="Admin/base :: footer"></div>
 
 
+<script type="text/javascript" src="\file\admin\Jquery\jquery-3.6.0.min.js"></script>
+<script src="\file\admin\Jquery\jquery-For-show-instructor.js"></script>
+<script type="text/javascript" src="\file\admin\bootstrap-3.4.1-dist\js\bootstrap.min.js"></script>
 
 
 

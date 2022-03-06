@@ -42,6 +42,7 @@ body
     background-color: #4B5680;
     border-color:#535E8C;
     color: #fff;
+	border: none;
 }
 /*added class to text box to jquery */
 .search_textfieldaddedclass
@@ -69,6 +70,7 @@ input:focus{outline:0;}
     border-color:#535E8C;
     color: #fff;
     font-weight:500;
+	border: none;
 }
 /*the main div in slide bar */
 .side-bar
@@ -402,6 +404,7 @@ span
 	margin-top: 43px;
 	font-size:23px;
 	padding: 3px 50px 3px 15px;
+	color: #000;
 }
 
 

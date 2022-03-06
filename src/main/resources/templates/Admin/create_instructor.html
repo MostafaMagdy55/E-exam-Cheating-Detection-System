@@ -78,7 +78,7 @@
 <head>
     <title>Add Instructor</title>
     <div th:replace="Admin/base :: header"></div>
-    <link rel="stylesheet" type="text/css" href="/file/admin/CSS\AddInstructor.css">
+    <link rel="stylesheet" type="text/css" href="\file\admin\CSS\AddInstructor.css">
 </head>
 <body>
 
@@ -102,7 +102,7 @@
     </div>
     <div class="info-Container">
 
-        <form th:action="@{/admin/save-instructor}" th:object="${instructor}">
+        <form th:action="@{/admin/save-instructor}" th:object="${instructor}"  enctype="multipart/form-data" method="post">
             <div>
 <!--                <label for="ID">ID</label>-->
 <!--                <input id="ID" type="text" required>-->
@@ -131,28 +131,43 @@
                 <input id="phone" type="text" th:field="*{phone}" required/>
             </div>
 
-            <div>
-                <label for="courses">Cources</label>
+<!--            <div>-->
+<!--                <label for="courses">Cources</label>-->
+<!--                <select  id="courses" name="cours" multiple="multiple" th:field="*{courses}" placeholder="Select Courses" >-->
 
-<!--                <select name="cours" placeholder="Select Course">-->
-
-<!--                    <option value="Js">JS</option>-->
-<!--                    <option value="php">php</option>-->
-<!--                    <option value="html">HTML</option>-->
-<!--                    <option value="css">CSS</option>-->
+<!--                    <option th:each="i : ${courses}" th:value="${i.id}" th:text="${i.CourseName}">-->
+<!--                    </option>-->
 <!--                </select>-->
+<!--            </div>-->
 
-                <select  id="courses" name="cours" multiple="multiple" th:field="*{courses}" placeholder="Select Courses" >
+            <div class="CD" > <label for="courses">Courses</label>
+                <dl class="dropdown">
+                    <dt>
+                        <a href="#">
+                            <span class="hida">Select Courses</span>
+                            <p class="multiSel"></p>
+                        </a>
+                    </dt>
+                    <dd>
+                        <div class="mutliSelect">
+                            <ul>
+                                <li th:each="i : ${courses}">
+                                    <input type="checkbox"th:field="*{courses}"  th:value="${i.id}" th:text="${i.CourseName}" /></li>
+                                </li>
 
-                    <option th:each="i : ${courses}" th:value="${i.id}" th:text="${i.CourseName}">
-                    </option>
+                            </ul>
 
-                </select>
+
+
+
+                        </div>
+                    </dd>
+                </dl>
             </div>
 
             <div>
                 <label class="ph">Photo</label>
-                <input id="photo" type="file" required>
+                <input type="file" name="files" multiple required>
             </div>
 
 
@@ -171,6 +186,8 @@
 
 <!--footer-->
 <div th:replace="Admin/base :: footer"></div>
+<script src="\file\admin\Jquery\ADDCourse.js"></script>
+<script src="\file\admin\Jquery/Alelt.js"></script>
 </body>
 </html>
 
