@@ -28,6 +28,8 @@ public class StudentController {
     CourseService courseService;
     @Autowired
     QuestionService questionService;
+    @Autowired
+    MessageService messageService;
 //////////////Static varibel//////////////
     private static int counter=1;
     private static int size=0;
@@ -35,7 +37,7 @@ public class StudentController {
 
 
 
-    @RequestMapping("/index")
+    @RequestMapping("/index/{id}")
     public String index( Model model)
     {
         Student student=studentService.findById(userId());
@@ -45,7 +47,7 @@ public class StudentController {
 
 
 
-    @RequestMapping("/profile")
+    @RequestMapping("/profile/{id}")
     public String profile( Model model)
     {
         Student student=studentService.findById(userId());
@@ -54,7 +56,7 @@ public class StudentController {
     }
 
 
-    @RequestMapping("/exams")
+    @RequestMapping("/exams/{id}")
     public String exams( Model model)
     {
         Student student=studentService.findById(userId());
@@ -65,7 +67,7 @@ public class StudentController {
 
 
 
-    @RequestMapping("/courses")
+    @RequestMapping("/courses/{id}")
     public String courses( Model model)
     {
         Student student=studentService.findById( userId());
@@ -75,7 +77,7 @@ public class StudentController {
 
 
 
-    @RequestMapping("/result")
+    @RequestMapping("/result/{id}")
     public String result( Model model)
     {
         Student student=studentService.findById(userId());
@@ -187,8 +189,30 @@ public class StudentController {
       return "Student/submitSucessfully";
 
  }
+ @RequestMapping("/my_messages")
+ public String MyMessages(Model model)
+ {
+     model.addAttribute("student",studentService.findById(userId()));
+     model.addAttribute("message",new Message());
+     return "Student/message";
 
-public  int userId()
+ }
+
+    @RequestMapping("/send_message")
+    public String SendMessages(@ModelAttribute Message message)
+    {
+        Student student=studentService.findById(userId());
+        student.addMessage(message);
+        messageService.save(message);
+        studentService.save(student);
+
+
+        return "redirect:/student/my_messages";
+
+    }
+
+
+    public  int userId()
 
 {
     Authentication auth = SecurityContextHolder.getContext().getAuthentication();

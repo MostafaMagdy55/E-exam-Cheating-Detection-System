@@ -52,7 +52,8 @@ public class StudentServiceIMP implements StudentService {
     public void save(Student student,MultipartFile[] files) {
         String name=student.getName();
         List<String>image=new ArrayList<>();
-        File f=new File("D:\\Graduation Project   E-exam Cheating Detection System\\E-exam-Cheating-Detection-System\\images\\"+name);
+        String dictory=System.getProperty("user.dir");
+        File f=new File(dictory+"\\target\\images\\"+name);
         f.mkdirs();
 
         if (f.exists())

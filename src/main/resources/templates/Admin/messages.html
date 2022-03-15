@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>replay</title>
+</head>
+<body>
+
+<div th:if="${messages}!=null">
+    <div  th:each="message: ${messages}">
+        <p th:text="${message.getStudent().getName()}"></p>
+        <a th:href="@{'/admin/show_message/'+${message.id}}" th:text="${message.title}"></a>
+    </div>
+</div>
+
+
+
+</body>
+</html>

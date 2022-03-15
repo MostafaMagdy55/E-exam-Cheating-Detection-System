@@ -1,20 +1,17 @@
 package com.Spring.ExamCheatingDetection.controller;
-import com.Spring.ExamCheatingDetection.Entity.Course;
-import com.Spring.ExamCheatingDetection.Entity.Instructor;
-import com.Spring.ExamCheatingDetection.Entity.Student;
-import com.Spring.ExamCheatingDetection.Service.CourseService;
-import com.Spring.ExamCheatingDetection.Service.InstructorService;
-import com.Spring.ExamCheatingDetection.Service.StudentService;
-import org.springframework.beans.factory.annotation.Autowired;
 
+import com.Spring.ExamCheatingDetection.Entity.*;
+import com.Spring.ExamCheatingDetection.Service.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.io.File;
 import java.util.List;
 
 @Controller
@@ -29,8 +26,12 @@ public class AdminController {
 
     @Autowired
     CourseService courseService;
+
    @Autowired
-  // private PasswordEncoder passwordEncoder;
+   MessageService messageService;
+
+   @Autowired
+    ReplayService replayService;
 
     @RequestMapping("/index")
 //    public String index1(Model model)
@@ -61,10 +62,10 @@ public class AdminController {
     @RequestMapping("show-student")
     public String ShowStudent(Model model)
     {
+        String dictory=System.getProperty("user.dir");
+        String path=dictory+"\\target\\images\\";
         model.addAttribute("course",new Course());
-        //List<Course> courses=courseService.findAll();
-        //model.addAttribute("student",new Student());
-        //model.addAttribute("courses",courses);
+        model.addAttribute("path",path);
         return "Admin/show_student";
     }
 
@@ -216,6 +217,37 @@ public List<Student>getAllStudent(){
     @ModelAttribute("CoursesList")
     public List<Course> getAllCourses(){
         return courseService.findAll();
+    }
+
+
+
+
+
+/////////////////meaasges///////////////
+ @RequestMapping("/messages")
+public String Messages(Model model)
+{
+    model.addAttribute("messages",messageService.findAll());
+    return "Admin/messages";
+}
+    @RequestMapping("/show_message/{id}")
+    public String showMessage( @PathVariable int id ,Model model)
+    {
+        model.addAttribute("message",  messageService.findById(id));
+        model.addAttribute("replay",new Replay());
+        return "Admin/replay";
+    }
+
+
+
+    @RequestMapping("/send_replay/{id}")
+    public String sendReplay(@ModelAttribute Replay replay,@PathVariable int id )
+    {
+        Message message= messageService.findById(id);
+        message.addReplay(replay);
+        replayService.save(replay);
+        messageService.save(message);
+        return "redirect:/admin/show_message/{id}";
     }
 
 

@@ -40,7 +40,7 @@
         <tbody>
         <tr th:each="student,itr: ${studentList}">
 
-               <td><img class="img-class" th:src="@{${'/images/'+student.name+'/'+student.getImages().get(0)+'/'}}"></td>
+               <td><img class="img-class" th:src="@{${'/target/images/'+student.name+'/'+student.getImages().get(0)+'/'}}"></td>
 
 <!--            <td><img class="img-class" th:src="@{${'/images/'+student.name+'/'+image}}"></td>-->
             <td><input type="text" class="Name"  name="student-name" th:value="${student.name}" disabled></td>

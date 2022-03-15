@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>send Message</title>
+</head>
+<body>
+
+<div  th:each="message: ${student.getMessages()}">
+     <h1> title</h1>   <p th:text="${message.getTitle()}"></p>
+     <h1>content</h1><p th:text="${message.getContent()}"></p>
+    <div  th:each="replay: ${message.getReplays()}">
+
+        <p th:text="${replay.getContent()}"></p>
+
+    </div>
+</div>
+
+
+<h3>new message</h3>
+<form method="post" th:action="@{/student/send_message}" th:Object="${message}">
+    <input type="hidden" th:field="*{id}" />
+    <input type="text"   th:field="*{title}"placeholder="Title"/>
+    <input type="text"   th:field="*{content}"  placeholder="message"/>
+    <input type="submit" th:value="submit">
+
+</form>
+
+</body>
+</html>

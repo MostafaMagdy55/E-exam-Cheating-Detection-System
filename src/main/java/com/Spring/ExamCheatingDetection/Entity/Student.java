@@ -1,8 +1,6 @@
 package com.Spring.ExamCheatingDetection.Entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -62,6 +60,18 @@ public class Student extends Person{
     List<StudentAnswer>studentAnswers;
 
 
+
+    @OneToMany(mappedBy = "student", fetch = FetchType.LAZY,
+            cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.REMOVE})
+
+    List<Message>messages;
+
+
+
+    @OneToMany(mappedBy = "student",fetch = FetchType.LAZY,
+            cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.REMOVE})
+
+    List<StudentCheatingType>studentCheatingTypeList;
 //
 //    @OneToOne()
 //    @JoinColumn(name = "student_answer_id")
@@ -79,7 +89,15 @@ public class Student extends Person{
 
         courses=course;
     }
+    public void addMessage(Message message) {
 
+            if (messages == null) {
+                messages = new ArrayList<>();
+            }
+
+            messages.add(message);
+            message.setStudent(this);
+        }
 
 
 

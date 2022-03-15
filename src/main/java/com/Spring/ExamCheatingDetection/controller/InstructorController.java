@@ -1,6 +1,9 @@
 package com.Spring.ExamCheatingDetection.controller;
 
-import com.Spring.ExamCheatingDetection.Entity.*;
+import com.Spring.ExamCheatingDetection.Entity.Exam;
+import com.Spring.ExamCheatingDetection.Entity.Instructor;
+import com.Spring.ExamCheatingDetection.Entity.Question;
+import com.Spring.ExamCheatingDetection.Entity.Student;
 import com.Spring.ExamCheatingDetection.Repository.StudentRepository;
 import com.Spring.ExamCheatingDetection.Service.*;
 import com.Spring.ExamCheatingDetection.config.UserPrincipal;
@@ -12,7 +15,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -35,8 +37,7 @@ public class InstructorController {
     QuestionService questionService;
      @Autowired
     CorrectAnswerService correctAnswerService;
-     @Autowired
-     WrongAnswerService wrongAnswerService;
+
      @Autowired
      InstructorService instructorService;
      @Autowired
