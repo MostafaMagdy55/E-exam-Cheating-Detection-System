@@ -60,6 +60,10 @@ public class Student extends Person{
     List<StudentAnswer>studentAnswers;
 
 
+    @OneToMany(mappedBy = "student",fetch = FetchType.LAZY,
+            cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.REMOVE})
+
+    List<Result>results;
 
     @OneToMany(mappedBy = "student", fetch = FetchType.LAZY,
             cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.REMOVE})
@@ -72,10 +76,6 @@ public class Student extends Person{
             cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.REMOVE})
 
     List<StudentCheatingType>studentCheatingTypeList;
-//
-//    @OneToOne()
-//    @JoinColumn(name = "student_answer_id")
-//    private StudentAnswer studentAnswer;
 
 
     public Student() {

@@ -1,0 +1,242 @@
+body, html {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-Background {
+  background-image: url("../Img/Background5.jpg");
+  filter: blur(8px);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*nav bar */
+/* Position text in the middle of the page/image */
+.navbar {
+  background-color: rgb(255,255,255); /* Fallback color */
+  background-color: rgba(255,255,255, 0.5); /* Black w/opacity/see-through */
+  color: #000;
+  z-index: 2;
+  margin-top:-96vh;
+  margin-left: 30vw;
+  width:64vw; 
+  height:11vh;
+  border-radius: 0.6vw;
+  box-shadow: 25px 25px 60px #9C9C9C;
+  position: fixed;
+}
+.nav li {
+  display: inline-block;
+  padding-left: 0.4vw;
+  padding-top: 1vw;
+  padding-bottom: 1vh;
+}
+
+.nav a
+{
+	text-decoration: none ;
+	color: #000;
+	font-weight:bold;
+	margin-left: 1.7vw;
+  font-size: 1.2vw;
+  margin-bottom: 2vw;
+}
+.logout
+{
+  border: none;
+  background-color: rgb(255,255,255); /* Fallback color */
+  background-color: rgba(255,255,255, 0.01);
+  margin-left: 2vw;
+  font-weight: bold;
+  font-size: 1.2vw;
+}
+.nav .Clicked
+{
+	color: #FF0909;
+}
+
+.nav li:hover input {
+  color: #ff0000;
+  cursor: pointer;
+  
+  }
+.nav li:hover a {
+      color: #ff0000;
+      background-color: rgb(255,255,255); /* Fallback color */
+      background-color: rgba(255,255,255, 0.01);
+    
+       }
+/*putting exam form */
+
+.putting-exam-form
+{
+  position: absolute;
+  background-color: rgb(255,255,255); /* Fallback color */
+  background-color: rgba(255,255,255, 0.5); /* Black w/opacity/see-through */
+  width: 97vw;
+  height: 87vh;
+  margin-top: -87vh;
+  border-radius: 1vw;
+  padding-top: 7vh;
+}
+
+/*quesion type */
+.question-type
+{
+  position: absolute;
+  margin-left:6vw;
+  margin-top: -5vh;
+}
+.true-or-false-div
+{
+  display: block;
+}
+
+.true-or-false-div label
+{
+   padding-left: 1vw;
+   font-size: 1.1vw;
+} 
+
+.true-or-false , .mcq
+{
+  width: 2vw;
+  height: 2vh;
+}
+.mcq-div
+{
+  display: block;
+}
+
+.mcq-div label
+{
+   padding-left: 1vw;
+   font-size: 1.1vw;
+} 
+.eyemov
+{
+  width: 2vw;
+  height: 2vh;
+}
+/*eye movement*/
+input:focus{outline:0;}
+
+::placeholder
+{
+  font-size:1vw;
+  color: #000;
+  opacity: 0.8; 
+}
+/*eyessss*/
+.eye-div
+{
+  margin-top: 1vh;
+  display: block;
+}
+.eye-div label
+{
+  padding-left: 1vw;
+  font-size: 1.1vw;
+}
+
+.timeallowed
+{
+  margin-top: 1vh;
+  width: 81vw;
+  height: 6vh;
+  padding-left: 2vw;
+  border-radius:0.5vw;
+  border :none;
+} 
+
+/*qu*/
+.qusetion-itself
+{
+  position: absolute;
+  margin-top: 1vh;
+  margin-left: -1vw;
+}
+
+.qusetion-itself input 
+{
+  display: block;
+  margin: 1vw;
+  width: 81vw;
+  height: 6vh;
+  padding-left: 2vw;
+  border-radius:0.5vw;
+  border :none;
+}
+
+#droplistcorrectanswer
+{
+  width: 81vw;
+  height: 6vh;
+  border-radius: 0.5vw;
+  border: none;
+  padding: 0.4vw;
+  margin-left: 1vw;
+  font-size: 1vw;
+}
+#droplistcorrectanswer:focus{outline:0;}
+/*Answers-to-true-or-false*/
+
+.Answersaddedclass
+{
+ margin-top: -39vh;
+ margin-left: 1vw;
+}
+.Answers-to-true 
+{
+  position: absolute;
+  margin-top: -2vw;
+}
+.Answers-to-true label ,.Answers-to-false label
+{
+  padding-left: 1vw;
+  font-size: 1.1vw;
+}
+.Answers-to-false
+{
+  margin-top: 26vw;
+}
+/*button*/
+
+.button
+{
+  position: absolute;
+  margin-top: -7vh;
+  margin-left: 69vw;
+
+}
+#go-to-next
+{
+  background-color: #82B3BB;
+  color: #fff;
+  width: 16vw;
+  height: 6vh;
+  border-radius:5vw;
+  border:none ;
+  box-shadow: 10px 10px 40px #828282;
+  font-size: 1vw;
+}
+.buttonaddedclasstotrueandfalse
+{
+  position: absolute;
+  margin-top: -3vh;
+  margin-left: 64vw;
+
+}
+
+.buttonaddedclasstoMCQ
+{
+  position: absolute;
+  margin-top: 54vh;
+  margin-left: 65vw;
+
+}

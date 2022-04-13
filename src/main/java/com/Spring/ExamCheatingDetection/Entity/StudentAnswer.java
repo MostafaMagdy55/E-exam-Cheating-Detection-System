@@ -8,7 +8,8 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class StudentAnswer {
@@ -37,43 +38,13 @@ public class StudentAnswer {
     private Student student;
 
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    @ManyToOne(cascade = {CascadeType.DETACH,
+            CascadeType.MERGE,
+            CascadeType.REFRESH,
+            CascadeType.REMOVE})
+    @JoinColumn(name = "exam_id")
+    private Exam exam;
 
-    public String getStringAnswer() {
-        return StringAnswer;
-    }
 
-    public void setStringAnswer(String stringAnswer) {
-        StringAnswer = stringAnswer;
-    }
-
-    public boolean getBooleanAnswer() {
-        return BooleanAnswer;
-    }
-
-    public void setBooleanAnswer(boolean booleanAnswer) {
-        BooleanAnswer = booleanAnswer;
-    }
-
-    public boolean isAnswerIsCorrect() {
-        return AnswerIsCorrect;
-    }
-
-    public void setAnswerIsCorrect(boolean answerIsCorrect) {
-        AnswerIsCorrect = answerIsCorrect;
-    }
-
-    public Student getStudent() {
-        return student;
-    }
-
-    public void setStudent(Student student) {
-        this.student = student;
-    }
 }

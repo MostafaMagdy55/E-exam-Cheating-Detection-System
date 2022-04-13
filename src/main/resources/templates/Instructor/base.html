@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--<head>-->
+<!--    <div th:fragment="header">-->
+<!--    <link rel="stylesheet" type="text/css" href="\file\instructor\bootstrap-3.4.1-dist\css\bootstrap.css">-->
+<!--    <link rel="stylesheet" href="\file\instructor\fontawesome-free\css\all.min.css">-->
+<!--    </div>-->
+<!--</head>-->
+<body>
+<!--<div th:fragment="body">-->
+<!--        <div class="bg-Background"></div>-->
+<!--        <div class="Page-Content">-->
+<!--            <a th:href="@{'/instructor/profile'}">Profile</a>-->
+<!--            <a th:href="@{'/instructor/set-exam'}">Putting Exam</a>-->
+<!--        </div>-->
+<!--</div>-->
+
+
+<div class="navbar" id="contant" th:fragment="body">
+    <ul class="nav">
+        <li><a th:href="@{'/instructor/profile'}">Profile</a></li>
+        <li><a th:href="@{'/instructor/courses'}">Courses</a></li>
+        <li><a th:href="@{'/instructor/set-exam'}">Set Exam</a></li>
+        <li><a th:href="@{'/instructor/exams'}">My Exam </a></li>
+        <li><a th:href="@{'/instructor/result/'}">Result</a></li>
+        <li>
+            <form th:action="@{/logout}" method="post">
+                <input class="logout" type="submit" value="Logout">
+            </form>
+        </li>
+
+    </ul>
+</div>
+
+
+</body>
+</html>

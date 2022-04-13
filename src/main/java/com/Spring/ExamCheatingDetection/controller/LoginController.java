@@ -26,7 +26,7 @@ public class LoginController {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
-            return "login";
+            return "myLogin";
         }
 
         return "redirect:/";
@@ -60,4 +60,12 @@ public class LoginController {
         }
     }
 
+
+//    @Bean
+//    public ViewResolver getViewResolver() {
+//        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+//        resolver.setPrefix("templates/");
+//        //resolver.setSuffix(".html");
+//        return resolver;
+//    }
 }

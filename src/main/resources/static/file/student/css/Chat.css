@@ -1,0 +1,181 @@
+body{
+    background-image: url("../Img/1.jpeg");
+    background-position-x: center;
+    background-position-y:35%;
+    background-repeat: no-repeat;
+    /*background-size: cover;
+    display: flex;*/
+}
+
+/*Nav bar*/
+
+/*div for navigation bar 
+.navbar
+{
+	background-color: #292F45;
+	width: 1360px;
+	height: 68px;
+	opacity: .7;
+	transition: 0.7s ease-out;	
+
+}*/
+
+.nav {
+    background-color: #2C2C2C;
+    list-style-type: none;
+    margin: -8px;
+    padding: 0;
+  }
+  
+  .nav li {
+    display: inline-block;
+    padding: 20px;
+    margin-left: 4%;
+    
+  }
+
+.nav a{
+    text-decoration: none;
+    color: #FFF;
+    display: block;
+	text-align: left;
+    font: 15px/20px sans-serif;
+    transition: all .25s ease;
+   
+   
+}
+
+.nav li:hover a {
+	color: #89D5E8;
+  
+}
+
+.nav .Clicked{
+    color: #89D5E8;
+    font: bold 15px/20px sans-serif;
+}
+
+
+
+
+/*div*/
+.MassForm{
+    position: relative;
+    margin-top: 5%;
+    transform: translate(8%);
+    background-color: rgba(0, 0, 0, 0.571);
+   /* width: 1199px;
+    height: 455px;*/
+    width: 85%;
+    height: 73%;
+    padding-top: 0.3%;
+}
+
+
+
+
+/*Chat*/
+
+/*Massage Problem div*/
+.Massageprob{
+    transform: translate(7%);
+    width: 71%;
+    background-color: #fff;
+    /*background-color: #3F5DD2;*/
+    height: 33%;
+    margin-top: 3%;
+    border-radius: 7px;
+    transition: 0.7s ease-out;
+    padding: 0.5%;
+}
+
+/*Title Massage*/
+.Massageprob h3{
+    color: #000;
+    margin-left: 3%;
+    margin-top: 2%;
+   
+}
+
+/*BodyMassage*/
+.Massageprob p{
+    color: #000;
+    font-size: large;
+    margin-top: 1%;
+    margin-left: 5%;
+}
+
+
+/*Replay Message div*/
+
+.ReplayMessage{
+ 
+  transform: translate(31%);
+  width: 71%;
+  background-color: #66A4B3;
+  /*background-color: #3F5DD2;*/
+  height: 25%;
+  margin-top: 2.5%;
+  border-radius: 7px;
+  transition: 0.7s ease-out;
+  padding: 1%;
+}
+
+/*BodyReplayMassage*/
+.ReplayMessage p{
+  color: #000;
+  font-size: large;
+  margin-top: 1%;
+  margin-left: 7%;
+}
+
+/*Replay
+
+.FormChat{
+  position: relative;
+}*/
+
+
+.FormChat input::placeholder{
+    color: rgb(102, 102, 102);
+	font-size: 12px;
+}
+
+
+/*Form*/
+.MassForm{
+    display: inline-block;
+}
+
+.FormChat{
+    margin-top: 5%;
+}
+.FormChat input[type=text]{
+        transform: translate(1%);
+        width: 71%;
+		border-radius: 7px;
+		margin-top: 4%;
+        margin-left: 5%;
+		color: #000;
+		font-size: small;
+		padding: 11px 20px 9px 39px;
+        border: none;
+        font-size: small;
+}
+
+/*.chat-bar-icons{
+    display: inline-block;
+}*/
+
+.FormChat input[type="submit"]{
+    transform: translate(17%);
+    
+       width:11%;
+    border-radius: 5px;
+	border: none;
+    padding: 9px 25px 9px 25px;
+    font-size: small;
+    margin-top: 2%;
+    background-color: #2AB4D5;
+    margin-bottom: 2%;
+}

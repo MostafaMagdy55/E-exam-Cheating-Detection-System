@@ -1,10 +1,6 @@
 package com.Spring.ExamCheatingDetection.Entity;
 
 
-import lombok.Getter;
-import lombok.Setter;
-
-
 import javax.persistence.*;
 
 
@@ -24,8 +20,8 @@ public class Question {
     @Column(name = "EyeMovment")
     private boolean EyeMovment;
 
-    @Column(name = "time")
-    private int Time;
+    @Column(name = "time_for_cheating")
+    private int TimeForCheating;
 
     @Column(name = "question_head")
     private  String QuestionHead;
@@ -68,7 +64,7 @@ public class Question {
     public Question(boolean Type, boolean eyeMovment, int Time) {
         this.Type = Type;
         EyeMovment = eyeMovment;
-        this.Time = Time;
+        this.TimeForCheating = Time;
     }
 
     public int getId() {
@@ -95,12 +91,12 @@ public class Question {
         EyeMovment = eyeMovment;
     }
 
-    public int getTime() {
-        return Time;
+    public int getTimeForCheating() {
+        return TimeForCheating;
     }
 
-    public void setTime(int time) {
-        Time = time;
+    public void setTimeForCheating(int time) {
+        TimeForCheating = time;
     }
 
     public String getQuestionHead() {
@@ -173,7 +169,7 @@ public class Question {
                 "id=" + id +
                 ", Type=" + Type +
                 ", EyeMovment=" + EyeMovment +
-                ", Time=" + Time +
+                ", Time=" + TimeForCheating +
                 ", QuestionHead='" + QuestionHead + '\'' +
                 ", OptionA='" + OptionA + '\'' +
                 ", OptionB='" + OptionB + '\'' +

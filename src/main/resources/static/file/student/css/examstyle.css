@@ -1,0 +1,130 @@
+body{
+    background-image: url("../Img/background.jpg");
+    background-size:cover;
+    height: 100%;
+    background-repeat: no-repeat;
+    font-family: Segoe UI;
+
+ 
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input
+{
+	width: 3vw;
+	height: 2vh;
+	cursor: pointer;
+}
+.qa_box
+{
+
+	width: 56vw;
+	padding: 1.46vw;
+	height:74vh;
+	background-color: #fff;
+	box-shadow:  0 0 5px 3px rgba(0,0,0,0,0.3);
+	border-radius: 1vw; 
+	margin-left: 23vw;
+	margin-top: 19vh;
+
+}
+
+
+
+.qa_box2
+{
+
+	width: 56vw;
+	padding: 1.46vw;
+	height:55vh;
+	background-color: #fff;
+	box-shadow:  0 0 5px 3px rgba(0,0,0,0,0.3);
+	border-radius: 1vw; 
+	margin-left: 23vw;
+	margin-top: 19vh;
+
+}
+
+
+.qa-header
+{
+	height: 8vh;
+	background-color: #66A4B3;
+	color: #fff;
+	padding:  1.3vw 4vw;
+	margin: -3.2vh -1.5vw 0 ;
+	border-radius: 1vw 1vw 0 0;
+
+}
+.timer-icon
+{
+	display: inline;
+	font-size: 1.4vw;
+	position: fixed;
+}
+
+#countdown
+{
+	margin-left: 43vw;
+	font-size: 1.4vw;
+	position: fixed;
+}
+
+.qa-set h4 
+{
+	margin: 7vh 5vw 5vh;
+		word-wrap:break-word;
+		font-size: 1.6vmin;
+	
+
+}
+
+.qa-ans-set span
+{
+
+	padding: 1vw 1vw;
+}
+
+.qa-ans-set
+{
+	margin-left: 5vw;
+	margin-bottom: 2vh;
+	font-size: 1.2vw;
+}
+.submit
+{
+	text-decoration: none;
+	color: #fff;
+}
+
+.qa-footer
+{
+	text-align: right;
+}
+
+.btn1
+{
+    position: fixed;
+	margin-left: -10vw;
+	display: inline-block;
+	background-color: #66A4B3;
+	color: #fff;
+	border-radius: 5vw;
+	cursor: pointer;
+	transition: all 0.3s ease-out;
+	box-shadow:  6px 6px  15px rgba(102,164,179,0.3);
+	width: 9vw;
+	height: 6vh;
+    text-align: center;
+	padding-top: 0.9vh;
+	font-size: 1.2vw;	
+}
+
+.val
+{
+	width: 2vw;
+	height: 2vw;
+} 

@@ -19,6 +19,13 @@ public class StudentCheatingType {
     private  int id;
 
 
+
+ //   @Column(name = "enable" ,columnDefinition = "integer default 0")
+
+    @ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.REMOVE},fetch = FetchType.LAZY)
+    @JoinColumn(name = "exam_id")
+    private Exam exam;
+
     @Column(name = "cheating_by_change_identity")
     private int CheatingByChangeIdentity;
 

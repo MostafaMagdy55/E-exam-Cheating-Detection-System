@@ -28,6 +28,9 @@ public class Exam {
     @Column(name = "number_of_question")
     private int NumberOfQuestion;
 
+    @Column(name = "updated")
+    private boolean Updated ;
+
 
 //    @Column(name = "exam_time")
 //    private int ExamTime;
@@ -36,6 +39,11 @@ public class Exam {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
     private Date date;
+
+
+    @Column(name = "time")
+    private int time;
+
 
 
     @ManyToOne(cascade = {CascadeType.DETACH,
@@ -85,6 +93,10 @@ public class Exam {
     @JoinColumn(name = "cheating_type_id")
     private CheatingType cheatingType;
 
+//    @OneToOne()
+//    @JoinColumn(name = "result_id")
+//    private Result result;
+
 
     @OneToMany(mappedBy = "exam", cascade = {
             CascadeType.DETACH,
@@ -95,6 +107,30 @@ public class Exam {
     List<Question> questions;
 
 
+    @OneToMany(mappedBy = "exam", cascade = {
+            CascadeType.DETACH,
+            CascadeType.MERGE,
+            CascadeType.REFRESH,
+            CascadeType.REMOVE
+    })
+    List<StudentAnswer> studentAnswers;
+
+
+
+    @OneToMany(mappedBy = "student",fetch = FetchType.LAZY,
+            cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.REMOVE})
+
+    List<Result>results;
+
+
+
+
+
+    @OneToMany(mappedBy = "exam",fetch = FetchType.LAZY,
+            cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.REMOVE})
+
+    List<StudentCheatingType>studentCheatingTypeList;
+
     public void addQuestion(Question question) {
       if (questions==null)
       {
@@ -102,6 +138,19 @@ public class Exam {
           questions.add(question);
       }
         question.setExam(this);
+
+    }
+
+
+
+
+    public void addStudentAnswer(StudentAnswer studentAnswer) {
+        if (studentAnswers==null)
+        {
+            studentAnswers=new ArrayList<>();
+            studentAnswers.add(studentAnswer);
+        }
+        studentAnswer.setExam(this);
 
     }
 

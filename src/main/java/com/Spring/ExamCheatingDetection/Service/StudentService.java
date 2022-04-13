@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface StudentService  {
     public List<Student> findAll();
-
+    public List<Student>search(String s);
     public Student findById(int theId);
 
     public void save(Student student, MultipartFile[] files);

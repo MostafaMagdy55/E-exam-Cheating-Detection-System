@@ -1,7 +1,6 @@
 package com.Spring.ExamCheatingDetection.Service.IMP;
 
 import com.Spring.ExamCheatingDetection.Entity.Instructor;
-import com.Spring.ExamCheatingDetection.Entity.Student;
 import com.Spring.ExamCheatingDetection.Repository.InstructorRepository;
 import com.Spring.ExamCheatingDetection.Service.InstructorService;
 import org.apache.commons.io.FileUtils;
@@ -59,7 +58,8 @@ public class InstructorServiceIMP implements InstructorService {
     public void save(Instructor instructor, MultipartFile[] files) {
         String name=instructor.getName();
         List<String>image=new ArrayList<>();
-        File f=new File("D:\\Graduation Project   E-exam Cheating Detection System\\E-exam-Cheating-Detection-System\\images\\"+name);
+        String dictory=System.getProperty("user.dir");
+        File f=new File(dictory+"\\target\\images\\"+name);
         f.mkdirs();
 
         if (f.exists())

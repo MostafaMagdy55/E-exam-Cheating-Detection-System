@@ -1,27 +1,84 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+
+
+<!--<h5 th:text="${message.getTitle()}"></h5>-->
+<!--<p th:text="${message.getContent()}"></p>-->
+
+
+<!--<div  th:each="replay: ${message.getReplays()}">-->
+<!--    <h5> replay</h5>-->
+<!--    <p th:text="${replay.getContent()}"></p>-->
+<!--</div>-->
+
+<!--<form th:action="@{/admin/send_replay/__${message.getId()}__}" th:object="${replay}">-->
+<!--    <input type="hidden" th:field="*{id}" />-->
+<!--    <input type="text"   th:field="*{content}"placeholder="replay"/>-->
+<!--    <input type="submit" value="submit" />-->
+
+<!--</form>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Read Problem </title>
+    <div th:replace="Admin/base :: header"></div>
+    <link rel="stylesheet" type="text/css" href="\file\admin\CSS\ReadProb.css">
+
 </head>
 <body>
 
+<!--sliderbar-->
+<div th:replace="Admin/base :: sliderbar"></div>
+<!--end sliderbar-->
 
 
+<!--nav bar-->
+<div th:replace="Admin/base :: navbar"></div>
+<!--end nav bar-->
 
-<h5 th:text="${message.getTitle()}"></h5>
-<p th:text="${message.getContent()}"></p>
-<div  th:each="replay: ${message.getReplays()}">
-    <h5> replay</h5>
-    <p th:text="${replay.getContent()}"></p>
+
+<!--center div -->
+<div class="the-center-div">
+    <div class="Massageprob">
+        <h3 th:text="${message.getTitle()}"></h3>
+        <p th:text="${message.getContent()}"></p>
+    </div>
+    <div th:if="${message.getReplays().size()!=0}">
+        <div class="ReplayMessage">
+            <div th:each="replay: ${message.getReplays()}">
+                <p th:text="${replay.getContent()}"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="FormChat">
+        <form class="RplayForm" th:action="@{/admin/send_replay/__${message.getId()}__}" th:object="${replay}">
+            <input type="hidden" th:field="*{id}"/>
+            <input type="text" th:field="*{content}" placeholder="replay"/>
+            <input type="submit" value="Replay">
+        </form>
+    </div>
+
 </div>
 
-<form th:action="@{/admin/send_replay/__${message.getId()}__}" th:object="${replay}">
-    <input type="hidden" th:field="*{id}" />
-    <input type="text"   th:field="*{content}"placeholder="replay"/>
-    <input type="submit" value="submit" />
 
-</form>
+<!--POPUP-->
+<div th:replace="Admin/base :: POPUP"></div>
 
+
+<script type="text/javascript" src="\file\admin\Jquery\jquery-3.6.0.min.js"></script>
+<script src="\file\admin\Jquery\jquery.js"></script>
+<script type="text/javascript" src="\file\admin\bootstrap-3.4.1-dist\js\bootstrap.min.js"></script>
 </body>
 </html>

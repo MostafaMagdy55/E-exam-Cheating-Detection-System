@@ -1,13 +1,9 @@
-
-
-
-
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Add Student</title>
-  <div th:replace="Admin/base :: header"></div>
-  <link rel="stylesheet" type="text/css" href="\file\admin\CSS\AddInstructor.css">
+    <title>Add Student</title>
+    <div th:replace="Admin/base :: header"></div>
+    <link rel="stylesheet" type="text/css" href="\file\admin\CSS\AddInstructor.css">
 </head>
 <body>
 
@@ -24,88 +20,92 @@
 <!--center div -->
 <div class="the-center-div">
 
-  <h3 class="add">Add Student</h3>
-  <!--img div-->
-  <div class="img-container">
-    <img src="/file/admin/Img/mem.jpeg" class="Add_img">
-  </div>
-  <div class="info-Container">
+    <h3 class="add">Add Student</h3>
+    <!--img div-->
+    <div class="img-container">
+        <img src="/file/admin/Img/mem.jpeg" class="Add_img">
+    </div>
+    <div class="info-Container">
 
-    <form th:action="@{/admin/save-student}" th:object="${student}" enctype="multipart/form-data" method="post">
-      <div>
-        <div>
-          <!--                <label for="ID">ID</label>-->
-          <!--                <input id="ID" type="text" required>-->
-          <input type="hidden" th:field="*{id}" />
-        </div>
+        <form th:action="@{/admin/save-student}" th:object="${student}" enctype="multipart/form-data" method="post">
+            <div>
+                <!--        <div>-->
+                <!--          &lt;!&ndash;                <label for="ID">ID</label>&ndash;&gt;-->
+                <!--          &lt;!&ndash;                <input id="ID" type="text" required>&ndash;&gt;-->
+                <!--      -->
+                <!--        </div>-->
+                <div th:if="${userISExist}!=null">
+                    <span style="color: #ac2925">the student already exist</span>
+                </div>
+                <input type="hidden" th:field="*{id}"/>
+                <div>
+                    <label for="name">Name</label>
+                    <!--                <input id="name" type="text" required>-->
+                    <input type="text" th:field="*{name}" id="name" required/>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <!--                <input id="email" type="email" required>-->
+                    <input id="email" type="email" th:field="*{email}" required/>
+                </div>
+                <div>
+                    <label for="pass">Password</label>
+                    <!--                <input id="pass" type="password" required>-->
+                    <input id="pass" type="password" th:field="*{password}" required/>
+                </div>
 
-        <div>
-          <label for="name">Name</label>
-          <!--                <input id="name" type="text" required>-->
-          <input type="text" th:field="*{name}"  id="name"required />
-        </div>
-        <div>
-          <label for="email">Email</label>
-          <!--                <input id="email" type="email" required>-->
-          <input id="email" type="email" th:field="*{email}" required />
-        </div>
-        <div>
-          <label for="pass">Password</label>
-          <!--                <input id="pass" type="password" required>-->
-          <input id="pass" type="password" th:field="*{password}" required />
-        </div>
+                <div>
+                    <label for="phone">Phone</label>
+                    <!--                <input id="pass" type="number" required>-->
+                    <input id="phone" type="text" th:field="*{phone}" required/>
+                </div>
 
-        <div>
-          <label for="phone">Phone</label>
-          <!--                <input id="pass" type="number" required>-->
-          <input id="phone" type="text" th:field="*{phone}" required/>
-        </div>
+                <!--            <div>-->
+                <!--                <label for="courses">Cources</label>-->
+                <!--                <select  id="courses" name="cours" multiple="multiple" th:field="*{courses}" placeholder="Select Courses" >-->
 
-        <!--            <div>-->
-        <!--                <label for="courses">Cources</label>-->
-        <!--                <select  id="courses" name="cours" multiple="multiple" th:field="*{courses}" placeholder="Select Courses" >-->
+                <!--                    <option th:each="i : ${courses}" th:value="${i.id}" th:text="${i.CourseName}">-->
+                <!--                    </option>-->
+                <!--                </select>-->
+                <!--            </div>-->
 
-        <!--                    <option th:each="i : ${courses}" th:value="${i.id}" th:text="${i.CourseName}">-->
-        <!--                    </option>-->
-        <!--                </select>-->
-        <!--            </div>-->
+                <div class="CD" > <label for="courses">Courses</label>
+                    <dl class="dropdown">
+                        <dt>
+                            <a href="#">
+                                <span class="hida">Select Courses</span>
+                                <p class="multiSel"></p>
+                            </a>
+                        </dt>
+                        <dd>
+                            <div class="mutliSelect">
+                                <ul>
+                                    <li th:each="i : ${courses}">
+                                        <input type="checkbox"th:field="*{courses}"  th:value="${i.id}" th:text="${i.CourseName}" /></li>
+                                    </li>
 
-        <div class="CD" > <label for="courses">Courses</label>
-          <dl class="dropdown">
-            <dt>
-              <a href="#">
-                <span class="hida">Select Courses</span>
-                <p class="multiSel"></p>
-              </a>
-            </dt>
-            <dd>
-              <div class="mutliSelect" th:each="i : ${courses}">
-                <ul>
-                  <li>
-                    <input type="checkbox"th:field="*{courses}"  th:value="${i.id}" th:text="${i.CourseName}" /></li>
-                  </li>
-
-                </ul>
-
-
-
-
-              </div>
-            </dd>
-          </dl>
-        </div>
-
-        <div>
-          <label class="ph">Photo</label>
-          <input type="file" name="files" multiple required>
-        </div>
+                                </ul>
 
 
-        <input type="submit" value="Add">
-      </div>
-    </form>​
 
-  </div>
+
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div>
+                    <label class="ph">Photo</label>
+                    <input type="file" name="files" multiple required>
+                </div>
+
+
+                <input type="submit" value="Add">
+            </div>
+        </form>
+        ​
+
+    </div>
 
 </div>
 

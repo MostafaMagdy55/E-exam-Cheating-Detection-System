@@ -1,0 +1,384 @@
+body 
+{
+	background-color: #151D30;
+}
+/*icon to open slide bar*/
+.menu-icons
+{
+	position: absolute;
+	color: #fff;
+	font-size: 27px;
+	margin-left:37px;
+	margin-top: 13px;
+	cursor: pointer;
+}
+/*div for navigation bar */
+.navbar
+{
+	background-color: #292F45;
+	width: 1360px;
+	height: 68px;
+	opacity: .7;
+	transition: 0.7s ease-out;	
+
+}
+/* added class to jquert for navigation bar */
+.navbaraddclass
+{
+	margin-left: 310px;
+	width: 1055px;
+	transition: 0.5s ease-in;	
+}
+
+/* logout button */
+#Logout
+{
+	height: 38px;
+    width: 114px;
+    margin-left: 87%;
+    border-radius: 8px;
+    background-color: #4B5680;
+    border-color:#535E8C;
+    color: #fff;
+    font-weight:500;
+	margin-top: 17px;
+	border: none;
+}
+/*the main div in slide bar */
+.side-bar
+{
+	z-index: 1;
+	background:rgba(255,255,255,0.1);
+	backdrop-filter: blur(15px);
+    width: 290px;
+    height: 700px;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    overflow-y:auto;
+    transition: 0.8s snap;
+    transition-property: left;
+}
+/*jquery class when silde bar is open */
+.side-bar.active
+{
+    left: 0;
+}
+/*menu*/
+.header
+{
+	position: absolute;
+	color: #fff;
+	left:0; 
+	margin-left:-230px;
+	margin-top: -3px;
+}
+
+/*course menu inside silde bar */
+.side-bar .menu 
+{
+	width: 100%;
+	margin-top:80px;
+
+}
+/*course menu item inside silde bar */
+.side-bar .menu .item
+{
+
+position: relative;
+cursor: pointer;
+} 
+/*course menu links inside silde bar */
+.side-bar .menu .item a 
+{
+	color: #fff;
+	font-size: 16px;
+	text-decoration:none;
+	display: block;
+	padding: 5px 30px;
+	line-height: 40px;
+}
+/*course menu backgroun while touch it inside silde bar */
+.side-bar .menu .item a:hover
+{
+	background-color: #7466F1;
+	transition:0.3s ease;
+} 
+.side-bar .menu .item i
+{
+	margin-right: 15px;
+}
+/*icons arrows */
+.side-bar .menu .item a .dropdown
+{
+	position: absolute;
+	right: 0;
+	margin-left: 20px;
+	margin-top:13px; 
+    transition:0.3s ease;
+}
+/*arrows icons while click */
+.rotate
+{
+	transform: rotate(90deg);
+} 
+/*design for inside menu */
+.side-bar .menu .item .sub-menu
+{
+	background:rgba(255,255,255,0.1);
+	display: none;
+}
+.side-bar .menu .item .sub-menu a 
+{
+	padding-left: 80px;
+}
+/*show members drop down menu*/
+.side-bar .menu .item .sub-menuFor-Member
+{
+	background:rgba(255,255,255,0.1);
+	display: none;
+}
+.side-bar .menu .item .sub-menuFor-Member a 
+{
+	padding-left: 80px;
+}
+
+.side-bar .menu .item .sub-menuFor-addMember
+{
+	background:rgba(255,255,255,0.1);
+	display: none;
+}
+.side-bar .menu .item .sub-menuFor-addMember a 
+{
+	padding-left: 80px;
+}
+/*close icon in slider*/
+.side-bar .close-btn
+{
+	position: absolute;
+	color: #fff;
+	font-size: 20px;
+	right: 0;
+	margin: 20px;
+	cursor: pointer;
+}
+/*central container div */
+.the-center-div
+{
+	position: relative;
+	background-color:#292F45;
+	width: 1300px;
+	height: 520px;
+	margin-left: 26px;
+	border-radius: 7px;
+	transition: 0.7s ease-out;	
+
+}
+/*added class for jquery for central container div */
+.the-center-divaddedClass
+{
+	
+	width: 1000px;
+	height: 520px;
+	margin-left:310px;
+	border-radius: 7px;
+	transition: 0.5s ease-in;	
+
+}
+
+/*Massage Problem div*/
+.Massageprob{
+    position:absolute;
+    transform: translate(31%);
+    width: 71%;
+    background-color: #463f8b;
+    /*background-color: #3F5DD2;*/
+    height: 33%;
+    margin-top: 3%;
+    border-radius: 7px;
+    transition: 0.7s ease-out;
+}
+
+/*Title Massage*/
+.Massageprob h3{
+    color: #fff;
+    margin-left: 3%;
+    margin-top: 3%;
+}
+
+/*BodyMassage*/
+.Massageprob p{
+    color: #fff;
+    font-size: large;
+    margin-top: 2%;
+    margin-left: 11%;
+}
+
+
+/*Replay Message div*/
+
+.ReplayMessage{
+  position:absolute;
+  transform: translate(7%);
+  width: 71%;
+  background-color: rgb(180, 176, 176);
+  /*background-color: #3F5DD2;*/
+  height: 25%;
+  margin-top: 235px;
+  border-radius: 7px;
+  transition: 0.7s ease-out;
+}
+
+/*BodyReplayMassage*/
+.ReplayMessage p{
+  color: #fff;
+  font-size: large;
+  margin-top: 3%;
+  margin-left: 5%;
+}
+
+
+
+
+/*Replay
+
+.FormChat{
+  position: relative;
+}*/
+
+.RplayForm input[type=text]{
+          width: 77%;
+          margin-top: 451px;
+          margin-left: 5%;
+          border-radius: 7px;
+          padding: 12px 30px 12px 45px;
+          background-color: rgba(0, 0, 0, 0.541);
+          border: none;
+          color: #fff;
+}
+
+.RplayForm input::placeholder{
+    color: #b1b1b1;
+	font-size: 16px;
+}
+
+.RplayForm input[type=submit]{
+    width: 11%;
+    padding: 9px 30px 11px 25px;
+    margin-left: 1%;
+    border-radius: 9px;
+    background-color: #19839A;
+    border: none;
+    color: #fff;
+}
+
+
+
+
+
+
+
+/*icons itself */
+.classpen ,.classeye ,.classeyeopen
+{
+	color: #000;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+
+/*POPUP*/
+
+.overlay {
+	
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .overlay:target {
+	
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .popup {
+	
+    margin: 50px auto;
+    padding: 31px;
+    background-color:#292F45;
+	
+    border-radius: 9px;
+    width: 34%;
+	height: 46%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+  
+  .popup h2 {
+    margin-top: 15px;
+    color: #877DDC;
+	margin-left: 31%;
+	font-size: 31px;
+	font-style: bold;
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+  }
+  .popup .close:hover {
+    color: red;
+  }
+  .popup .info-Containerx {
+    overflow: auto;
+	padding-bottom: 50px;
+  }
+
+.info-Containerx input[type=text]{
+    width: 375px;
+	border-radius:2px;
+	border: none;
+	margin-left: 6%;
+	margin-top: 43px;
+	font-size:23px;
+	padding: 3px 50px 3px 15px;
+	color: #000;
+}
+
+
+.info-Containerx input[type=submit] {
+	font-size: 18px;
+    background-color: #7466F1;
+	width: 377px;
+    padding: 8px 19px 3px 19px;
+    color: #fff;	
+	border-radius:2px;
+	border: none;
+	margin-top: 20px;
+	margin-left: 6%;
+	text-align: center;
+ 
+}
+.info-Containerx input::placeholder{
+	color: #646369;
+	font-size: 16px;
+}
+  @media screen and (max-width: 600px){
+    .box{
+      width: 70%;
+    }
+    .popup{
+      width: 70%;
+    }
+  }

@@ -1,10 +1,50 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div th:each="result,itr: ${student.getResults()}">-->
+<!--    <span th:text="${result.getExam().getCourse().getCourseName()}"></span>-->
+<!--    <br>-->
+<!--    <span th:text="${result.getExamResult()}"></span>/ <span th:text="${result.getNumOfQuestion()}"></span>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="\file\student\css\result.css">
+    <title>Result</title>
 </head>
 <body>
-
+<!--nav bar-->
+<div th:replace="Student/base :: body"></div>
+<div class="img-container">
+    <img src="\file\student\img\result.jpg">
+</div>
+<table>
+    <thead>
+    <th>Course Name</th>
+    <th>Grades</th>
+    <th>Fired</th>
+    </thead>
+    <tbody>
+    <div th:each="result,itr: ${student.getResults()}">
+        <tr>
+            <td th:text="${result.getExam().getCourse().getCourseName()}"></td>
+            <td><span th:text="${result.getExamResult()}"></span>/ <span th:text="${result.getNumOfQuestion()}"></span>
+            </td>
+            <td>no</td>
+        </tr>
+    </div>
+    </tbody>
+</table>
 </body>
 </html>

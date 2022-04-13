@@ -1,20 +1,57 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>My Courses</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div th:each="course:${instructor.getCourses()}">-->
+<!--    <span th:text="${course.getCourseName()}"></span>-->
+<!--    <br>-->
+<!--    <div th:each="student,num:${course.getStudents()}">-->
+<!--        <span th:text="${num.count}"></span>-->
+<!--    </div>-->
+
+
+<!--</div>-->
+
+<!--<div th:text="${ins}"></div>-->
+<!--</body>-->
+<!--</html>-->
+
+
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Courses</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="\file\instructor\css\course.css">
+    <title>Course</title>
 </head>
 <body>
-<div th:each="course:${instructor.getCourses()}">
-    <span th:text="${course.getCourseName()}"></span>
-    <br>
-    <div th:each="student,num:${course.getStudents()}">
-        <span th:text="${num.count}"></span>
-    </div>
 
-
+<div class="img-container">
+    <img src="\file\instructor\img\course.jpg">
 </div>
-
-<div th:text="${ins}"></div>
+<!--nav bar-->
+<div th:replace="Instructor/base :: body"></div>
+<!---end nav bar -->
+<table>
+    <thead>
+    <th>Course Name</th>
+    <th>Number of Students</th>
+    </thead>
+    <tbody>
+    <div th:each="course:${instructor.getCourses()}">
+        <tr>
+            <td th:text="${course.getCourseName()}"></td>
+            <div th:each="student,num:${course.getStudents()}">
+                <td th:text="${num.count}"></td>
+            </div>
+        </tr>
+    </div>
+    </tbody>
+</table>
 </body>
 </html>

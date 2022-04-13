@@ -1,29 +1,84 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>MyExams</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div th:each="course:${student.getCourses()}">-->
+<!--    <span th:text="${course.getCourseName()}"></span>-->
+<!--    <div th:each="exam:${course.getExams()}">-->
+<!--        <span th:text="${exam.getDate()}"></span>-->
+<!--        &lt;!&ndash;        <div th:each="question,num:${exam.getQuestions()}">&ndash;&gt;-->
+<!--        &lt;!&ndash;            <div th:if="${num.first == true}">&ndash;&gt;-->
+<!--        <div th:if="${date.compareTo(exam.getDate())==0}">-->
+<!--            <div th:if="${hour==exam.getTime()}">-->
+<!--                <div th:if="${minute<=59}">-->
+<!--                    <div th:if="${student.getExams().contains(exam)==false}">-->
+<!--                        <a th:href="@{'/student/enter-exam/' +${exam.getId()}+ '/' +${exam.getQuestions().get(0).getId()}}">enter-->
+<!--                            exam</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;            </div>&ndash;&gt;-->
+<!--        &lt;!&ndash;        </div>&ndash;&gt;-->
+<!--    </div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="\file\student\css/exam-time.css">
+    <title>EXAM TIME</title>
 </head>
 <body>
+<!--nav bar-->
+<div th:replace="Student/base :: navbar"></div>
 
+<div class="img-container">
+    <img src="\file\student\img\Time.jpg">
+</div>
+<table>
+    <thead>
+    <th>Exam date</th>
+    <th>Time</th>
+    <th>Course Name</th>
+    <th>Link</th>
 
-
-<div th:each="course:${student.getCourses()}">
-    <span th:text="${course.getCourseName()}"></span>
-
-    <div th:each="exam:${course.getExams()}">
-         <span th:text="${exam.getDate()}"></span>
-
-        <div th:each="question,num:${exam.getQuestions()}" >
-            <div th:if="${num.first == true}">
+    </thead>
+    <tbody>
+    <div th:each="course:${student.getCourses()}">
+        <div th:each="exam:${course.getExams()}">
+            <tr>
+                <td th:text="${exam.getDate()}"></td>
+                <td th:text="${exam.getTime()}"></td>
+                <td th:text="${exam.getCourse().getCourseName()}"></td>
                 <div th:if="${date.compareTo(exam.getDate())==0}">
-                    <div th:if="${student.getExams().contains(exam)==false}">
-                     <a th:href="@{'/student/enter-exam/' +${exam.getId()}+ '/' +${question.getId()}}">enter exam</a>
+                    <div th:if="${hour==exam.getTime()}">
+                        <div th:if="${minute<=58}">
+                            <div th:if="${student.getExams().contains(exam)==false}">
+                                <td>
+                                    <a th:href="@{'/student/enter-exam/' +${exam.getId()}+ '/' +${exam.getQuestions().get(0).getId()}}">Go
+                                        to exam</a></td>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div th:if="${date.compareTo(exam.getDate())!=0}">
+                   <td>fdsfsfsd</td>
+                </div>
+            </tr>
         </div>
     </div>
-</div>
+    </tbody>
+</table>
 </body>
 </html>

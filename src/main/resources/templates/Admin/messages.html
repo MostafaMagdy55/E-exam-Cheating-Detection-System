@@ -1,19 +1,55 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>replay</title>
+    <title>ProblemsPage</title>
+    <div th:replace="Admin/base :: header"></div>
+    <link rel="stylesheet" type="text/css" href="\file\admin\CSS\problems.css">
 </head>
 <body>
+<!--sliderbar-->
+<div th:replace="Admin/base :: sliderbar"></div>
+<!--end sliderbar-->
 
-<div th:if="${messages}!=null">
-    <div  th:each="message: ${messages}">
-        <p th:text="${message.getStudent().getName()}"></p>
-        <a th:href="@{'/admin/show_message/'+${message.id}}" th:text="${message.title}"></a>
+
+<!--nav bar-->
+<div th:replace="Admin/base :: navbar"></div>
+<!--end nav bar-->
+
+
+<!--center div -->
+<div class="the-center-div">
+    <h3 class="update">Problems</h3>
+    <div th:if="${messages}!=null">
+    <table>
+        <tbody class="tableQue">
+        <div  th:each="message: ${messages}">
+        <tr>
+            <td><a name="Course-name" th:href="@{'/admin/show_message/'+${message.id}}"  th:text="${message.getStudent().getName()} +':'+ ${message.getTitle()}"></a></td>
+        </tr>
+<!--        <tr>-->
+<!--            <td><a name="Course-name" href="#">Bulk action : what is the problem ?</a></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td><a name="Course-name" href="#">Bulk action : what is the problem ?</a></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td><a name="Course-name" href="#">Bulk action : what is the problem ?</a></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td><a name="Course-name" href="#">Bulk action : what is the problem ?</a></td>-->
+<!--        </tr>-->
+        </div>
+        </tbody>
+    </table>
     </div>
+
 </div>
 
+<!--POPUP-->
+<div th:replace="Admin/base :: POPUP"></div>
 
-
+<script type="text/javascript" src="\file\admin\Jquery\jquery-3.6.0.min.js"></script>
+<script src="\file\admin\Jquery\Jquery-Problems.js"></script>
+<script type="text/javascript" src="\file\admin\bootstrap-3.4.1-dist\js\bootstrap.min.js"></script>
 </body>
 </html>

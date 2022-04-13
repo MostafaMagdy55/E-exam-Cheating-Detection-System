@@ -7,8 +7,16 @@
 <body>
 
 <div th:each="exam:${instructor.getExams()}">
-    <span th:text="${exam.getCourse().getCourseName()}"></span>
-    <a th:href="@{'/instructor/evaluate-exam/'+${exam.getId()}}">evaluate</a>
+    <br>
+    <div th:each="result:${exam.getResults()}">
+        <span th:text="${result.getExam().getCourse().getCourseName()}"></span>
+        <br>
+        <span th:text="${result.getStudent().getName()}"></span>
+        <br>
+        <span th:text="${result.getExamResult()}"></span>/ <span th:text="${result.getNumOfQuestion()}"></span>
+        <br>
+    </div>
+<!--    <a th:href="@{'/instructor/evaluate-exam/'+${exam.getId()}}">evaluate</a>-->
 </div>
 
 

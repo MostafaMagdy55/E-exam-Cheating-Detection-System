@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashbord</title>
+    <link rel="stylesheet" type="text/css" href="\file\admin\bootstrap-3.4.1-dist\css\bootstrap.css">
+    <link rel="stylesheet" href="\file\admin\fontawesome-free-5.15.4-web\css\all.min.css">
+    <link rel="stylesheet" type="text/css" href="\file\admin\CSS\Dash.css">
+    <link rel="stylesheet" href="\file\admin\fontawesome-free\css\all.min.css">
+
+</head>
+<body>
+
+<!--sliderbar-->
+<div th:replace="Admin/base :: sliderbar"></div>
+<!--end sliderbar-->
+
+
+<!--navbar-->
+<div th:replace="Admin/base :: navbar"></div>
+<!--end nav bar-->
+
+<div class="quary">
+    <div class="info-top">
+        <ul class="inlinee">
+            <li class="Stu"> <i class="fas fa-user"></i></li>
+            <p class="num" name="St"><b>123</b></p>
+            <p class="s"><b>Student</b></p>
+            <li class="Cour"><i class="fas fa-book"></i></li>
+            <p class="numC" name="Cou"><b>32</b></p>
+            <p class="c"><b>Course</b></p>
+            <li class="Ins"><i class="fas fa-chalkboard-teacher"></i></li>
+            <p class="numI" name="Inst"><b>19</b></p>
+            <p class="i"><b>Instructor</b></p>
+            <li class="ex"><i class="fas fa-newspaper"></i></li>
+            <p class="numE" name="Exa"><b>31</b></p>
+            <p class="e"><b>Exams</b></p>
+
+
+        </ul>
+
+    </div>
+</div>
+<div class="the-center-div">
+    <!--img div-->
+    <div class="img-container">
+        <img src="\file\admin\Img\Dashbord.jpeg" class="Add_img">
+    </div>
+    <!--Div near Img-->
+    <div class="info-Container">
+        <!--<div class="wrapper">
+          <div class="container d-flex flex-column justify-content-center align-items-center">
+            <div class="chart-wrapper">
+              <canvas id="myChart"></canvas>
+             <button onclick="great(document.getElementById('St').value,document.getElementById('Cou').value),
+              document.getElementById('Inst').value,document.getElementById('Exa').value">send</button>
+            </div>
+          </div>-->
+        <div class="chart-wrapper">
+            <canvas id="myChart"></canvas>
+            <!--<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+            <script>
+                let  items= [123, 5, 19,29];
+
+                const ctx = document.getElementById('myChart').getContext('2d');
+                const myChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['Student', 'Course', 'Instrucor', 'Exams'],
+                        datasets: [{
+                            label: '# of Votes',
+                            data:  items,
+                            backgroundColor: ['#026FE5', '#19839A', '#BB7C45','#32911f'],
+
+                            borderWidth: 0.1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        legend:{
+                            display:true,
+                            position: 'right',
+                        },
+
+                    }
+                });
+            </script>
+        </div>
+    </div>
+
+</div>
+</div>
+
+<!--POPUP-->
+<div th:replace="Admin/base :: POPUP"></div>
+
+<script type="text/javascript" src="\file\admin\Jquery\jquery-3.6.0.min.js"></script>
+<script src="\file\admin\Jquery/Dash.js"></script>
+<!--<script src="Jquery/Alelt.js"></script>-->
+<script type="text/javascript" src="\file\admin\bootstrap-3.4.1-dist\js\bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+<!--<script src="Jquery/script.js"></script>-->
+</body>
+</html>

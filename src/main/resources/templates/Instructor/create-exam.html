@@ -1,65 +1,173 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--    <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">-->
+<!--    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
+<!--    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<form  th:action="@{/instructor/save-exam}" th:object="${exam}">-->
+<!--    <input type="hidden" th:field="*{id}"/>-->
+
+<!--    <select   class="form-control" th:field="*{time}">-->
+<!--        <option th:value="0" disabled >Enter Exam Time</option>-->
+<!--        <option th:value="1" th:text="1" ></option>-->
+<!--        <option th:value="2" th:text="2" ></option>-->
+<!--        <option th:value="3" th:text="3" ></option>-->
+<!--        <option th:value="4" th:text="4" ></option>-->
+<!--        <option th:value="5" th:text="6" ></option>-->
+<!--        <option th:value="7" th:text="7" ></option>-->
+<!--        <option th:value="8" th:text="9" ></option>-->
+<!--        <option th:value="10" th:text="10" ></option>-->
+<!--        <option th:value="11" th:text="11" ></option>-->
+<!--        <option th:value="12" th:text="12" ></option>-->
+<!--        <option th:value="13" th:text="13" ></option>-->
+<!--        <option th:value="14" th:text="14" ></option>-->
+<!--        <option th:value="15" th:text="16" ></option>-->
+<!--        <option th:value="17" th:text="17" ></option>-->
+<!--        <option th:value="18" th:text="18" ></option>-->
+<!--        <option th:value="19" th:text="19" ></option>-->
+<!--        <option th:value="20" th:text="20" ></option>-->
+<!--        <option th:value="21" th:text="21" ></option>-->
+<!--        <option th:value="22" th:text="22" ></option>-->
+<!--        <option th:value="24" th:text="24" ></option>-->
+<!--    </select>-->
+<!--    <div class="form-group row">-->
+<!--        <label class="col-sm-2 col-form-label">NumberOFQuestion</label>-->
+<!--        <div class="col-sm-10">-->
+<!--            <input type="number" class="form-control" th:field="*{numberOfQuestion}"  placeholder="NumberOFQuestion"/>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group row">-->
+<!--        <label  class="col-sm-2 col-form-label">DATE</label>-->
+<!--        <div class="col-sm-10">-->
+<!--            <input type="date" th:field="*{date}" pattern = "yyyy-MM-dd" class="form-control"  placeholder="DATE"/>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="form-group row">-->
+<!--        <label  class="col-sm-2 col-form-label">Course</label>-->
+<!--        <div class="col-sm-10">-->
+<!--    <select   class="form-control" th:field="*{course}">-->
+<!--        <option th:each="i : ${courses}" th:value="${i.id}" th:text="${i.getCourseName()}">-->
+<!--        </option>-->
+<!--    </select>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group row">-->
+<!--        <label class="col-sm-2 col-form-label">cheatingByChangeIdentity</label>-->
+<!--        <div class="col-sm-10">-->
+<!--            <input type="number" class="form-control" th:field="*{cheatingType.cheatingByChangeIdentity}"  placeholder="cheatingByChangeIdentity"/>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group row">-->
+<!--        <label class="col-sm-2 col-form-label">cheatingByEyeMovement</label>-->
+<!--        <div class="col-sm-10">-->
+<!--            <input type="number" class="form-control" th:field="*{cheatingType.cheatingByEyeMovement}"  placeholder="cheatingByEyeMovement"/>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group row">-->
+<!--        <label class="col-sm-2 col-form-label">cheatingBySpeaking</label>-->
+<!--        <div class="col-sm-10">-->
+<!--            <input type="number" class="form-control" th:field="*{cheatingType.cheatingBySpeaking}"  placeholder="cheatingBySpeaking"/>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group row">-->
+<!--        <label class="col-sm-2 col-form-label">noise</label>-->
+<!--        <div class="col-sm-10">-->
+<!--            <input type="number" class="form-control" th:field="*{cheatingType.noise}"  placeholder="noise"/>-->
+<!--            <button type="submit" class="btn btn-primary my-1">Submit</button>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--</form>-->
+
+<!--</body>-->
+<!--</html>-->
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+    <title>Putting Exam</title>
+    <link rel="stylesheet" type="text/css" href="\file\instructor\bootstrap-3.4.1-dist\css\bootstrap.css">
+    <link rel="stylesheet" href="\file\instructor\fontawesome-free\css\all.min.css">
+    <link rel="stylesheet" type="text/css" href="\file\instructor\CSS\putting-exam.css">
 </head>
 <body>
-
-<form  th:action="@{/instructor/save-exam}" th:object="${exam}">
+<div class="bg-Background"></div>
+<div th:replace="Instructor/base :: body"></div>
+<form th:action="@{/instructor/save-exam}" th:object="${exam}">
     <input type="hidden" th:field="*{id}"/>
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">NumberOFQuestion</label>
-        <div class="col-sm-10">
-            <input type="number" class="form-control" th:field="*{numberOfQuestion}"  placeholder="NumberOFQuestion"/>
+    <div class="putting-exam-form">
+        <div th:if="${Error}!=null">
+            <span style="color: #ff0909">number of Questions can't less or Equal 0</span>
         </div>
-    </div>
-    <div class="form-group row">
-        <label  class="col-sm-2 col-form-label">DATE</label>
-        <div class="col-sm-10">
-            <input type="date" th:field="*{date}" pattern = "yyyy-MM-dd" class="form-control"  placeholder="DATE"/>
+        <div th:if="${Error2}!=null">
+            <span style="color: #ff0909">Must Select Course</span>
         </div>
-    </div>
+        <div class="Course-Name">
+            <p class="course-name-label">Course Name</p>
+            <select name="course" id="courses" th:field="*{course}">
+<!--                <optgroup placeholder="Select Course">-->
+                    <option disabled value="0">Select Course</option>
+                    <option th:each="i : ${courses}" th:value="${i.id}" th:text="${i.getCourseName()}">
+                    </option>
+<!--                </optgroup>-->
+            </select>
 
-    <div class="form-group row">
-        <label  class="col-sm-2 col-form-label">Course</label>
-        <div class="col-sm-10">
-    <select   class="form-control" th:field="*{course}">
-        <option th:each="i : ${courses}" th:value="${i.id}" th:text="${i.getCourseName()}">
-        </option>
-    </select>
         </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">cheatingByChangeIdentity</label>
-        <div class="col-sm-10">
-            <input type="number" class="form-control" th:field="*{cheatingType.cheatingByChangeIdentity}"  placeholder="cheatingByChangeIdentity"/>
+        <div class="Date">
+            <p class="date-label">Date</p>
+            <input name="date" class="date-input" type="date" th:field="*{date}" pattern="yyyy-MM-dd"
+                   placeholder="DATE">
         </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">cheatingByEyeMovement</label>
-        <div class="col-sm-10">
-            <input type="number" class="form-control" th:field="*{cheatingType.cheatingByEyeMovement}"  placeholder="cheatingByEyeMovement"/>
+        <div class="Start-Time">
+            <p class="Start-Time-label">Start Time</p>
+            <input type="text" name="date" class="Start-Time-input" th:field="*{time}">
         </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">cheatingBySpeaking</label>
-        <div class="col-sm-10">
-            <input type="number" class="form-control" th:field="*{cheatingType.cheatingBySpeaking}"  placeholder="cheatingBySpeaking"/>
+        <div class="Number-of-Question">
+            <p class="number-of-question-label">Number of Question</p>
+            <input type="number" name="number-of-question" class="number-of-question-input"
+                   th:field="*{numberOfQuestion}">
         </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">noise</label>
-        <div class="col-sm-10">
-            <input type="number" class="form-control" th:field="*{cheatingType.noise}"  placeholder="noise"/>
-            <button type="submit" class="btn btn-primary my-1">Submit</button>
+        <div class="Noise">
+            <p class="Noise-label">Noise</p>
+            <input type="text" name="Noise" class="Noise-input" th:field="*{cheatingType.noise}" placeholder="Noise">
+        </div>
+        <div class="Cheating-by-Changing-Identity">
+            <p class="Cheating-by-Changing-Identity-label">Cheating by Changing Identity</p>
+            <input type="text" name="Cheating-by-Changing-Identity" class="Cheating-by-Changing-Identity-input"
+                   th:field="*{cheatingType.cheatingByChangeIdentity}">
+        </div>
+        <div class="Cheating-by-Eye-Movement">
+            <p class="Cheating-by-Eye-Movement-label">Cheating by Eye Movement</p>
+            <input type="text" name="Cheating-by-Eye-Movement" class="Cheating-by-Eye-Movement-input"
+                   th:field="*{cheatingType.cheatingByEyeMovement}">
+        </div>
+        <div class="Cheating-by-Speaking">
+            <p class="Cheating-by-Speaking-label">Cheating by Speaking</p>
+            <input type="text" name="Cheating-by-Speaking-Identity" class="Cheating-by-Speaking-input"
+                   th:field="*{cheatingType.cheatingBySpeaking}">
+        </div>
+        <div class="button">
+            <button id="go-to-next" type="submit">Go to Next <i class="fas fa-arrow-right classicons"></i></button>
         </div>
     </div>
 
 </form>
-
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+

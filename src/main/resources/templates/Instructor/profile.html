@@ -1,18 +1,61 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<p th:text="${instructor.getName()}"></p>-->
+<!--<p th:text="${instructor.getEmail()}"></p>-->
+<!--<p th:text="${instructor.getPhone()}"></p>-->
+<!--<img width="300" height="200" th:src="@{${'/target/images/'+instructor.name+'/'+instructor.getImage()+'/'}}">-->
+
+<!--&lt;!&ndash;<div th:each="image:${student.getImages()}">&ndash;&gt;-->
+<!--&lt;!&ndash;    <img th:src="@{${'/images/'+student.name+'/'+image}}" th:width="100" th:height="100" />&ndash;&gt;-->
+<!--&lt;!&ndash;    <br>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+<!--</body>-->
+<!--</html>-->
+
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="\file\instructor\bootstrap-3.4.1-dist\css\bootstrap.css">
+    <link rel="stylesheet" href="\file\instructor\fontawesome-free\css\all.min.css">
+    <link rel="stylesheet" type="text/css" href="\file\instructor\CSS\home-page.css">
 </head>
 <body>
-<p th:text="${instructor.getName()}"></p>
-<p th:text="${instructor.getEmail()}"></p>
-<p th:text="${instructor.getPhone()}"></p>
+<div class="bg-Background"></div>
+<div th:replace="Instructor/base :: body"></div>
+<div class="Form-Content">
 
-<!--<div th:each="image:${student.getImages()}">-->
-<!--    <img th:src="@{${'/images/'+student.name+'/'+image}}" th:width="100" th:height="100" />-->
-<!--    <br>-->
-<!--</div>-->
+    <div class="info-Container">
+        <div class="profileimg"><img th:src="@{${'/target/images/'+instructor.name+'/'+instructor.getImage()+'/'}}"></div>
 
+        <table class="info-table">
+            <tr>
+                <td class="ID">Name <span class="span">:</span></td>
+                <td><input type="text" name="id" th:value="${instructor.getName()}" disabled></td>
+            </tr>
+            <tr>
+                <td class="Name">Email <span class="span2">:</span></td>
+                <td><input type="text" class="Nametext" name="name" th:value="${instructor.getEmail()}" disabled></td>
+            </tr>
+
+            <tr>
+                <td class="Phone">Phone <span class="span5">:</span></td>
+                <td><input type="Phone" class="Phonetext" name="Phone" th:value="${instructor.getPhone()}" disabled></td>
+            </tr>
+    </div>
+
+    </table>
+</div>
+</div>
+<script type="text/javascript" src="\file\instructor\Jquery\jquery-3.6.0.min.js"></script>
+<script src="\file\instructor\Jquery\jquery-For-home-page.js"></script>
+<script type="text/javascript" src="\file\instructor\bootstrap-3.4.1-dist\js\bootstrap.min.js"></script>
 </body>
 </html>

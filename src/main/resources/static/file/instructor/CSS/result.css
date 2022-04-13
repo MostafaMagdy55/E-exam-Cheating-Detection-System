@@ -1,0 +1,236 @@
+body, html {
+    height: 100%;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .bg-Background {
+    background-image: url("../Img/Background5.jpg");
+    filter: blur(0.4vw);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  
+  
+  /*nav bar */
+  /* Position text in the middle of the page/image */
+  .navbar {
+    background-color: rgb(255,255,255); /* Fallback color */
+    background-color: rgba(255,255,255, 0.5); /* Black w/opacity/see-through */
+    color: #000;
+    z-index: 2;
+    margin-top:-96vh;
+    margin-left: 30vw;
+    width:64vw; 
+    height:11vh;
+    border-radius: 0.6vw;
+    box-shadow: 25px 25px 60px #9C9C9C;
+    position: fixed;
+  }
+  .nav li {
+    display: inline-block;
+    padding-left: 0.4vw;
+    padding-top: 1vw;
+  }
+  
+  .nav a
+  {
+      text-decoration: none ;
+      color: #000;
+      font-weight:bold;
+      margin-left: 1.7vw;
+    font-size: 1.2vw;
+  }
+  .logout
+  {
+    border: none;
+    background-color: rgb(255,255,255); /* Fallback color */
+    background-color: rgba(255,255,255, 0.03);
+    margin-left: 2vw;
+    font-weight: bold;
+    font-size: 1.2vw;
+  }
+  .nav .Clicked
+  {
+      color: #FF0909;
+  }
+  
+  .nav li:hover input {
+    color: #ff0000;
+    cursor: pointer;
+    
+    }
+  .nav li:hover a {
+        color: #ff0000;
+        background-color: rgb(255,255,255); /* Fallback color */
+        background-color: rgba(255,255,255, 0.01);
+      
+         }
+  /*image */
+  
+  .profileimg img 
+  {
+    width: 11vw;
+    height: 25vh;
+    margin: 2vw;
+    border-radius: 1vw;
+    background-size:cover ;
+  }
+  
+  /*table */
+  .info-Container
+  {
+      position: absolute;
+      background-color: rgb(255,255,255); /* Fallback color */
+      background-color: rgba(255,255,255, 0.7); /* Black w/opacity/see-through */
+      width: 40vw;
+      height: 66vh;
+      margin-left: 8vw;
+      margin-top: -76vh;
+      border-radius: 0.4vw;
+  
+  }
+  /*inner table */
+  .info-table
+  {
+      border-collapse: collapse;
+      margin: 2.7vh 5vw ;
+      font-size: 1.3vw;
+  
+  }
+  /*the labels */
+  .info-table tr .ID, .info-table tr .Name,.info-table tr .Email,.info-table tr .Course-name-label ,.info-table tr .Phone
+  {
+      position: fixed;
+      color:#000;
+    
+  
+  }
+  /* : */
+  .info-table tr .ID .span
+  {
+      position: absolute;
+      padding-left: 4.4vw;
+  }
+  .info-table tr .Name .span2
+  {
+      position: absolute;
+      padding-left: 4.5vw;
+  }
+  
+  .info-table tr .Phone .span5
+  {
+      position: absolute;
+      padding-left: 4vw;
+  }
+  
+  /*text filed */
+  .info-table td input 
+  {
+  width: 19vw;
+  margin-left: 10vw;
+  margin-right: 4vw;
+  margin-bottom: 1.6vw;
+  margin-top: 0.1vh;
+  color: #000;
+  background-color: rgb(255,255,255); /* Fallback color */
+  background-color: rgba(255,255,255, 0.01); /* Black w/opacity/see-through */
+  border:none;
+  } 
+  
+  input:focus{outline:0;}
+  
+  table
+  {
+    position: absolute;	
+    border-collapse: collapse;
+    text-align:center;
+    width: 95vw;
+    margin-left:2vw;
+    margin-top:-74vh;
+    background:#97A7E2;
+    overflow: scroll;
+    border-radius: 10px 10px 10px 10px;
+  
+  
+  }
+
+  tbody
+  {  
+    width: 95vw;
+    overflow: auto;
+    height: 50vh;
+    display: block;
+    border-radius: 0px 10px 10px 10px;
+  }
+table thead th:nth-of-type(2)
+{
+  padding-left: 3vw;
+}
+table thead th:nth-of-type(3)
+{
+  padding-left: 6vw;
+}
+table thead th:nth-of-type(4)
+{
+  padding-left: 4vw;
+}
+table thead th:nth-of-type(5)
+{
+  padding-left: 4vw;
+}
+
+  tr:nth-child(even)
+  {
+      background-color:#436E8E;
+      color: rgb(0, 0, 0);
+      border:none;
+      font-size: 1vw;
+
+    }
+  
+  tr:nth-child(odd)
+  {
+      color: rgb(0, 0, 0);
+      border:none;
+      background:#97A7E2;
+      font-size: 1vw;
+  
+  }
+  td, th
+  {
+    
+    padding: 1vh;
+    width: 40vw;
+    line-height: 8vh;
+    font-weight: 600;
+  }
+  th:first-child
+  {
+    border-radius: 10px 0px 0px 0px;
+    padding-left: 3vw;
+  
+  }
+  th:last-child
+  {
+    border-radius: 0px 10px 0px 0px;
+  }
+ 
+  
+  thead 
+  {
+    display: block;
+  }
+  th
+  {
+    border-bottom: 0;
+    color: #fff;
+    font-size:1.2vw;
+    padding:1.9vh; 
+    background-color: #436E8E;
+  }  

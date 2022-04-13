@@ -103,12 +103,16 @@
     <div class="info-Container">
 
         <form th:action="@{/admin/save-instructor}" th:object="${instructor}"  enctype="multipart/form-data" method="post">
-            <div>
-<!--                <label for="ID">ID</label>-->
-<!--                <input id="ID" type="text" required>-->
-                <input type="hidden" th:field="*{id}" />
-            </div>
+<!--            <div>-->
+<!--&lt;!&ndash;                <label for="ID">ID</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                <input id="ID" type="text" required>&ndash;&gt;-->
+<!--              -->
+<!--            </div>-->
 
+            <div  th:if="${userISExist}!=null">
+                <span style="color: #ac2925">the instuctor already exist</span>
+            </div>
+            <input type="hidden" th:field="*{id}" />
             <div>
                 <label for="name">Name</label>
 <!--                <input id="name" type="text" required>-->

@@ -1,17 +1,63 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<p th:text="${student.getName()}"></p>-->
+<!--<p th:text="${student.getEmail()}"></p>-->
+<!--<p th:text="${student.getPhone()}"></p>-->
+
+<!--<div th:each="image:${student.getImages()}">-->
+<!--    <img width="300" height="200" th:src="@{${'/target/images/'+student.name+'/'+student.getImages().get(0)+'/'}}">-->
+<!--    <br>-->
+<!--</div>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="\file\student\css\Profile.css">
+    <title>Profile</title>
 </head>
 <body>
-<p th:text="${student.getName()}"></p>
-<p th:text="${student.getEmail()}"></p>
-<p th:text="${student.getPhone()}"></p>
 
-<div th:each="image:${student.getImages()}">
-    <img th:src="@{${'/images/'+student.name+'/'+image}}" th:width="100" th:height="100" />
-    <br>
+<div class="container">
+    <!--nav bar-->
+    <div th:replace="Student/base :: navbar"></div>
+    <!--end nav bar-->
+
+    <!--start of form -->
+    <div class="profile-container">
+
+
+        <div th:each="image:${student.getImages()}">
+            <div class="profileimg"> <img th:src="@{${'/target/images/'+student.name+'/'+student.getImages().get(0)+'/'}}"></div>
+        </div>
+
+        <div class="con">
+            <label class="studentname">Student name <span class="span1"> : </span></label>
+            <label class="studentnameans" th:text="${student.getName()}"></label>
+        </div>
+        <div class="con">
+            <label class ="gmail">gmail <span class="span2"> : </span> </label>
+            <label class="gmailans" th:text="${student.getEmail()}"></label>
+        </div>
+        <div class="con">
+            <label class="phone">Phone <span class="span3"> : </span></label>
+            <label class="phoneans" th:text="${student.getPhone()}"></label>
+        </div>
+    </div>
+
+
 </div>
 
 </body>

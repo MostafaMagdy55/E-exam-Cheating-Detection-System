@@ -1,0 +1,122 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Login Page</title>
+<script></script>
+<!--        <link rel="stylesheet" th:href="@{/login/css/login.css}"/>-->
+<!--        <link rel="stylesheet" href="/login/css/login.css"/>-->
+        <style>
+            body{
+                background: linear-gradient(90deg,#11455D 50%, #FFF 50%);
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            }
+
+            .log{
+                position: absolute;
+                background-color: #FFF;
+                text-align: center;
+                top:48vh;
+                left: 51vw;
+                width:43vw;
+                height: 55vh;
+                border-radius: 1.3vw;
+                transform: translate(-50%,-50%);
+                box-shadow: 1vw 4vw 7vw rgba(0,0,0,0.16);
+            }
+
+            input[type=password]{
+                margin-bottom: 1vw;
+            }
+
+            input{
+                margin: 0.7vw 0vw;
+                background-color: #E2E0E0;
+                border-radius: 0.4vw;
+                width: 29vw;
+                height: 6.3vh;
+                border: none;
+                padding-left: 2vw;
+                font-size:1.2vw;
+            }
+
+
+            h3{
+                font-size: 2vw;
+                line-height: 1.3vw;
+                font-weight: 640;
+                color: #4E4E4E;
+                margin-bottom: 8vh;
+                padding-top: 2vh;
+
+            }
+
+            input:focus{outline:0;}
+
+            .sub{
+                background-color: #11455D;
+                color: #fff;
+                border-radius: 0.4vw;
+                margin-top: 2vh;
+                border:none;
+                width: 29vw;
+                height: 6.3vh;
+                border: none;
+                font-size:1.2vw;
+                padding-right: 3vw;
+
+
+            }
+
+
+            ::placeholder{
+                color: #8d8d8d;
+            }
+            .element-animation{
+                animation: animationFrames linear 2s;
+                /*transform-origin: 50% 50%;*/
+                animation-iteration-count: 1;
+                animation-direction: alternate;
+            }
+
+            @keyframes animationFrames{
+                0% {
+                    transform:  translate(0px,-254px)  ;
+                }
+                60% {
+                    transform:  translate(0px,0px)  ;
+                }
+
+                80% {
+                    transform:  translate(0px,0px)  ;
+                }
+
+                100% {
+                    transform:  translate(0px,0px)  ;
+                }
+            }
+        </style>
+    </head>
+    <body class="element-animation">
+        <div class="log">
+            <h3>Login Form</h3>
+            <div th:if="${param.error}">
+                Invalid username and password.</div>
+            <div th:if="${param.logout}">
+                You have been logged out.</div>
+            <form th:action="@{/login}" method="Post">
+                <input type="text" name="username" placeholder="Username" />
+                <input type="password" name="password" placeholder="Password"/>
+<!--            <input type="checkbox" id="check"><label class="rem"/>Remamber me</label>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;-->
+<!--            <a href="ForgetPass.html">Forget password ?</a><br>-->
+                <input type="submit" value="Log in" class="sub" />
+        </form>
+    </div>
+        <script src="/file/login/jquery-3.6.0.min.js"></script>
+        <script src="/file/login/Page1.2.js"> </script>
+    </body>
+</html>

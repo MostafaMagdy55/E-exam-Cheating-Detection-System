@@ -1,15 +1,10 @@
 package com.Spring.ExamCheatingDetection;
 
-import com.Spring.ExamCheatingDetection.Entity.Course;
-import com.Spring.ExamCheatingDetection.Repository.CourseRepository;
 import com.Spring.ExamCheatingDetection.Service.CourseService;
 import com.Spring.ExamCheatingDetection.Service.ExamService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import java.util.Date;
-import java.util.List;
+import java.time.LocalTime;
 
 public class testPassword {
 @Autowired
@@ -27,6 +22,9 @@ private static ExamService examService;
 
      //   System.err.println(new Date());
 
+        LocalTime localTime=LocalTime.now();
 
+        System.out.println(localTime.getHour());
+        System.out.println(localTime.getMinute());
     }
 }

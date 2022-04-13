@@ -1,69 +1,154 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Exam</title>-->
+<!--    <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">-->
+<!--    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
+<!--    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div th:text="${question.getQuestionHead()}"></div>-->
+<!--<br>-->
+<!--<form th:action="@{/student/save-exam/__${examId}__/__${question.getId()+1}__}" th:object="${studentAnswer}"-->
+<!--      method="post">-->
+<!--    <div>-->
+
+<!--        <div th:if="${question.getType()==true}">-->
+
+<!--            true <input class="form-check-input" type="radio" name="gridRadios" th:field="*{BooleanAnswer}"-->
+<!--                        th:value="true">-->
+<!--            fasle <input class="form-check-input" type="radio" name="gridRadios" th:field="*{BooleanAnswer}"-->
+<!--                         th:value="false">-->
+<!--        </div>-->
+
+<!--        <div th:unless="${question.getType()==true}">-->
+
+<!--            <label class="form-check-label">-->
+<!--                <div th:text="${question.getOptionA()}"></div>-->
+<!--            </label>-->
+<!--            <div class="form-check">-->
+<!--                <input class="form-check-input" type="radio" name="gridRadios" th:field="*{stringAnswer}" th:value="A">-->
+<!--            </div>-->
+
+<!--            <div class="form-check">-->
+<!--                <label class="form-check-label">-->
+<!--                    <div th:text="${question.getOptionB()}"></div>-->
+<!--                </label>-->
+<!--                <input class="form-check-input" type="radio" name="gridRadios" th:field="*{stringAnswer}" th:value="B">-->
+<!--            </div>-->
+
+<!--            <div class="form-check">-->
+<!--                <label class="form-check-label">-->
+<!--                    <div th:text="${question.getOptionC()}"></div>-->
+<!--                </label>-->
+<!--                <input class="form-check-input" type="radio" name="gridRadios" th:field="*{stringAnswer}" th:value="C">-->
+<!--            </div>-->
+
+<!--            <div class="form-check">-->
+<!--                <label class="form-check-label">-->
+<!--                    <div th:text="${question.getOptionD()}"></div>-->
+<!--                </label>-->
+<!--                <input class="form-check-input" type="radio" name="gridRadios" th:field="*{stringAnswer}" th:value="D">-->
+<!--            </div>-->
+
+<!--        </div>-->
+<!--    </div>-->
+<!--    <input type="submit">-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->
+
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
     <title>Exam</title>
-    <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="\file\student\fontawesome-free\css\all.min.css">
+    <link rel="stylesheet" type="text/css" href="\file\student\css\examstyle.css">
 </head>
 <body>
-<div th:text="${question.getQuestionHead()}"></div>
-    <br>
-    <form th:action="@{/student/save-exam/__${examId}__/__${question.getId()+1}__}" th:object="${studentAnswer}" method="post">
-        <div>
-
-            <div th:if="${question.getType()==true}">
-
-              true  <input class="form-check-input" type="radio" name="gridRadios"   th:field="*{BooleanAnswer}" th:value="true">
-              fasle  <input class="form-check-input" type="radio" name="gridRadios"   th:field="*{BooleanAnswer}" th:value="false">
-            </div>
-
-
-
-
-
-            <div th:unless="${question.getType()==true}">
-
-                <label class="form-check-label" >
-                    <div th:text="${question.getOptionA()}"></div>
-                </label>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios"   th:field="*{stringAnswer}" th:value="A">
+<div class="qa_box">
+    <div class="qa-header">
+        <div class="timer-icon"><i class="fas fa-clock"></i></div>
+        <span id="countdown"></span>
+    </div>
+    <div class="qa-body">
+        <div class="qa-set">
+            <h4 id="qusetion" th:text="${question.getQuestionHead()}"></h4>
+            <input type="hidden" class ="val" id="Timer-input" name="timer-input" value="15">
+            <form th:action="@{/student/save-exam/__${examId}__/__${question.getId()+1}__}" th:object="${studentAnswer}" method="post">
+                <div th:if="${question.getType()==true}">
+                    <div class="qa-ans-set">
+                        <input type="radio" name="a" th:field="*{booleanAnswer}" th:value="1">
+                        <span>True</span>
+                    </div>
+                    <div class="qa-ans-set">
+                        <input type="radio" name="a" th:field="*{booleanAnswer}" th:value="0">
+                        <span>False</span>
+                    </div>
                 </div>
-
-                <div class="form-check">
-                    <label class="form-check-label" >
-                        <div th:text="${question.getOptionB()}"></div>
-                    </label>
-                    <input class="form-check-input" type="radio" name="gridRadios"   th:field="*{stringAnswer}" th:value="B">
+                <div th:unless="${question.getType()==true}">
+                    <div class="qa-ans-set">
+                        <input type="radio" name="a" th:field="*{stringAnswer}" th:value="A">
+                        <span th:text="${question.getOptionA()}"></span>
+                    </div>
+                    <div class="qa-ans-set">
+                        <input type="radio" name="a" th:field="*{stringAnswer}" th:value="B">
+                        <span th:text="${question.getOptionB()}"></span>
+                    </div>
+                    <div class="qa-ans-set">
+                        <input type="radio" name="a" th:field="*{stringAnswer}" th:value="C">
+                        <span th:text="${question.getOptionC()}"></span>
+                    </div>
+                    <div class="qa-ans-set">
+                        <input type="radio" name="a" th:field="*{stringAnswer}" th:value="D">
+                        <span th:text="${question.getOptionD()}"></span>
+                    </div>
                 </div>
+                <div class="qa-footer">
+                    <input class="btn1" id="thebutton" type="submit" value="Submit">
 
-                <div class="form-check">
-                    <label class="form-check-label" >
-                        <div th:text="${question.getOptionC()}"></div>
-                    </label>
-                    <input class="form-check-input" type="radio" name="gridRadios"   th:field="*{stringAnswer}" th:value="C">
                 </div>
-
-                <div class="form-check">
-                    <label class="form-check-label" >
-                        <div th:text="${question.getOptionD()}"></div>
-                    </label>
-                    <input class="form-check-input" type="radio" name="gridRadios"   th:field="*{stringAnswer}" th:value="D">
-                </div>
-
-            </div>
         </div>
+        </form>
+    </div>
+    <div id="countdown"></div>
+    <script type="text/javascript" src="\file\student\Jquery\jquery-3.6.0.min.js"></script>
+    <script src="\file\student\Jquery\jquery1.js"></script>
+    <script src="\file\student\js\text.js"></script>
+    <script>
+
+        var seconds = document.getElementById('Timer-input').value,
+            secondpass,
+            countdown = setInterval(function () {
+                "use strict";
+                secondPass();
+
+            }, 1000);
 
 
-        <input type="submit">
-    </form>
+        function secondPass() {
+            "use strict";
+            var minutes = Math.floor(seconds / 60),
+                remseconds = seconds % 60;
+
+            console.log(Math.floor(seconds % 60));
+
+            document.getElementById("countdown").innerHTML = minutes + ":" + remseconds;
+
+            if (seconds > 0) {
+                seconds = seconds - 1;
+
+            } else {
+                clearInterval(countdown);
+                document.getElementById('thebutton').click();
+
+            }
+
+        }
 
 
-
-
+    </script>
 </body>
-
-
 </html>

@@ -13,7 +13,7 @@
 
 <!--nav bar-->
 <div class="navbar" id="contant">
-    <form th:action="@{/logout}" method="post">
+    <form th:action="@{/search}" method="post">
         <!--forms-->
         <div class="forms">
             <div class="menu-icons">
@@ -40,7 +40,8 @@
         </thead>
         <tbody>
         <tr th:each="instructor,itr: ${instructorList}">
-            <td><img class="img-class" th:src="@{${'/images/'+instructor.name+'/'+instructor.getImage()+'/'}}"></td>
+            <td>   <img class="img-class" th:src="@{${'/target/images/'+instructor.name+'/'+instructor.getImage()+'/'}}"></td>
+<!--            <td><img class="img-class" th:src="@{${'/images/'+instructor.name+'/'+instructor.getImage()+'/'}}"></td>-->
 <!--            <td><img class="img-class" src="/file/admin/Img\Profile_img.jpg"></td>-->
             <td><input type="text" class="Name"  name="student-name" th:value="${instructor.name}" disabled></td>
             <td><input type="text" class="Email" name="Email" th:value="${instructor.email}" disabled></td>

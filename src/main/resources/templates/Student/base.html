@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="navbar">
+
+
+    <div class="navbar" id="contant">
+        <ul class="nav">
+            <li><a th:href="@{'/student/profile/'+${student.getId()}}" th:text="Profile"></a></li>
+            <li><a th:href="@{'/student/courses/'+${student.getId()}}" th:text="Courses"></a></li>
+            <li><a th:href="@{'/student/exams/'+${student.getId()}}" th:text="Exams"></a></li>
+            <li><a th:href="@{'/student/result/'+${student.getId()}}" th:text="Result"></a></li>
+            <li><a th:href="@{'/student/messages/'}">NewMassage</a></li>
+            <li><a th:href="@{'/student/myMessages/'}">Massage</a></li>
+            <li>
+                <form th:action="@{/logout}" method="post">
+                    <input class="logout" type="submit" value="Logout" id="Logout">
+                </form>
+            </li>
+
+        </ul>
+    </div>
+
+
+</div>
+
+</body>
+</html>

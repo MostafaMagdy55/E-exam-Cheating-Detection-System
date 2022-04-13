@@ -31,7 +31,7 @@ public class Instructor extends Person{
 
     }
 
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "instructor",cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH})
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "instructor",cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.REMOVE})
 
     List<Course>courses;
 
@@ -43,14 +43,27 @@ public class Instructor extends Person{
     List<Exam>exams;
 
 
-    public void addCourse(Course course) {
-        if (courses==null)
-        {
-            courses=new ArrayList<>();
-            courses.add(course);
-        }
-        course.setInstructor(this);
+//    public void addCourse(Course course) {
+//        if (courses==null)
+//        {
+//            courses=new ArrayList<>();
+//            courses.add(course);
+//        }
+//        course.setInstructor(this);
+//
+//    }
 
+    public void addCourse(List<Course> course) {
+
+        if (courses == null) {
+            courses = new ArrayList<>();
+        }
+
+        courses=course;
+        for(int i=0;i<course.size();i++)
+        {
+            course.get(i).setInstructor(this);
+        }
     }
 
 

@@ -1,0 +1,108 @@
+body{
+    background-image: url("../Img/1.jpeg");
+    background-position-x: center;
+    background-position-y:35%;
+    background-repeat: no-repeat;
+    /*background-size: cover;
+    display: flex;*/
+}
+
+
+/*Nav bar*/
+
+/*div for navigation bar 
+.navbar
+{
+	background-color: #292F45;
+	width: 1360px;
+	height: 68px;
+	opacity: .7;
+	transition: 0.7s ease-out;	
+
+}*/
+
+.nav {
+    background-color: #2C2C2C;
+    list-style-type: none;
+    margin: -8px;
+    padding: 0;
+  }
+  
+  .nav li {
+    display: inline-block;
+    padding: 20px;
+    margin-left: 4%;
+    
+  }
+
+.nav a{
+    text-decoration: none;
+    color: #FFF;
+    display: block;
+	text-align: left;
+    font: 15px/20px sans-serif;
+    transition: all .25s ease;
+   
+   
+}
+
+.nav li:hover a {
+	color: #89D5E8;
+  
+}
+
+.nav .Clicked{
+    color: #89D5E8;
+    font: bold 15px/20px sans-serif;
+}
+
+
+
+
+/*div*/
+.MassForm{
+    position: relative;
+    margin-top: 5%;
+    transform: translate(8%);
+    background-color: rgba(0, 0, 0, 0.571);
+    width: 85%;
+    height: 73%;
+}
+
+
+/*Form*/
+.MassForm input[type=text]{
+        transform: translate(10%);
+        width: 77%;
+		border-radius: 7px;
+		margin-top: 4%;
+		color: #000;
+		font-size: small;
+		padding: 13px 20px 15px 51px;
+        border: none;
+        font-size: medium;
+}
+
+textarea{
+    transform: translate(10%);
+        width: 77%;
+    border-radius: 7px;
+	border: none;
+    padding: 15px 20px 51px 51px;
+    font-size: large;
+    margin-top: 2%;
+}
+
+
+.MassForm input[type="submit"]{
+    transform: translate(70%);
+    margin-left: 35%;
+       width:12%;
+    border-radius: 5px;
+	border: none;
+    padding: 12px 25px 12px 25px;
+    font-size: small;
+    margin-top: 2%;
+    background-color: #2AB4D5;
+    margin-bottom: 2%;
+}

@@ -31,6 +31,7 @@ $(document).ready(function()
         $('.change-img').addClass('change-imgaddedclass');
          
         $('.menu-icons').css("visibility","hidden")
+        $('.quary').addClass('quaryaddedClass');
        
     });
 
@@ -45,6 +46,7 @@ $(document).ready(function()
          $('.info-Container').removeClass('info');
           $('.change-img').removeClass('change-imgaddedclass');
         $('.menu-icons').css("visibility","visible")
+        $('.quary').removeClass('quaryaddedClass');
     });
     
     /*to make the text field able to edit it */

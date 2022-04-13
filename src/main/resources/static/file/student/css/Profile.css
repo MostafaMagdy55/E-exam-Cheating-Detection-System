@@ -1,0 +1,133 @@
+html , body 
+{
+	height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+.container
+{
+height: 100%;
+background: url(../Img/Profilebackground.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+
+.nav {
+  background-color: #2C2C2C;
+  list-style-type: none;
+  padding: 0vw;
+}
+
+.nav li {
+  display: inline-block;
+  padding: 1.5vw;
+  margin-left: 4vw;  
+}
+
+.nav a{
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+  text-align: left;
+  font-size: 1.2vw;
+  transition: all .25s ease;
+  font-weight: 500;
+
+ 
+}
+
+.nav li:hover a {
+color: #89D5E8;
+
+}
+
+.nav .Clicked{
+  color: #89D5E8;
+  font-size: 1.3vw;
+  font-weight: 500;
+}
+
+.logout
+{
+  border: none;
+  background-color: rgb(255,255,255); /* Fallback color */
+  background-color: #2C2C2C;
+  color: #FFF;
+  margin-left: 1.3vw;
+  margin-top: 1vh;
+  font-size: 1.2vw;
+  font-weight: 533;
+  cursor: pointer;
+}
+.nav li:hover input {
+  color: #89D5E8;
+  
+  }
+
+
+.profile-container
+{
+  width:35vw;
+  height: 55vh;
+  background-color:#96B7BB;
+  border-radius: 5px;
+  margin-left: 55vw;
+  margin-top: 14vh;
+  padding: 4vh;
+}
+
+
+.profileimg img 
+{
+  width: 13vw;
+  height: 27vh;
+  border-radius: 10px;
+}
+
+.studentname , .gmail , .phone
+{
+  font-weight:610;
+padding-left: 1vw;
+color: #FFF;
+}
+.con {
+margin-bottom: 2vh;
+margin-top: 3vh;
+}
+
+.con .studentname , .gmail ,.phone
+{
+  font-size: 1.3vw;
+}
+.span1
+{
+  padding-left: 1vw;
+  padding-right:2vw;
+  color: #FFF;
+}
+ .span2
+{
+  padding-left: 6vw;
+  padding-right:2vw;
+  color: #FFF;
+}
+.span3
+{
+  padding-left: 5.4vw;
+  padding-right:2.4vw;
+  color: #FFF;
+}
+
+.studentnameans ,.gmailans,.phoneans
+{
+  font-weight:500;
+  font-size: 1.4vw;
+  color: #FFF;
+}
+
+

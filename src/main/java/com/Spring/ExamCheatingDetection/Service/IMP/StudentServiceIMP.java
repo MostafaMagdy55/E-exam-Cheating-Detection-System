@@ -31,6 +31,11 @@ public class StudentServiceIMP implements StudentService {
     }
 
     @Override
+    public List<Student> search(String s) {
+       return studentRepository.findByNameLike(s);
+    }
+
+    @Override
     public Student findById(int theId) {
 
         Optional<Student> result = studentRepository.findById(theId);

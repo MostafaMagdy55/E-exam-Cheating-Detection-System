@@ -1,30 +1,69 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>send Message</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<div  th:each="message: ${student.getMessages()}">-->
+<!--     <h1> title</h1>   <p th:text="${message.getTitle()}"></p>-->
+<!--     <h1>content</h1><p th:text="${message.getContent()}"></p>-->
+<!--    <div  th:each="replay: ${message.getReplays()}">-->
+
+<!--        <p th:text="${replay.getContent()}"></p>-->
+
+<!--    </div>-->
+<!--</div>-->
+
+
+<!--<h3>new message</h3>-->
+<!--<form method="post" th:action="@{/student/send_message}" th:Object="${message}">-->
+<!--    <input type="hidden" th:field="*{id}" />-->
+<!--    <input type="text"   th:field="*{title}"placeholder="Title"/>-->
+<!--    <input type="text"   th:field="*{content}"  placeholder="message"/>-->
+<!--    <input type="submit" th:value="submit">-->
+
+<!--</form>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>send Message</title>
+    <title>Send Massage</title>
+    <link rel="stylesheet" href="\file\student\fontawesome-free\css\all.min.css">
+    <link rel="stylesheet" type="text/css" href="\file\student\css\SendMassage.css">
 </head>
 <body>
 
-<div  th:each="message: ${student.getMessages()}">
-     <h1> title</h1>   <p th:text="${message.getTitle()}"></p>
-     <h1>content</h1><p th:text="${message.getContent()}"></p>
-    <div  th:each="replay: ${message.getReplays()}">
+<!--nav bar-->
+<div th:replace="Student/base :: navbar"></div>
+<!--end nav bar-->
 
-        <p th:text="${replay.getContent()}"></p>
 
-    </div>
+<div class="MassForm">
+    <form method="post" th:action="@{/student/send_message}" th:Object="${message}">
+        <input type="hidden" th:field="*{id}" />
+        <input type="text" id="tex" placeholder="Title" th:field="*{title}"><br>
+        <!--<input type="textarea" id="texarea">-->
+        <textarea class="texarea" placeholder="Massage..." cols="15" rows="11" th:field="*{content}"></textarea></br>
+        <input type="submit" value="Send">
+    </form>
 </div>
 
 
-<h3>new message</h3>
-<form method="post" th:action="@{/student/send_message}" th:Object="${message}">
-    <input type="hidden" th:field="*{id}" />
-    <input type="text"   th:field="*{title}"placeholder="Title"/>
-    <input type="text"   th:field="*{content}"  placeholder="message"/>
-    <input type="submit" th:value="submit">
-
-</form>
-
+<script type="text/javascript" src="\file\student\Jquery\jquery-3.6.0.min.js"></script>
 </body>
 </html>

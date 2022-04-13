@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Replay</title>
+    <link rel="stylesheet" href="\file\student\fontawesome-free\css\all.min.css">
+    <link rel="stylesheet" type="text/css" href="\file\student\css/Chat.css">
+</head>
+<body>
+
+<!--nav bar-->
+<div th:replace="Student/base :: navbar"></div>
+<!--end nav bar-->
+
+<div  th:each="message: ${student.getMessages()}">
+<div class="MassForm">
+    <div class="Massageprob">
+        <h3 th:text="${message.getTitle()}"></h3>
+        <p th:text="${message.getContent()}"></p>
+    </div>
+</div>
+    <div class="ReplayMessage">
+        <p>solution  profile..., solution in navbar ,solution is profile..., solution in navbar
+            i have some issues in my exam...
+        </p>
+    </div>
+    <div class="FormChat">
+        <form class="RplayForm" action="#">
+            <input type="text" placeholder="Your Replay...">
+            <input type="submit" value="Send">
+        </form>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="\file\student\Jquery\jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="\file\student\js/JsChat.js"></script>
+</body>
+</html>

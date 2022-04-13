@@ -1,0 +1,299 @@
+body, html {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-Background {
+  background-image: url("../Img/Background5.jpg");
+  filter: blur(0.4vw);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+/*nav bar */
+/* Position text in the middle of the page/image */
+.navbar {
+  background-color: rgb(255,255,255); /* Fallback color */
+  background-color: rgba(255,255,255, 0.5); /* Black w/opacity/see-through */
+  color: #000;
+  z-index: 2;
+  margin-top:-96vh;
+  margin-left: 30vw;
+  width:64vw; 
+  height:11vh;
+  border-radius: 0.6vw;
+  box-shadow: 25px 25px 60px #9C9C9C;
+  position: fixed;
+}
+.nav li {
+  display: inline-block;
+  padding-left: 0.4vw;
+  padding-top: 1vw;
+}
+
+.nav a
+{
+	text-decoration: none ;
+	color: #000;
+	font-weight:bold;
+	margin-left: 1.7vw;
+  font-size: 1.2vw;
+}
+.logout
+{
+  border: none;
+  background-color: rgb(255,255,255); /* Fallback color */
+  background-color: rgba(255,255,255, 0.1);
+  margin-left: 2vw;
+  font-weight: bold;
+  font-size: 1.2vw;
+}
+.nav .Clicked
+{
+	color: #FF0909;
+}
+
+.nav li:hover input {
+  color: #ff0000;
+  cursor: pointer;
+  
+  }
+.nav li:hover a {
+      color: #ff0000;
+      background-color: rgb(255,255,255); /* Fallback color */
+      background-color: rgba(255,255,255, 0.01);
+    
+       }
+/*putting exam form */
+
+.putting-exam-form
+{
+  position: absolute;
+  background-color: rgb(255,255,255); /* Fallback color */
+  background-color: rgba(255,255,255, 0.2); /* Black w/opacity/see-through */
+  width: 69vw;
+  height:83vh;
+ 
+  margin-top: -84vh;
+  border-radius: 1vw;
+  padding-top: 2vw;
+}
+
+/*inside form */
+
+input:focus{outline:0;}
+
+/*course name */
+.Course-Name
+{
+  margin-top: 2vh;
+}
+.course-name-label
+{
+  display: inline;
+  margin: 0vw 11vw 0vw 5vw;
+  font-size: 1.3vw;
+}
+
+#courses
+{
+  width: 22vw;
+  height: 6.4vh;
+  border-radius: 0.3vw;
+  border: none;
+  padding: 0.6vw;
+  font-size: 1vw;
+
+}
+#courses:focus{outline:0;}
+
+/*Number of question*/
+
+.Number-of-Question
+{
+  margin-top: 2vh;
+}
+.number-of-question-label
+{
+  display: inline;
+  margin: 0vw 7.3vw 0vw 5vw;
+  font-size: 1.3vw;
+
+}
+.number-of-question-input
+{
+  width: 22vw;
+  height: 6vh;
+  border-radius: 0.3vw;
+  border: none;
+  padding: 1vw;
+  font-size: 1vw;
+}
+/*date*/
+.Date
+{
+  margin-top: 2vh;
+}
+.date-label
+{
+  display: inline;
+  margin: 0vw 16.2vw 0vw 5vw;
+  font-size: 1.3vw;
+}
+.date-input
+{
+  width: 22vw;
+  height: 6vh;
+  border-radius: 0.3vw;
+  border: none;
+  padding: 1vw;
+  font-size: 1vw;
+}
+/*Start-Time*/
+.Start-Time
+{
+  margin-top: 2vh;
+}
+.Start-Time-label
+{
+  display: inline;
+  margin: 0vw 13vw 0vw 5vw;
+  font-size: 1.3vw;
+
+}
+.Start-Time-input
+{
+  width: 22vw;
+  height: 6vh;
+  border-radius: 0.3vw;
+  border: none;
+  padding: 1vw;
+}
+/*Cheating by changing identity */
+
+.Cheating-by-Changing-Identity
+{
+  margin-top: 2vh;
+}
+.Cheating-by-Changing-Identity-label
+{
+  position: absolute;
+  display: inline;
+  margin: 0vw 12vw 0vw 5vw;
+  font-size: 1.3vw;
+}
+.Cheating-by-Changing-Identity-input
+{
+  width: 22vw;
+  height: 6vh;
+  border-radius: 0.3vw;
+  border: none;
+  padding: 1vw;
+  margin-left: 24.3vw;
+}
+
+/*Noise*/
+
+.Noise
+{
+  margin-top:1vw;
+}
+.Noise-label
+{
+  display: inline;
+  margin: 0vw 15.6vw 0vw 5vw;
+  font-size: 1.3vw;
+}
+.Noise-input
+{
+  width: 22vw;
+  height: 6vh;
+  border-radius: 0.3vw;
+  border: none;
+  padding: 1vw;
+}
+
+/*Cheating-by-Eye-Movement*/
+.Cheating-by-Eye-Movement
+{
+  margin-top: 1vw;
+}
+.Cheating-by-Eye-Movement-label
+{
+  display: inline;
+  margin: 0vw 3vw 0vw 5vw;
+  font-size: 1.3vw;
+}
+.Cheating-by-Eye-Movement-input
+{
+  width: 22vw;
+  height: 6vh;
+  border-radius: 0.3vw;
+  border: none;
+  padding: 1vw;
+}
+/*Cheating-by-Speaking*/
+.Cheating-by-Speaking
+{
+  margin-top: 1vw;
+}
+.Cheating-by-Speaking-label
+{
+  display: inline;
+  margin: 0vw 6.2vw 0vw 5vw;
+  font-size: 1.3vw;
+}
+.Cheating-by-Speaking-input
+{
+  width: 22vw;
+  height: 6vh;
+  border-radius: 0.3vw;
+  border: none;
+  padding: 1vw;
+}
+/* time */
+
+.time-div
+{
+margin-top: 1vw;
+}
+.time-label
+{
+  display: inline;
+  margin: 0vw 16vw 0vw 5vw;
+  font-size: 1.3vw;
+}
+.time-input
+{
+  width: 22vw;
+  height: 6vh;
+  border-radius: 0.3vw;
+  border: none;
+  padding: 1vw;
+  font-size: 1vw;
+}
+/*button*/
+.button
+{
+  position: absolute;
+  margin-left: 55vw;
+  margin-top: -5.5vh;
+}
+#go-to-next
+{
+  background-color: #82B3BB;
+  color: #fff;
+  width: 12vw;
+  height: 6vh;
+  border-radius: 2vw;
+  border:none ;
+  box-shadow: 10px 10px 40px #828282;
+  font-size: 1vw;
+}
+

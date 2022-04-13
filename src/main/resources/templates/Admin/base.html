@@ -24,7 +24,9 @@
             <i class="fas fa-times-circle"></i>
         </div>
         <div class="menu">
+            <div class="item"><a th:href="@{'/admin/dashbord'}">Dashbord</a></div>
             <div class="item"><a th:href="@{'/admin/index'}">Profile</a></div>
+
             <div class="item">
                 <a class="sub-btnFor-addmember">Add Member<i class="fas fa-chevron-right dropdown"></i></a>
                 <div class="sub-menuFor-addMember">
@@ -48,7 +50,7 @@
                 </div>
             </div>
 <!--            <div class="item"><a href="#">Approve Exam</a></div>-->
-            <div class="item"><a href="#">Problem</a></div>
+            <div class="item"><a th:href="@{'/admin/problems'}">Problem</a></div>
         </div>
 
     </div>
