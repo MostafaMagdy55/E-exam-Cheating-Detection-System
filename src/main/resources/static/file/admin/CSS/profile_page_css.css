@@ -1,60 +1,114 @@
 body 
 {
 	background-color: #151D30;
+    color: #fff;
 }
-/*icon to open slide bar*/
 .menu-icons
 {
 	position: absolute;
 	color: #fff;
-	font-size: 27px;
-	margin-left:37px;
-	margin-top: 13px;
+	font-size: 2vw;
+	margin-left:2.5vw;
+	margin-top: 2vh;
 	cursor: pointer;
 }
 /*div for navigation bar */
 .navbar
 {
 	background-color: #292F45;
-	width: 1360px;
-	height: 68px;
-	opacity: .7;
+	width: 99vw;
+	height: 10vh;
 	transition: 0.7s ease-out;	
+	margin-bottom: 4vh;
 
 }
 /* added class to jquert for navigation bar */
 .navbaraddclass
 {
-	margin-left: 310px;
-	width: 1055px;
+	margin-left: 22.6vw;
+	width: 76vw;
 	transition: 0.5s ease-in;	
 }
 
 /* logout button */
-#Logout
+.logout
 {
-	height: 38px;
-    width: 114px;
-    margin-left: 87%;
-    border-radius: 8px;
+	height: 5.9vh;
+    width: 9vw;
+    margin-left: 88vw;
+    border-radius: 0.3vw;
     background-color: #4B5680;
     border-color:#535E8C;
     color: #fff;
     font-weight:500;
-	margin-top: 17px;
+	margin-top: 2.1vh;
+	font-size: 1.1vw;
 	border: none;
 }
+
+/* add classlogout button */
+.logoutaddclass
+{
+	height: 5.9vh;
+    width: 9vw;
+    margin-left: 64vw;
+    border-radius: 0.3vw;
+    background-color: #4B5680;
+    border-color:#535E8C;
+    color: #fff;
+    font-weight:500;
+	margin-top: 2vh;
+	font-size: 1.1vw;
+	border: none;
+}
+
+.search_textfield
+{
+	width: 21vw;
+	height: 6vh;
+	background-color: #535E8C;
+	border-radius: 0.2vw;
+	border: none;
+	margin-left: 65vw;
+	margin-top: 2vh;
+	padding-left: 1vw;
+	color: rgb(255, 255, 255);
+	position: fixed;
+}
+
+.addsearch_textfield
+{
+	width: 17vw;
+	height: 6vh;
+	background-color: #535E8C;
+	border-radius: 0.2vw;
+	border: none;
+	margin-left: 45vw;
+	margin-top: 2vh;
+	padding-left: 1vw;
+	color: rgb(255, 255, 255);
+	position: fixed;
+}
+
+input:focus{outline:0;}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: rgb(255, 255, 255);
+	opacity: 1; /* Firefox */
+	font-size: 1vw;
+	position: fixed;
+	margin-top: 1.6vh;
+  }
 /*the main div in slide bar */
 .side-bar
 {
 	z-index: 1;
 	background:rgba(255,255,255,0.1);
-	backdrop-filter: blur(15px);
-    width: 290px;
-    height: 700px;
+	backdrop-filter: blur(7vw);
+    width: 21.6vw;
+    height: 120vh;
     position: fixed;
     top: 0;
-    left: -100%;
+    left: -50vw;
     overflow-y:auto;
     transition: 0.8s snap;
     transition-property: left;
@@ -62,7 +116,7 @@ body
 /*jquery class when silde bar is open */
 .side-bar.active
 {
-    left: 0;
+    left: 0vw;
 }
 /*menu*/
 .header
@@ -70,21 +124,24 @@ body
 	position: absolute;
 	color: #fff;
 	left:0; 
-	margin-left:-230px;
-	margin-top: -3px;
+	font-size: 2.2vw;
+	position: fixed;
+	margin-left:1.6vw ;
+	margin-top: -0.5vh;
 }
 
 /*course menu inside silde bar */
 .side-bar .menu 
 {
-	width: 100%;
-	margin-top:80px;
+	width: 21.6vw;
+	margin-top:14vh;
+	font-size: 1.9vw;
+	font-weight: 200;
 
 }
 /*course menu item inside silde bar */
 .side-bar .menu .item
 {
-
 position: relative;
 cursor: pointer;
 } 
@@ -92,11 +149,11 @@ cursor: pointer;
 .side-bar .menu .item a 
 {
 	color: #fff;
-	font-size: 16px;
+	font-size: 1.2vw;
 	text-decoration:none;
 	display: block;
-	padding: 5px 30px;
-	line-height: 40px;
+	padding: 1.4vh 2vw;
+	line-height: 2.4vw;
 }
 /*course menu backgroun while touch it inside silde bar */
 .side-bar .menu .item a:hover
@@ -106,15 +163,15 @@ cursor: pointer;
 } 
 .side-bar .menu .item i
 {
-	margin-right: 15px;
+	margin-right: 1.7vw;
+	margin-top: 1.3vh;
 }
 /*icons arrows */
 .side-bar .menu .item a .dropdown
 {
 	position: absolute;
 	right: 0;
-	margin-left: 20px;
-	margin-top:13px; 
+	margin-left: 4vw;
     transition:0.3s ease;
 }
 /*arrows icons while click */
@@ -122,7 +179,7 @@ cursor: pointer;
 {
 	transform: rotate(90deg);
 } 
-/*design for inside menu */
+/*design for inside menu*/
 .side-bar .menu .item .sub-menu
 {
 	background:rgba(255,255,255,0.1);
@@ -130,7 +187,8 @@ cursor: pointer;
 }
 .side-bar .menu .item .sub-menu a 
 {
-	padding-left: 80px;
+	padding-left: 6vw;
+	font-size: 1.2vw;
 }
 /*show members drop down menu*/
 .side-bar .menu .item .sub-menuFor-Member
@@ -140,7 +198,8 @@ cursor: pointer;
 }
 .side-bar .menu .item .sub-menuFor-Member a 
 {
-	padding-left: 80px;
+	padding-left: 6vw;
+	font-size: 1.2vw;	
 }
 
 .side-bar .menu .item .sub-menuFor-addMember
@@ -150,57 +209,60 @@ cursor: pointer;
 }
 .side-bar .menu .item .sub-menuFor-addMember a 
 {
-	padding-left: 80px;
+	padding-left: 6vw;
+	font-size: 1.2vw;
 }
 /*close icon in slider*/
-.side-bar .close-btn
+.close-btn
 {
 	position: absolute;
 	color: #fff;
-	font-size: 20px;
+	font-size: 1.5vw;
 	right: 0;
-	margin: 20px;
+	margin: 1.9vw;
 	cursor: pointer;
 }
+
 /*central container div */
 .the-center-div
 {
 	position: relative;
 	background-color:#292F45;
-	width: 1300px;
-	height: 520px;
-	margin-left: 26px;
-	border-radius: 7px;
+	width: 97vw;
+	height: 85vh;
+	margin-left: 1.5vw;
+	border-radius: 0.7vw;
 	transition: 0.7s ease-out;	
+	margin-top: -1vh;
 
 }
 /*added class for jquery for central container div */
 .the-center-divaddedClass
 {
 	
-	width: 1000px;
-	height: 520px;
-	margin-left:310px;
-	border-radius: 7px;
+	width: 76vw;
+	height: 83vh;
+	margin-left:22.6vw;
+	border-radius: 0.7vw;
 	transition: 0.5s ease-in;	
 
 }
-
 
 /*profile img container */
 .img-container
 { 
 	position: absolute;
-	width: 18%;
-	height: 46%;
+	width: 17vw;
+	height: 40vh;
 	background-color: #fff;
-	margin-left:9%;
-	margin-top: 4%;
+	margin-left:15vw;
+	margin-top: 19vh;
 }
 .img-containeraddclass
 {
-	    width: 23%;
-		height: 48%;		
+	    width: 17vw;
+		height: 40vh;
+		margin-left: 9vw;		
 }
 /*Profile_img*/
 
@@ -210,41 +272,16 @@ cursor: pointer;
 	width: 100%;
 
 }
-/*camere circile*/
-.change-img
-{
-	position: absolute;
-	width: 20%;
-	height: 19%;
-	border-radius: 50% 50%;
-	margin-top: 93%;
-	margin-left: 39%;
-	background-color: #7466F1;
 
-}
-.change-imgaddedclass
-{
-    height: 17%;
-	margin-top: 98%;
-	margin-left: 40%;
-}
-/*camera icons */
-.Camera
-{
-	color: #fff;
-	font-size: 20px;
-	margin-left: 28%;
-	margin-top: 28%;
-
-}
 /*user name */
 .admin-name
 {
-	position: absolute;
+  position: absolute;
   color:#fff;
-  font-weight: bold;
-  margin-left: 13%;
-  margin-top: 14%;
+  font-weight: 700;
+  margin-left: 1.4vw;
+  margin-top: 4vh;
+  font-size: 1.9vw;
 
 }
 
@@ -252,11 +289,24 @@ cursor: pointer;
 .info-Container
 {
 	position: absolute;
-	width: 57%;
-	height: 80%;
-	margin-left: 35%;
-	margin-top: 7%;
-	background-color: #868686;
+	width: 40vw;
+	height: 42vh;
+	margin-left: 40vw;
+	margin-top: 19vh;
+	background-color: #9696967a;
+	border-radius: 1vh;
+
+}
+
+/*table */
+.info-Containeraddedclass
+{
+	position: fixed;
+	width: 40vw;
+	height: 42vh;
+	margin-left: 32vw;
+	margin-top: 19vh;
+	background-color: #9696967a;
 	border-radius: 5px;
 
 }
@@ -264,8 +314,8 @@ cursor: pointer;
 .info-table
 {
 	border-collapse: collapse;
-	margin: 10% 17% ;
-	font-size: 126%;
+	margin: 9vh 6vw ;
+	font-size: 1.4vw;
 
 }
 /*the labels */
@@ -275,85 +325,38 @@ cursor: pointer;
 	color:#fff;
 
 }
-/* : */
-.info-table tr .ID .span
-{
-	position: absolute;
-	padding-left: 505%;
-}
+
 .info-table tr .Name .span2
 {
 	position: absolute;
-	padding-left: 130%;
-}
-.info-table tr .Email .span3
-{
-	position: absolute;
-	padding-left: 144%;
+	padding-left: 5vw;
 }
 .info-table tr .Password .span4
 {
 	position: absolute;
-	padding-left: 40%;
+	padding-left: 2.5vw;
 }
+
 .info-table tr .Phone .span5
 {
 	position: absolute;
-	padding-left: 116%;
+	padding-left: 4.5vw;
 }
 
 /*text filed */
 .info-table td input 
 {
-width: 60%;
-margin-left: 140px;
-margin-right: 20px;
+width: 19vw;
+height: 5vh;
+margin-left: 11vw;
+margin-right: 2vw;
 margin-bottom: 27px;
 margin-top: -4px;
 color: #fff;
-background-color: #868686;
+background-color: #85848400;
 border:none;
-}
-/*div of pen icons */
-.info-table tr td .pen-name ,.info-table tr td .pen-email,.info-table tr td .pen-phone 
-{
-	position: absolute;
-	margin-top:-4%;
-	margin-left: 7%;
-}
-/*div of pen beside eye*/
-.info-table tr td .pen-with-eye
-{
- position: absolute;
- margin-top: -4%;
- margin-left: 7%;
-}
 
-/*eye icons */
-.info-table tr td .eye-password
-{
-	position: absolute;
-	margin-top: -3.3%;
-	margin-left: 2%;
 }
-
-.info-table tr td .open-eye-password
-{
-    position: absolute;
-	margin-top: -3.3%;
-	margin-left: 2%;
-    visibility: hidden;
-}
-
-
-/*icons itself */
-.classpen ,.classeye ,.classeyeopen
-{
-	color: #000;
-	font-size: 15px;	
-	cursor: pointer;
-}
-
 
 /*POPUP*/
 
@@ -377,30 +380,29 @@ border:none;
   
   .popup {
 	
-    margin: 50px auto;
-    padding: 31px;
+    margin: 3.5vw auto;
+    padding: 1.5vw;
     background-color:#292F45;
-	
-    border-radius: 9px;
-    width: 34%;
-	height: 46%;
+    border-radius: 1.5vh;
+    width: 33.9vw;
+	height: 45.9vh;
     position: relative;
-    transition: all 5s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
   
   .popup h2 {
-    margin-top: 15px;
+    margin-top: 3.9vh;
     color: #877DDC;
-	margin-left: 31%;
-	font-size: 31px;
+	margin-left: 9.5vw;
+	font-size: 2.2vw;
 	font-style: bold;
   }
   .popup .close {
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 3vh;
+    right: 1.99vw;
     transition: all 200ms;
-    font-size: 30px;
+    font-size: 2.15vw;
     font-weight: bold;
     text-decoration: none;
     color: #fff;
@@ -410,39 +412,39 @@ border:none;
   }
   .popup .info-Containerx {
     overflow: auto;
-	padding-bottom: 50px;
+	padding-bottom: 5vh;
   }
 
 .info-Containerx input[type=text]{
-    width: 375px;
-	border-radius:2px;
+    width: 26.39vw;
+	border-radius: 0.3vh;
 	border: none;
-	margin-left: 6%;
-	margin-top: 43px;
-	font-size:23px;
-	padding: 3px 50px 3px 15px;
+	margin-left: 2.15vw;
+	margin-top: 6.5vh;
+	font-size: 1.59vw;
+	padding: 0.5vh 5vw 0.55vh 1vw;
 	color: #000;
 }
 
 
 .info-Containerx input[type=submit] {
-	font-size: 18px;
+	font-size: 1.23vw;
     background-color: #7466F1;
-	width: 377px;
-    padding: 8px 19px 3px 19px;
+	width: 26.39vw;
+    padding: 1vh 5vw 1vh 5vw;
     color: #fff;	
-	border-radius:2px;
+	border-radius: 0.3vh;
 	border: none;
-	margin-top: 20px;
-	margin-left: 6%;
+	margin-top: 3.3vh;
+	margin-left: 2.15vw;
 	text-align: center;
  
 }
 .info-Containerx input::placeholder{
 	color: #646369;
-	font-size: 16px;
+	font-size: 1.17vw;
 }
-  @media screen and (max-width: 600px){
+  @media screen and (max-width: 400px){
     .box{
       width: 70%;
     }
@@ -450,17 +452,3 @@ border:none;
       width: 70%;
     }
   }
-
-
-#Sumbitbutton
-{
-	position: absolute;
-	width:18% ;
-	height: 9%;
-	background-color: #7466F1;
-	border-radius: 75px;
-	font-size: 90%;
-    margin-left:19%; 
-    margin-top: 0.3%;
-    box-shadow: 0 4px 8px 0 rgba(77, 67, 168 , 0.2), 0 6px 20px 0 rgba(77, 67, 168 , 0.19);
-}

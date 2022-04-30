@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Profile Page</title>
+    <link rel="stylesheet" type="text/css" href="\file\admin\bootstrap-3.4.1-dist\css\bootstrap.css">
+    <link rel="stylesheet" href="\file\admin\fontawesome-free\css\all.min.css">
+    <link rel="stylesheet" type="text/css" href="\file\admin\CSS\profile_page_css.css">
+
+</head>
+<body>
+
+
+<!--sliderbar-->
+<div th:replace="Admin/base :: sliderbar"></div>
+<!--end sliderbar-->
+<!--nav bar-->
+<div th:replace="Admin/base :: navbar"></div>
+<!--end nav bar-->
+
+<!--center div -->
+<div class="the-center-div">
+    <!--img div-->
+    <div class="img-container">
+        <img src="\file\admin\Img\Profile_img.jpg" class="Profile_img">
+
+        <h3 class="admin-name">Admin</h3>
+    </div>
+    <div class="info-Container">
+        <table class="info-table">
+            <tr>
+                <td class="Name">Name <span class="span2">:</span></td>
+                <td><input type="text" class="Nametext" name="name" value="Admin" disabled></td>
+
+            </tr>
+            <tr>
+                <td class="Password">Password <span class="span4">:</span></td>
+                <td><input type="Password" class="Passwordtext" name="Password" value="admin" disabled></td>
+
+            </tr>
+            <tr>
+                <td class="Phone">Phone <span class="span5">:</span></td>
+                <td><input type="Phone" class="Phonetext" name="Phone" value="05252532522" disabled></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+
+<!--POPUP-->
+<div id="popup1" class="overlay">
+    <div class="popup">
+        <h2>Add Course</h2>
+        <a class="close" href="#">&times;</a>
+
+        <div class="info-Containerx">
+            <form>
+                <div>
+
+                    <input id="coursename" type="text" placeholder="CourseName" required>
+                </div>
+                <input type="submit" value="Add">
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="\file\admin\Jquery\jquery-3.6.0.min.js"></script>
+<script src="\file\admin\Jquery\jquery.js"></script>
+<script type="text/javascript" src="\file\admin\bootstrap-3.4.1-dist\js\bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+

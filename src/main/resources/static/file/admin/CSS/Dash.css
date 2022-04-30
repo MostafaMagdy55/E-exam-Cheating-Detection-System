@@ -7,41 +7,57 @@ body
 {
 	position: absolute;
 	color: #fff;
-	font-size: 27px;
-	margin-left:37px;
-	margin-top: 13px;
+	font-size: 2vw;
+	margin-left:2.5vw;
+	margin-top: 2vh;
 	cursor: pointer;
 }
 /*div for navigation bar */
 .navbar
 {
 	background-color: #292F45;
-	width: 1360px;
-	height: 68px;
-	opacity: .7;
+	width: 99vw;
+	height: 10vh;
 	transition: 0.7s ease-out;	
 
 }
 /* added class to jquert for navigation bar */
 .navbaraddclass
 {
-	margin-left: 310px;
-	width: 1055px;
+	margin-left: 22.6vw;
+	width: 76vw;
 	transition: 0.5s ease-in;	
 }
 
 /* logout button */
-#Logout
+.logout
 {
-	height: 38px;
-    width: 114px;
-    margin-left: 87%;
-    border-radius: 8px;
+	height: 5.9vh;
+    width: 9vw;
+    margin-left: 88vw;
+    border-radius: 0.3vw;
     background-color: #4B5680;
     border-color:#535E8C;
     color: #fff;
     font-weight:500;
-	margin-top: 17px;
+	margin-top: 2vh;
+	font-size: 1.1vw;
+	border: none;
+}
+
+/* add classlogout button */
+.logoutaddclass
+{
+	height: 5.9vh;
+    width: 9vw;
+    margin-left: 64vw;
+    border-radius: 0.3vw;
+    background-color: #4B5680;
+    border-color:#535E8C;
+    color: #fff;
+    font-weight:500;
+	margin-top: 2vh;
+	font-size: 1.1vw;
 	border: none;
 }
 /*the main div in slide bar */
@@ -49,12 +65,12 @@ body
 {
 	z-index: 1;
 	background:rgba(255,255,255,0.1);
-	backdrop-filter: blur(15px);
-    width: 290px;
-    height: 700px;
+	backdrop-filter: blur(7vw);
+    width: 21.6vw;
+    height: 120vh;
     position: fixed;
     top: 0;
-    left: -100%;
+    left: -50vw;
     overflow-y:auto;
     transition: 0.8s snap;
     transition-property: left;
@@ -62,7 +78,7 @@ body
 /*jquery class when silde bar is open */
 .side-bar.active
 {
-    left: 0;
+    left: 0vw;
 }
 /*menu*/
 .header
@@ -70,15 +86,19 @@ body
 	position: absolute;
 	color: #fff;
 	left:0; 
-	margin-left:-230px;
-	margin-top: -3px;
+	font-size: 2.2vw;
+	position: fixed;
+	margin-left:1.6vw ;
+	margin-top: -0.5vh;
 }
 
 /*course menu inside silde bar */
 .side-bar .menu 
 {
-	width: 100%;
-	margin-top:80px;
+	width: 21.6vw;
+	margin-top:14vh;
+	font-size: 1.9vw;
+	font-weight: 200;
 
 }
 /*course menu item inside silde bar */
@@ -91,11 +111,11 @@ cursor: pointer;
 .side-bar .menu .item a 
 {
 	color: #fff;
-	font-size: 16px;
+	font-size: 1.2vw;
 	text-decoration:none;
 	display: block;
-	padding: 5px 30px;
-	line-height: 40px;
+	padding: 1.4vh 2vw;
+	line-height: 2.4vw;
 }
 /*course menu backgroun while touch it inside silde bar */
 .side-bar .menu .item a:hover
@@ -105,15 +125,15 @@ cursor: pointer;
 } 
 .side-bar .menu .item i
 {
-	margin-right: 15px;
+	margin-right: 1.7vw;
+	margin-top: 1.3vh;
 }
 /*icons arrows */
 .side-bar .menu .item a .dropdown
 {
 	position: absolute;
 	right: 0;
-	margin-left: 20px;
-	margin-top:13px; 
+	margin-left: 4vw;
     transition:0.3s ease;
 }
 /*arrows icons while click */
@@ -121,25 +141,27 @@ cursor: pointer;
 {
 	transform: rotate(90deg);
 } 
-/*design for inside menu */
+/*design for inside menu*/
 .side-bar .menu .item .sub-menu
 {
 	background:rgba(255,255,255,0.1);
-	display:none;
+	display: none;
 }
 .side-bar .menu .item .sub-menu a 
 {
-	padding-left: 80px;
+	padding-left: 6vw;
+	font-size: 1.2vw;
 }
 /*show members drop down menu*/
-.side-bar .menu .item .sub-menuFor-Member 
+.side-bar .menu .item .sub-menuFor-Member
 {
 	background:rgba(255,255,255,0.1);
 	display: none;
 }
 .side-bar .menu .item .sub-menuFor-Member a 
 {
-	padding-left: 80px;
+	padding-left: 6vw;
+	font-size: 1.2vw;	
 }
 
 .side-bar .menu .item .sub-menuFor-addMember
@@ -149,16 +171,17 @@ cursor: pointer;
 }
 .side-bar .menu .item .sub-menuFor-addMember a 
 {
-	padding-left: 80px;
+	padding-left: 6vw;
+	font-size: 1.2vw;
 }
 /*close icon in slider*/
 .close-btn
 {
 	position: absolute;
 	color: #fff;
-	font-size: 20px;
+	font-size: 1.5vw;
 	right: 0;
-	margin: 20px;
+	margin: 1.9vw;
 	cursor: pointer;
 }
 
@@ -169,28 +192,28 @@ cursor: pointer;
 	position: relative;
 	border-radius: 7px;
 	transition: 0.7s ease-out;	
-    margin-top: 1%;
-	width: 1131px;
-	height: 357px;
-	margin-left: 10%;
+    margin-top: 2.3vh;
+	width: 80vw;
+	height: 55.9vh;
+	margin-left: 10vw;
 }
 
 
 .img-container
 { 
 	transform: translate(17%);
-    width: 32%;
-    height: 90%;
-    margin-top: 1.3%;
+    width: 25vw;
+    height: 50vh;
+    margin-top: 2vh;
     float: left;
 }
 
 .Add_img
 {
-	height: 100%;
-	width: 100%;
+	height: 50vh;
+	width: 25vw;
 	border-radius: 1px;
-	margin-left: -12%;
+	margin-left: -3vw;
 
 }
 
@@ -199,29 +222,29 @@ cursor: pointer;
 .the-center-divaddedClass
 {
 	
-	width: 1071px;
+	width: 75.7vw;
 	/*height: 390px;*/
-	margin-left:293px;
-	border-radius: 3px;
+	margin-left: 21vw;
+	border-radius: 1vh;
 	transition: 0.5s ease-in;	
 
 }
 
 .quaryaddedClass{
-    margin-left:119px;
+    margin-left: 8.35vw;
 	border-radius: 1px;
 	transition: 0.5s ease-in;	
-    width: 1000px;
+    width: 5vw;
 
 }
 .quary{
     position:relative;
 	transition: 0.5s ease-out;	
-    height: 151px;
-    margin-top: 2%;
-    width: 1133px;
+    height: 23.5vh;
+    margin-top: 3.9vh;
+    width: 79.7vw;
     transform: translate(15%);
-	margin-bottom: -0.3%;
+	margin-bottom: -0.3vh;
 }
 
 /*div*/
@@ -246,42 +269,43 @@ cursor: pointer;
 
 .info-top{
     position: relative;
-    width: 100%;
-	height: 100%;
+    width: 81vw;
+	height: 24vh;
    transform: translate(-50%);
     background-color: #292F45;
     text-align: center;
-    padding-top: 1.5%;
-	margin-left: 48.5%;
-	margin-top: 0.1%;
+    padding-top: 2.7vh;
+	margin-left: 38.8vw;
+	margin-top: 0.1vh;
 	border-radius: 1px;
 
 }
 
 .info-topOpen{
-	width: 94%;
+	width: 93.5%;
+	margin-left: 39.3vw;
 }
 
 /*DivTop*/
 
 .inlinee{
-	margin-top: 2.5%;
+	margin-top: 3.9vh;
 	float: left;
-	margin-left: 4%;
+	margin-left: 3vw;
 }
 
 .inlineeOpen{
-	margin-left: -1.4%;
+	margin-left: -1.4vw;
 }
 
 .inlinee .Stu{
 	display: inline-block;
-	width: 57px;
-	height: 53px;
+	width: 3.9vw;
+	height: 8.3vh;
 	background-color: #353c58;
-	margin: 0px 9px;
+	margin: 0vw 0.5vw;
 	border-radius: 50%;
-	margin-top: 1%;
+	margin-top: 1vh;
 	
 }
 
@@ -289,11 +313,11 @@ cursor: pointer;
 
 .inlinee i{
 	position: absolute;
-	margin-top: 1.5%;
+	margin-top: 2.7vh;
 	text-align: center;
 	color: #19839A;
-	font-size: large;
-	margin-left: -0.7%;
+	font-size: 3vh;
+	margin-left: -0.5vw;
 	
 }
 
@@ -302,16 +326,20 @@ cursor: pointer;
 .inlinee .num{
 	position: absolute;
 		display: inline-block;
-		margin-top: 0.9%;
-		margin-left: 0.3%;
-		font-size: medium;
+		margin-top: 1.9vh;
+		margin-left: 0.1vw;
+		font-size: 3vh;
+    	background-color: #292F45;
+		border: none;
+		width: 5vw;
 }
 .inlinee .s{
 	position: absolute;
-	margin-top: -2.5%;
-	margin-left: 7.3%;
+	display: inline-block;
+	margin-top: 7vh;
+	margin-left: 0.3vw;
 	color: #AAA;
-	font-size: medium;
+	font-size: 3vh;
 
 }
 
@@ -319,27 +347,31 @@ cursor: pointer;
 /*ULFA Course*/
 .inlinee .Cour{
 	display: inline-block;
-	width: 57px;
-	height: 53px;
+	width: 3.9vw;
+	height: 8.3vh;
 	background-color: #353c58;
-	margin: 0px 191px;
+	margin: 0vw 13vw;
 	border-radius: 50%;
-	margin-top: 1%;
+	margin-top: 1vh;
 }
 
 .inlinee .numC{
 	position: absolute;
 		display: inline-block;
-		margin-top: 1%;
-		margin-left: -179px;
-		font-size: medium;
+		margin-top: 1.7vh;
+		margin-left: -12.7vw;
+		font-size: 3vh;
+		background-color: #292F45;
+		border: none;
+		width: 5vw;
 }
 .inlinee .c{
 	position: absolute;
-	margin-top: -2.5%;
-	margin-left: 341px;
+	display: inline-block;
+	margin-top: 7vh;
+	margin-left: -12.7vw;
 	color: #AAA;
-	font-size: medium;
+	font-size: 3vh;
 
 }
 
@@ -347,28 +379,32 @@ cursor: pointer;
 /*ULFA Instructor*/
 .inlinee .Ins{
 	display: inline-block;
-	width: 57px;
-	height: 53px;
+	width: 3.9vw;
+	height: 8.3vh;
 	background-color: #353c58;
-	margin: 0px 13px;
+	margin: 0vw 1vw;
 	border-radius: 50%;
-	margin-top: 1.3%;
+	margin-top: 1.9vh;
 }
 
 
 .inlinee .numI{
 	position: absolute;
 		display: inline-block;
-		margin-top: 1%;
-		margin-left: -7px;
-		font-size: medium;
+		margin-top: 1.3vh;
+		margin-left: -0.4vw;
+		font-size: 3vh;
+		background-color: #292F45;
+		border: none;
+		width: 5vw;
 }
 .inlinee .i{
 	position: absolute;
-	margin-top: -2.5%;
-	margin-left: 605px;
+	display: inline-block;
+	margin-top: 7vh;
+	margin-left: -0.3vw;
 	color: #AAA;
-	font-size: medium;
+	font-size: 3vh;
 
 }
 
@@ -377,28 +413,32 @@ cursor: pointer;
 /*ULFA Exam*/
 .inlinee .ex{
 	display: inline-block;
-	width: 57px;
-	height: 53px;
+	width: 3.9vw;
+	height: 8.3vh;
 	background-color: #353c58;
-	margin: 0px 187px;
+	margin: 0vw 13vw;
 	border-radius: 50%;
-	margin-top: 1%;
+	margin-top: 1.5vh;
 }
 
 
 .inlinee .numE{
 	position: absolute;
 		display: inline-block;
-		margin-top: 1%;
-		margin-left: -173px;
-		font-size: medium;
+		margin-top: 1.5vh;
+		margin-left: -12vw;
+		font-size: 3vh;
+		background-color: #292F45;
+		border: none;
+		width: 5vw;
 }
 .inlinee .e{
 	position: absolute;
-	margin-top: -2.5%;
-	margin-left: 867px;
+	display: inline-block;
+	margin-top: 7vh;
+	margin-left: -12vw;
 	color: #AAA;
-	font-size: medium;
+	font-size: 3vh;
 
 }
 
@@ -409,14 +449,13 @@ cursor: pointer;
 
   .chart-wrapper {
 	position: absolute;
-	width: 371px;
-	height: 77px;
-	margin-left: 19.9%;
-	margin-top: -2.5%;
+	width: 26vw;
+	height: 9vh;
+	margin-left: 13vw;
+	margin-top: -2.7vh;
+	font-size: 12vh;
 
   }
-
-
 
 
   
@@ -442,30 +481,29 @@ cursor: pointer;
   
   .popup {
 	
-    margin: 50px auto;
-    padding: 31px;
+    margin: 3.5vw auto;
+    padding: 1.5vw;
     background-color:#292F45;
-	
-    border-radius: 9px;
-    width: 34%;
-	height: 46%;
+    border-radius: 1.5vh;
+    width: 33.9vw;
+	height: 45.9vh;
     position: relative;
-    transition: all 5s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
   
   .popup h2 {
-    margin-top: 15px;
+    margin-top: 3.9vh;
     color: #877DDC;
-	margin-left: 31%;
-	font-size: 31px;
+	margin-left: 9.5vw;
+	font-size: 2.2vw;
 	font-style: bold;
   }
   .popup .close {
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 3vh;
+    right: 1.99vw;
     transition: all 200ms;
-    font-size: 30px;
+    font-size: 2.15vw;
     font-weight: bold;
     text-decoration: none;
     color: #fff;
@@ -475,39 +513,39 @@ cursor: pointer;
   }
   .popup .info-Containerx {
     overflow: auto;
-	padding-bottom: 50px;
+	padding-bottom: 5vh;
   }
 
 .info-Containerx input[type=text]{
-    width: 375px;
-	border-radius:2px;
+    width: 26.39vw;
+	border-radius: 0.3vh;
 	border: none;
-	margin-left: 6%;
-	margin-top: 43px;
-	font-size:23px;
-	padding: 3px 50px 3px 15px;
+	margin-left: 2.15vw;
+	margin-top: 6.5vh;
+	font-size: 1.59vw;
+	padding: 0.5vh 5vw 0.55vh 1vw;
 	color: #000;
 }
 
 
 .info-Containerx input[type=submit] {
-	font-size: 18px;
+	font-size: 1.23vw;
     background-color: #7466F1;
-	width: 377px;
-    padding: 8px 19px 3px 19px;
+	width: 26.39vw;
+    padding: 1vh 5vw 1vh 5vw;
     color: #fff;	
-	border-radius:2px;
+	border-radius: 0.3vh;
 	border: none;
-	margin-top: 20px;
-	margin-left: 6%;
+	margin-top: 3.3vh;
+	margin-left: 2.15vw;
 	text-align: center;
  
 }
 .info-Containerx input::placeholder{
 	color: #646369;
-	font-size: 16px;
+	font-size: 1.17vw;
 }
-  @media screen and (max-width: 600px){
+  @media screen and (max-width: 400px){
     .box{
       width: 70%;
     }

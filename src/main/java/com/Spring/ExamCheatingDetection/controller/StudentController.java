@@ -39,12 +39,6 @@ public class StudentController {
     private static int size = 0;
 
 
-    @RequestMapping("/index/{id}")
-    public String index(Model model) {
-        Student student = studentService.findById(userId());
-        model.addAttribute("student", student);
-        return "Student/index";
-    }
 
 
     @RequestMapping("/profile/{id}")
@@ -179,7 +173,7 @@ public class StudentController {
 
         for (int i = 0; i < questions.size(); i++) {
             if (questions.get(i).getType() == false) {
-                if (studentAnswersToExam.get(i).getStringAnswer() != "" && studentAnswersToExam.get(i).getStringAnswer().equals(questions.get(i).getCorrectAnswer())) {
+                if (studentAnswersToExam.get(i).getStringAnswer() != null && studentAnswersToExam.get(i).getStringAnswer().equals(questions.get(i).getCorrectAnswer())) {
                     num++;
                     studentAnswersToExam.get(i).setAnswerIsCorrect(true);
                     studentAnswerService.save(studentAnswersToExam.get(i));
@@ -208,6 +202,7 @@ public class StudentController {
 
     }
 
+
     @RequestMapping("/messages")
     public String Message(Model model) {
         model.addAttribute("student", studentService.findById(userId()));
@@ -230,14 +225,8 @@ public class StudentController {
         student.addMessage(message);
         messageService.save(message);
         studentService.save(student);
-        return "redirect:/student/messages";
+        return "redirect:/student/myMessages/";
 
-    }
-
-
-    @RequestMapping("/enter-exam/-10/-10")
-    public String Fired() {
-        return "Student/firedpage";
     }
 
 

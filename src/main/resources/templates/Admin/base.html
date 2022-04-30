@@ -15,8 +15,49 @@
 
 </div>
 
-<div th:fragment="sliderbar">
+<!--<div th:fragment="sliderbar">-->
 
+<!--    <div class="side-bar">-->
+
+<!--        <div class="close-btn">-->
+<!--            <h2 class="header">Menu</h2>-->
+<!--            <i class="fas fa-times-circle"></i>-->
+<!--        </div>-->
+<!--        <div class="menu">-->
+<!--            <div class="item"><a th:href="@{'/admin/dashbord'}">Dashbord</a></div>-->
+<!--            <div class="item"><a th:href="@{'/admin/index'}">Profile</a></div>-->
+
+<!--            <div class="item">-->
+<!--                <a class="sub-btnFor-addmember">Add Member<i class="fas fa-chevron-right dropdown"></i></a>-->
+<!--                <div class="sub-menuFor-addMember">-->
+<!--                    <div class="item"><a th:href="@{'/admin/CreateStudent'}">Add Student</a></div>-->
+<!--                    <div class="item"><a th:href="@{'/admin/CreateInstructor/'}">Add Instructor</a></div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="item">-->
+<!--                <a class="sub-btn">Course<i class="fas fa-chevron-right dropdown"></i></a>-->
+<!--                <div class="sub-menu">-->
+<!--                    <div class="item"><a href="#popup1">Add Course</a></div>-->
+<!--                    <div class="item"><a th:href="@{'/admin/show-course'}">show Courses</a></div>-->
+<!--                    &lt;!&ndash;                    <div class="item"><a href="Delete-Course.html">Delete Course</a></div>&ndash;&gt;-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="item">-->
+<!--                <a class="sub-btnFor-member">Members<i class="fas fa-chevron-right dropdown"></i></a>-->
+<!--                <div class="sub-menuFor-Member">-->
+<!--                    <div class="item"><a th:href="@{'/admin/show-student'}">Show Students</a></div>-->
+<!--                    <div class="item"><a th:href="@{'/admin/show-instructor'}">Show Instructor</a></div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash;            <div class="item"><a href="#">Approve Exam</a></div>&ndash;&gt;-->
+<!--            <div class="item"><a th:href="@{'/admin/problems'}">Problem</a></div>-->
+<!--        </div>-->
+
+<!--    </div>-->
+<!--</div>-->
+
+
+<div th:fragment="sliderbar">
     <div class="side-bar">
 
         <div class="close-btn">
@@ -26,7 +67,6 @@
         <div class="menu">
             <div class="item"><a th:href="@{'/admin/dashbord'}">Dashbord</a></div>
             <div class="item"><a th:href="@{'/admin/index'}">Profile</a></div>
-
             <div class="item">
                 <a class="sub-btnFor-addmember">Add Member<i class="fas fa-chevron-right dropdown"></i></a>
                 <div class="sub-menuFor-addMember">
@@ -39,7 +79,6 @@
                 <div class="sub-menu">
                     <div class="item"><a href="#popup1">Add Course</a></div>
                     <div class="item"><a th:href="@{'/admin/show-course'}">show Courses</a></div>
-<!--                    <div class="item"><a href="Delete-Course.html">Delete Course</a></div>-->
                 </div>
             </div>
             <div class="item">
@@ -49,14 +88,30 @@
                     <div class="item"><a th:href="@{'/admin/show-instructor'}">Show Instructor</a></div>
                 </div>
             </div>
-<!--            <div class="item"><a href="#">Approve Exam</a></div>-->
             <div class="item"><a th:href="@{'/admin/problems'}">Problem</a></div>
         </div>
 
     </div>
 </div>
 
-<div  th:fragment="navbar">
+
+<!--<div th:fragment="navbar">-->
+<!--    <div class="navbar" id="contant">-->
+<!--        <form th:action="@{/logout}" method="post">-->
+<!--            &lt;!&ndash;forms&ndash;&gt;-->
+<!--            <div class="forms">-->
+<!--                <div class="menu-icons">-->
+<!--                    <i class="fas fa-bars"></i>-->
+<!--                </div>-->
+<!--                &lt;!&ndash;<input type="search" class="search_textfield" placeholder="Search">&ndash;&gt;-->
+<!--                <input type="submit" value="Logout" id="Logout">-->
+<!--            </div>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<div th:fragment="navbar">
     <div class="navbar" id="contant">
         <form th:action="@{/logout}" method="post">
             <!--forms-->
@@ -64,13 +119,34 @@
                 <div class="menu-icons">
                     <i class="fas fa-bars"></i>
                 </div>
-                <!--<input type="search" class="search_textfield" placeholder="Search">-->
-                <input type="submit" value="Logout" id="Logout">
+                <!-- <input type="search" class="search_textfield" placeholder="Search">-->
+                <input type="submit" value="Logout" id="Logout" class="logout">
             </div>
         </form>
     </div>
 </div>
 
+
+<!--<div th:fragment="POPUP">-->
+<!--    <div id="popup1" class="overlay">-->
+<!--        <div class="popup">-->
+<!--            <h2>Add Course</h2>-->
+<!--            <a class="close" href="#">&times;</a>-->
+
+<!--            <div class="info-Containerx">-->
+<!--                <form th:action="@{/admin/save-course}" th:object="${course}">-->
+<!--                    <div>-->
+
+<!--                        &lt;!&ndash;                    <input id="coursename" type="text"  placeholder="CourseName" required>&ndash;&gt;-->
+<!--                        <input id="coursename" type="text" th:field="*{CourseName}" placeholder="CourseName" required/>-->
+<!--                    </div>-->
+<!--                    <input type="submit" value="Add">-->
+
+<!--                </form>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 
 <div th:fragment="POPUP">
@@ -83,8 +159,7 @@
                 <form th:action="@{/admin/save-course}" th:object="${course}">
                     <div>
 
-                        <!--                    <input id="coursename" type="text"  placeholder="CourseName" required>-->
-                        <input id="coursename" type="text" th:field="*{CourseName}"  placeholder="CourseName" required/>
+                        <input id="coursename" type="text" th:field="*{CourseName}" placeholder="CourseName" required>
                     </div>
                     <input type="submit" value="Add">
 
@@ -94,15 +169,11 @@
     </div>
 </div>
 
-<div th:fragment="footer" >
+
+<div th:fragment="footer">
     <script type="text/javascript" src="/file/admin/Jquery\jquery-3.6.0.min.js"></script>
     <script src="/file/admin/Jquery\jquery1.js"></script>
     <script type="text/javascript" src="/file/admin/bootstrap-3.4.1-dist\js\bootstrap.min.js"></script>
-
-
-
-
-
 
 
     <script src="Jquery\ADDCourse.js"></script>

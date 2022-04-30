@@ -1,47 +1,63 @@
 body 
 {
 	background-color: #151D30;
+    color: #fff;
 }
-/*icon to open slide bar*/
 .menu-icons
 {
 	position: absolute;
 	color: #fff;
-	font-size: 27px;
-	margin-left:37px;
-	margin-top: 13px;
+	font-size: 2vw;
+	margin-left:2.5vw;
+	margin-top: 2vh;
 	cursor: pointer;
 }
 /*div for navigation bar */
 .navbar
 {
 	background-color: #292F45;
-	width: 1360px;
-	height: 68px;
-	opacity: .7;
+	width: 99vw;
+	height: 10vh;
 	transition: 0.7s ease-out;	
 
 }
 /* added class to jquert for navigation bar */
 .navbaraddclass
 {
-	margin-left: 310px;
-	width: 1055px;
+	margin-left: 22.6vw;
+	width: 76vw;
 	transition: 0.5s ease-in;	
 }
 
 /* logout button */
-#Logout
+.logout
 {
-	height: 38px;
-    width: 114px;
-    margin-left: 87%;
-    border-radius: 8px;
+	height: 5.9vh;
+    width: 9vw;
+    margin-left: 88vw;
+    border-radius: 0.3vw;
     background-color: #4B5680;
     border-color:#535E8C;
     color: #fff;
     font-weight:500;
-	margin-top: 17px;
+	margin-top: 2vh;
+	font-size: 1.1vw;
+	border: none;
+}
+
+/* add classlogout button */
+.logoutaddclass
+{
+	height: 5.9vh;
+    width: 9vw;
+    margin-left: 64vw;
+    border-radius: 0.3vw;
+    background-color: #4B5680;
+    border-color:#535E8C;
+    color: #fff;
+    font-weight:500;
+	margin-top: 2vh;
+	font-size: 1.1vw;
 	border: none;
 }
 /*the main div in slide bar */
@@ -49,12 +65,12 @@ body
 {
 	z-index: 1;
 	background:rgba(255,255,255,0.1);
-	backdrop-filter: blur(15px);
-    width: 290px;
-    height: 700px;
+	backdrop-filter: blur(7vw);
+    width: 21.6vw;
+    height: 120vh;
     position: fixed;
     top: 0;
-    left: -100%;
+    left: -50vw;
     overflow-y:auto;
     transition: 0.8s snap;
     transition-property: left;
@@ -62,7 +78,7 @@ body
 /*jquery class when silde bar is open */
 .side-bar.active
 {
-    left: 0;
+    left: 0vw;
 }
 /*menu*/
 .header
@@ -70,21 +86,24 @@ body
 	position: absolute;
 	color: #fff;
 	left:0; 
-	margin-left:-230px;
-	margin-top: -3px;
+	font-size: 2.2vw;
+	position: fixed;
+	margin-left:1.6vw ;
+	margin-top: -0.5vh;
 }
 
 /*course menu inside silde bar */
 .side-bar .menu 
 {
-	width: 100%;
-	margin-top:80px;
+	width: 21.6vw;
+	margin-top:14vh;
+	font-size: 1.9vw;
+	font-weight: 200;
 
 }
 /*course menu item inside silde bar */
 .side-bar .menu .item
 {
-
 position: relative;
 cursor: pointer;
 } 
@@ -92,11 +111,11 @@ cursor: pointer;
 .side-bar .menu .item a 
 {
 	color: #fff;
-	font-size: 16px;
+	font-size: 1.2vw;
 	text-decoration:none;
 	display: block;
-	padding: 5px 30px;
-	line-height: 40px;
+	padding: 1.4vh 2vw;
+	line-height: 2.4vw;
 }
 /*course menu backgroun while touch it inside silde bar */
 .side-bar .menu .item a:hover
@@ -106,15 +125,15 @@ cursor: pointer;
 } 
 .side-bar .menu .item i
 {
-	margin-right: 15px;
+	margin-right: 1.7vw;
+	margin-top: 1.3vh;
 }
 /*icons arrows */
 .side-bar .menu .item a .dropdown
 {
 	position: absolute;
 	right: 0;
-	margin-left: 20px;
-	margin-top:13px; 
+	margin-left: 4vw;
     transition:0.3s ease;
 }
 /*arrows icons while click */
@@ -122,7 +141,7 @@ cursor: pointer;
 {
 	transform: rotate(90deg);
 } 
-/*design for inside menu */
+/*design for inside menu*/
 .side-bar .menu .item .sub-menu
 {
 	background:rgba(255,255,255,0.1);
@@ -130,7 +149,8 @@ cursor: pointer;
 }
 .side-bar .menu .item .sub-menu a 
 {
-	padding-left: 80px;
+	padding-left: 6vw;
+	font-size: 1.2vw;
 }
 /*show members drop down menu*/
 .side-bar .menu .item .sub-menuFor-Member
@@ -140,7 +160,8 @@ cursor: pointer;
 }
 .side-bar .menu .item .sub-menuFor-Member a 
 {
-	padding-left: 80px;
+	padding-left: 6vw;
+	font-size: 1.2vw;	
 }
 
 .side-bar .menu .item .sub-menuFor-addMember
@@ -150,16 +171,17 @@ cursor: pointer;
 }
 .side-bar .menu .item .sub-menuFor-addMember a 
 {
-	padding-left: 80px;
+	padding-left: 6vw;
+	font-size: 1.2vw;
 }
 /*close icon in slider*/
-.side-bar .close-btn
+.close-btn
 {
 	position: absolute;
 	color: #fff;
-	font-size: 20px;
+	font-size: 1.5vw;
 	right: 0;
-	margin: 20px;
+	margin: 1.9vw;
 	cursor: pointer;
 }
 /*central container div */
@@ -167,109 +189,126 @@ cursor: pointer;
 {
 	position: relative;
 	background-color:#292F45;
-	width: 1300px;
-	height: 520px;
-	margin-left: 26px;
-	border-radius: 7px;
+	width: 91.4vw;
+	height: 81.1vh;
+	margin-left: 3.9vw;
+	border-radius: 1vh;
 	transition: 0.7s ease-out;	
+  padding-top: 0.3vh;
+  overflow-y: scroll;
+  padding-bottom: 1.9vh;
 
 }
 /*added class for jquery for central container div */
 .the-center-divaddedClass
 {
 	
-	width: 1000px;
-	height: 520px;
-	margin-left:310px;
-	border-radius: 7px;
-	transition: 0.5s ease-in;	
+	width: 76vw;
+	height: 85vh;
+	margin-left:22.6vw;
+	border-radius: 0.7vw;
+	transition: 0.5s ease-in;
 
 }
 
+input:focus{outline:0;}
+
 /*Massage Problem div*/
 .Massageprob{
-    position:absolute;
-    transform: translate(31%);
-    width: 71%;
+    transform: translate(19.9vw);
+    width: 65vw;
     background-color: #463f8b;
-    /*background-color: #3F5DD2;*/
-    height: 33%;
-    margin-top: 3%;
-    border-radius: 7px;
+    margin-top: 5.9vh;
+    border-radius: 1vh;
     transition: 0.7s ease-out;
+   /**/ padding-bottom: 1.9vh;
+    padding-right: 1.3vw;
+    margin-bottom: 3vh;
+
+    
 }
 
 /*Title Massage*/
 .Massageprob h3{
     color: #fff;
-    margin-left: 3%;
-    margin-top: 3%;
+    margin-left: 2.5vw;
+    margin-top: 3.9vh;
+    font-size: 1.7vw;
+    padding-top: 3vh;
 }
 
 /*BodyMassage*/
 .Massageprob p{
     color: #fff;
-    font-size: large;
-    margin-top: 2%;
-    margin-left: 11%;
+    font-size: 1.3vw;
+    margin-top: 2.3vh;
+    margin-left: 5.9vw;
+}
+
+.MassageAdd{
+  width: 47.9vw;
 }
 
 
 /*Replay Message div*/
 
 .ReplayMessage{
-  position:absolute;
   transform: translate(7%);
-  width: 71%;
+  width: 63vw;
   background-color: rgb(180, 176, 176);
-  /*background-color: #3F5DD2;*/
-  height: 25%;
-  margin-top: 235px;
-  border-radius: 7px;
+  margin-top: 3.7vh;
+  border-radius: 1vh;
   transition: 0.7s ease-out;
+  padding-bottom: 1.9vh;
+  padding-right: 1.1vw;
+  padding-top: 0.1vh;
 }
 
 /*BodyReplayMassage*/
 .ReplayMessage p{
   color: #fff;
-  font-size: large;
-  margin-top: 3%;
-  margin-left: 5%;
+  font-size: 1.3vw;
+  margin-top: 3.7vh;
+  margin-left: 3vw;
 }
 
+.ReplayAdd{
+  width: 55vw;
+}
 
-
-
-/*Replay
-
-.FormChat{
-  position: relative;
-}*/
-
-.RplayForm input[type=text]{
-          width: 77%;
-          margin-top: 451px;
-          margin-left: 5%;
-          border-radius: 7px;
-          padding: 12px 30px 12px 45px;
+.TexInp{
+        position: relative;
+          width: 70vw;
+          height: 7vh;
+          margin-top: 17vh;
+          margin-left: 4.5vw;
+          border-radius: 1.1vh;
+          padding: 1.9vh 19vw 1.9vh 3.1vw;
           background-color: rgba(0, 0, 0, 0.541);
           border: none;
           color: #fff;
 }
 
+
+.FormAdd{
+  width: 51.9vw;
+}
+
 .RplayForm input::placeholder{
     color: #b1b1b1;
-	font-size: 16px;
+	font-size: 1.15vw;
 }
 
 .RplayForm input[type=submit]{
-    width: 11%;
-    padding: 9px 30px 11px 25px;
-    margin-left: 1%;
-    border-radius: 9px;
+  position: relative;
+    width: 9.7vw;
+    padding: 1.5vh 3vw 1.7vh 3vw;
+    margin-left: 1vw;
+    border-radius: 1.5vh;
     background-color: #19839A;
     border: none;
     color: #fff;
+    font-size: 1vw;
 }
 
 
@@ -291,94 +330,93 @@ cursor: pointer;
 
 .overlay {
 	
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    transition: opacity 500ms;
-    visibility: hidden;
-    opacity: 0;
-  }
-  .overlay:target {
-	
-    visibility: visible;
-    opacity: 1;
-  }
-  
-  .popup {
-	
-    margin: 50px auto;
-    padding: 31px;
-    background-color:#292F45;
-	
-    border-radius: 9px;
-    width: 34%;
-	height: 46%;
-    position: relative;
-    transition: all 5s ease-in-out;
-  }
-  
-  .popup h2 {
-    margin-top: 15px;
-    color: #877DDC;
-	margin-left: 31%;
-	font-size: 31px;
-	font-style: bold;
-  }
-  .popup .close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    transition: all 200ms;
-    font-size: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #fff;
-  }
-  .popup .close:hover {
-    color: red;
-  }
-  .popup .info-Containerx {
-    overflow: auto;
-	padding-bottom: 50px;
-  }
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+
+  margin: 3.5vw auto;
+  padding: 1.5vw;
+  background-color:#292F45;
+  border-radius: 1.5vh;
+  width: 33.9vw;
+height: 45.9vh;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 3.9vh;
+  color: #877DDC;
+margin-left: 9.5vw;
+font-size: 2.2vw;
+font-style: bold;
+}
+.popup .close {
+  position: absolute;
+  top: 3vh;
+  right: 1.99vw;
+  transition: all 200ms;
+  font-size: 2.15vw;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+}
+.popup .close:hover {
+  color: red;
+}
+.popup .info-Containerx {
+  overflow: auto;
+padding-bottom: 5vh;
+}
 
 .info-Containerx input[type=text]{
-    width: 375px;
-	border-radius:2px;
-	border: none;
-	margin-left: 6%;
-	margin-top: 43px;
-	font-size:23px;
-	padding: 3px 50px 3px 15px;
-	color: #000;
+  width: 26.39vw;
+border-radius: 0.3vh;
+border: none;
+margin-left: 2.15vw;
+margin-top: 6.5vh;
+font-size: 1.59vw;
+padding: 0.5vh 5vw 0.55vh 1vw;
+color: #000;
 }
 
 
 .info-Containerx input[type=submit] {
-	font-size: 18px;
-    background-color: #7466F1;
-	width: 377px;
-    padding: 8px 19px 3px 19px;
-    color: #fff;	
-	border-radius:2px;
-	border: none;
-	margin-top: 20px;
-	margin-left: 6%;
-	text-align: center;
- 
+font-size: 1.23vw;
+  background-color: #7466F1;
+width: 26.39vw;
+  padding: 1vh 5vw 1vh 5vw;
+  color: #fff;	
+border-radius: 0.3vh;
+border: none;
+margin-top: 3.3vh;
+margin-left: 2.15vw;
+text-align: center;
+
 }
 .info-Containerx input::placeholder{
-	color: #646369;
-	font-size: 16px;
+color: #646369;
+font-size: 1.17vw;
 }
-  @media screen and (max-width: 600px){
-    .box{
-      width: 70%;
-    }
-    .popup{
-      width: 70%;
-    }
+@media screen and (max-width: 400px){
+  .box{
+    width: 70%;
   }
+  .popup{
+    width: 70%;
+  }
+}

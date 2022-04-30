@@ -1,25 +1,24 @@
 $(document).ready(function()
 { 
-	/*to open menu in course */
-	$(".sub-btn").click(function()
-	{
+  /*to open menu in course */
+  $(".sub-btn").click(function()
+  {
                 $(".sub-btn").next('.sub-menu').slideToggle();
                 $(".sub-btn").find('.dropdown').toggleClass('rotate');
     });
 
     $(".sub-btnFor-member").click(function()
-	{
+  {
                 $(".sub-btnFor-member").next('.sub-menuFor-Member').slideToggle();
                 $(".sub-btnFor-member").find('.dropdown').toggleClass('rotate');
+
     });
     $(".sub-btnFor-addmember").click(function()
     {
                 $(".sub-btnFor-addmember").next('.sub-menuFor-addMember').slideToggle();
                 $(".sub-btnFor-addmember").find('.dropdown').toggleClass('rotate');
-                
     });
-
-	/*to open slide bar  */
+  /*to open slide bar  */
     $('.menu-icons').click(function()
     {
         $('.side-bar').addClass('active');
@@ -27,20 +26,13 @@ $(document).ready(function()
         $('.navbar').addClass('navbaraddclass');
         $('.search_textfield').addClass('search_textfieldaddedclass');
         $('.img-container').addClass('img-containeraddclass');
-        $('.info-Container').addClass('info');
         $('.change-img').addClass('change-imgaddedclass');
-         
         $('.menu-icons').css("visibility","hidden");
-        $('.logout').addClass('logoutaddclass');
-        $('.add').addClass('addclass');
-        $('.closetable').addClass('opentable');
-        $('.closetbody').addClass('opentbody');
-        $('.search_textfield').addClass('addsearch_textfield');
-      
+     
        
     });
 
-	/*to close slide bar */
+  /*to close slide bar */
     $('.close-btn').click(function()
     {
         $('.side-bar').removeClass('active');
@@ -48,18 +40,18 @@ $(document).ready(function()
         $('.navbar').removeClass('navbaraddclass');
         $('.search_textfield').removeClass('search_textfieldaddedclass');
          $('.img-container').removeClass('img-containeraddclass');
-         $('.info-Container').removeClass('info');
           $('.change-img').removeClass('change-imgaddedclass');
         $('.menu-icons').css("visibility","visible")
-        $('.quary').removeClass('quaryaddedClass');
-        $('.logout').removeClass('logoutaddclass');
-                $('.add').removeClass('addclass');
-        $('.closetable').removeClass('opentable');
-        $('.closetbody').removeClass('opentbody');
-        $('.search_textfield').removeClass('addsearch_textfield');
     });
-    
-    /*to make the text field able to edit it */
-    
 
- });
+     $('.classdelete').on('click', function(){
+        if (confirm('Are You Sure To Delete This Row'))
+        {    
+        $(this).closest('tr').remove();
+        }
+        else
+        {
+            return false ;
+        }
+      });
+});

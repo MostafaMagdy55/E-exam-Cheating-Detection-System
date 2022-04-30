@@ -27,6 +27,12 @@ $(document).ready(function()
         $('.img-container').addClass('img-containeraddclass');
         $('.change-img').addClass('change-imgaddedclass');
         $('.menu-icons').css("visibility","hidden");
+        $('.logout').addClass('logoutaddclass');
+        $('.add').addClass('addclass');
+        $('.closetable').addClass('opentable');
+        $('.closetbody').addClass('opentbody');
+        $('.search_textfield').addClass('addsearch_textfield');
+
        
     });
 
@@ -39,7 +45,15 @@ $(document).ready(function()
         $('.search_textfield').removeClass('search_textfieldaddedclass');
          $('.img-container').removeClass('img-containeraddclass');
           $('.change-img').removeClass('change-imgaddedclass');
-        $('.menu-icons').css("visibility","visible")
+        $('.menu-icons').css("visibility","visible");
+        $('.logout').removeClass('logoutaddclass');
+        $('.add').removeClass('addclass');
+        $('.closetable').removeClass('opentable');
+        $('.closetbody').removeClass('opentbody');
+        $('.search_textfield').removeClass('addsearch_textfield');
+
+
+
     });
 
    $('.Delete').on('click', function(){

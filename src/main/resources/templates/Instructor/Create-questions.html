@@ -1,160 +1,3 @@
-<!--<!DOCTYPE html>-->
-<!--<html xmlns:th="http://www.thymeleaf.org">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>Title</title>-->
-<!--    <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">-->
-<!--    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
-<!--    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>-->
-<!--</head>-->
-<!--<body>-->
-
-<!--<form method="post" th:action="@{/instructor/save-question}" th:Object="${question}">-->
-<!--    <input type="hidden" th:field="*{id}"/>-->
-<!--    <fieldset class="form-group">-->
-<!--        <div class="row">-->
-<!--            <legend class="col-form-label col-sm-2 pt-0">Question Type</legend>-->
-<!--            <div class="col-sm-10">-->
-<!--                <div class="form-check">-->
-<!--                    <input class="form-check-input" type="radio" name="gridRadios"   th:field="*{type}" th:value="1" checked>-->
-<!--                    <label class="form-check-label" >-->
-<!--                      True-False-->
-<!--                    </label>-->
-<!--                </div>-->
-<!--                <div class="form-check">-->
-<!--                    <input class="form-check-input" type="radio" name="gridRadios"   th:field="*{type}" th:value="0">-->
-<!--                    <label class="form-check-label" >-->
-<!--                       Mutible Chosice-->
-<!--                    </label>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </fieldset>-->
-<!--    <div class="form-group row">-->
-<!--        <div class="col-sm-2">Eye Movement</div>-->
-<!--        <div class="col-sm-10">-->
-<!--            <div class="form-check">-->
-<!--                <input class="form-check-input" type="checkbox" th:value="1">-->
-<!--                <label class="form-check-label" >-->
-<!--                    Eye Movement-->
-<!--                </label>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-
-<!--    <div class="form-group row">-->
-<!--        <label  class="col-sm-2 col-form-label">TIME</label>-->
-<!--        <div class="col-sm-10">-->
-<!--            <input type="number" th:field="*{Time}" class="form-control"  placeholder="TIME">-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="form-group row">-->
-<!--        <label  class="col-sm-2 col-form-label">questionDetail</label>-->
-<!--        <div class="col-sm-10">-->
-<!--            <input type="text" th:field="*{questionHead}" class="form-control"  placeholder="questionDetail">-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="form-group row">-->
-
-<!--        <label class="col-sm-2 col-form-label"> option A</label>-->
-<!--        <div class="col-sm-10">-->
-<!--            <input type="text" th:field="*{optionA}" class="form-control"  placeholder="option A">-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="form-group row">-->
-<!--        <label  class="col-sm-2 col-form-label">option B</label>-->
-<!--        <div class="col-sm-10">-->
-<!--            <input type="text" th:field="*{optionB}"  class="form-control" placeholder="option B">-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="form-group row">-->
-<!--        <label  class="col-sm-2 col-form-label">option C</label>-->
-<!--        <div class="col-sm-10">-->
-<!--            <input type="text" th:field="*{optionC}"  class="form-control" placeholder="option C">-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="form-group row">-->
-<!--        <label  class="col-sm-2 col-form-label">option D</label>-->
-<!--        <div class="col-sm-10">-->
-<!--            <input type="text" th:field="*{optionD}"  class="form-control" placeholder="option D">-->
-<!--        </div>-->
-<!--    </div>-->
-
-<!--    <div class="row">-->
-<!--            <div class="col-sm-10">-->
-<!--                <div class="form-check">-->
-<!--                    <input class="form-check-input" type="radio" name="gridRadios1"   th:field="*{CorrectAnswerBool}" th:value="true"  >-->
-<!--                    <label class="form-check-label" >-->
-<!--                        True-->
-<!--                    </label>-->
-<!--                </div>-->
-<!--                <div class="form-check">-->
-<!--                    <input class="form-check-input" type="radio" name="gridRadios1"   th:field="*{CorrectAnswerBool}" th:value="false">-->
-<!--                    <label class="form-check-label" >-->
-<!--                       flase-->
-<!--                    </label>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--    </div>-->
-
-
-
-
-
-
-
-<!--    <div class="form-group row">-->
-<!--        <label class="col-sm-2 col-form-label">CorrectAnswer</label>-->
-<!--        <div class="col-sm-10">-->
-<!--            <select   class="form-control"  th:field="*{correctAnswer}" >-->
-<!--&lt;!&ndash;                <option value=" " th:disabled="disabled" th:selected="selected">&ndash;&gt;-->
-<!--               <option   value=" ">  select Correct Answer </option>-->
-<!--                <option th:text="A" th:value="A">   </option>-->
-<!--                <option th:text="B" th:value="B">   </option>-->
-<!--                <option th:text="C" th:value="C">   </option>-->
-<!--                <option th:text="D" th:value="D">   </option>-->
-<!--                </option>-->
-<!--            </select>-->
-<!--        </div>-->
-<!--    </div>-->
-
-<!--&lt;!&ndash;    <div class="form-group row">&ndash;&gt;-->
-<!--&lt;!&ndash;        <label class="col-sm-2 col-form-label">CorrectAnswer</label>&ndash;&gt;-->
-<!--&lt;!&ndash;        <div class="col-sm-10">&ndash;&gt;-->
-<!--&lt;!&ndash;            <select   class="form-control"  th:field="*{correctAnswer}" >&ndash;&gt;-->
-<!--&lt;!&ndash;                <option   value=" ">  select Correct Answer </option>&ndash;&gt;-->
-<!--&lt;!&ndash;                <option th:text="true" th:value="true">   </option>&ndash;&gt;-->
-<!--&lt;!&ndash;                <option th:text="flase" th:value="false">   </option>&ndash;&gt;-->
-
-<!--&lt;!&ndash;                </option>&ndash;&gt;-->
-<!--&lt;!&ndash;            </select>&ndash;&gt;-->
-<!--&lt;!&ndash;        </div>&ndash;&gt;-->
-<!--&lt;!&ndash;    </div>&ndash;&gt;-->
-<!--    -->
-
-<!--    <div class="form-group row">-->
-<!--        <div class="col-sm-10">-->
-<!--            <button type="submit" class="btn btn-primary">submit</button>-->
-<!--            <div th:if="${QurstionId!=0}">-->
-<!--                <a th:href="@{'/instructor/edit-question/'}">edit</a>-->
-<!--           </div>-->
-<!--&lt;!&ndash;            <a th:href="@{'/instructor/edit-question/'}">edit</a>&ndash;&gt;-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</form>-->
-<!--</body>-->
-<!--</html>-->
-
-
-
-
-
-
-
-
-
-
-
 
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
@@ -186,6 +29,7 @@
                 <label >Eye Movement</label>
             </div>
             <input type="number"  class="timeallowed" name="timeallowed" placeholder="Eye Movement Time Allowed" th:field="*{TimeForCheating}">
+            <input type="number" class="timeofquestion" name="timeofque" placeholder="Question Time ( for ex :15 min )" th:field="*{QuestionTime}">
             <div class="qusetion-itself">
                 <input type="text" class="Question" name="Question" placeholder="Question Details" th:field="*{questionHead}">
                 <input type="text" class="correctanswer" name="correctanswer" placeholder="Option A" th:field="*{optionA}">
@@ -213,7 +57,7 @@
                 </div>
             </DIV>
             <div class="button">
-<!--                <button type="submit" class="btn btn-primary">submit</button>-->
+                <!--                <button type="submit" class="btn btn-primary">submit</button>-->
                 <button  id="go-to-next" type="submit">Go to Next Question <i class="fas fa-arrow-right classicons"></i></button>
             </div>
 

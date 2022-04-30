@@ -1,24 +1,35 @@
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Course result</title>
+    <link rel="stylesheet" type="text/css" href="\file\instructor\bootstrap-3.4.1-dist\css\bootstrap.css">
+    <link rel="stylesheet" href="\file\instructor\fontawesome-free\css\all.min.css">
+    <link rel="stylesheet" type="text/css" href="\file\instructor\CSS\courseresult.css">
 </head>
 <body>
+<div class="bg-Background"></div>
+<!--nav bar-->
+<div th:replace="Instructor/base :: body"></div>
+<!---end nav bar -->
 
-<div th:each="exam:${instructor.getExams()}">
-    <br>
-    <div th:each="result:${exam.getResults()}">
-        <span th:text="${result.getExam().getCourse().getCourseName()}"></span>
-        <br>
-        <span th:text="${result.getStudent().getName()}"></span>
-        <br>
-        <span th:text="${result.getExamResult()}"></span>/ <span th:text="${result.getNumOfQuestion()}"></span>
-        <br>
+<table>
+    <thead>
+    <th>Course Name</th>
+    <th>Show Result</th>
+    </thead>
+    <tbody>
+    <div th:each="exam:${instructor.getExams()}">
+        <tr>
+            <td th:text="${exam.getCourse().getCourseName()}"></td>
+            <td><a th:href="@{'/instructor/exam_result/'+${exam.getId()}}" th:text="Result"></a></td>
+        </tr>
     </div>
-<!--    <a th:href="@{'/instructor/evaluate-exam/'+${exam.getId()}}">evaluate</a>-->
-</div>
+    </tbody>
+</table>
 
-
+<script type="text/javascript" src="\file\instructor\Jquery\jquery-3.6.0.min.js"></script>
+<script src="\file\instructor\Jquery\jquery-For-home-page.js"></script>
+<script type="text/javascript" src="\file\instructor\bootstrap-3.4.1-dist\js\bootstrap.min.js"></script>
 </body>
 </html>

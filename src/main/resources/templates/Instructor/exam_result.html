@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grade</title>
+    <link rel="stylesheet" type="text/css" href="\file\instructor\bootstrap-3.4.1-dist\css\bootstrap.css">
+    <link rel="stylesheet" href="\file\instructor\fontawesome-free\css\all.min.css">
+    <link rel="stylesheet" type="text/css" href="\file\instructor\CSS\result.css">
+</head>
+<body>
+<div class="bg-Background"></div>
+<!--nav bar-->
+<div th:replace="Instructor/base :: body"></div>
+<!---end nav bar -->
+
+<table>
+    <thead>
+    <th>Student Name</th>
+<!--    <th>Course Name</th>-->
+    <th>Grades</th>
+    <th>fired</th>
+    <th>Noise</th>
+    <th>Changing Identity</th>
+    <th>Eye Movement</th>
+    <th>Speaking</th>
+    </thead>
+    <tbody>
+    <div th:each="student:${exam.getStudents()}">
+        <div th:each="detail:${exam.getStudents()}">
+        <tr>
+            <td th:text="${student.getName()}">manaar aitallah</td>
+            <td  th:text="${student.getName()}">12</td>
+            <td>yes</td>
+            <td>3</td>
+            <td>1</td>
+            <td>2</td>
+            <td>1</td>
+        </tr>
+    </div>
+    <tr>
+        <td>Student Name</td>
+        <td>Co</td>
+        <td>12</td>
+        <td>yes</td>
+        <td>3</td>
+        <td>1</td>
+        <td>2</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Student Name</td>
+        <td>Co</td>
+        <td>12</td>
+        <td>yes</td>
+        <td>3</td>
+        <td>1</td>
+        <td>2</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Student Name</td>
+        <td>Co</td>
+        <td>12</td>
+        <td>yes</td>
+        <td>3</td>
+        <td>1</td>
+        <td>2</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Student Name</td>
+        <td>Co</td>
+        <td>12</td>
+        <td>yes</td>
+        <td>3</td>
+        <td>1</td>
+        <td>2</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Student Name</td>
+        <td>Co</td>
+        <td>12</td>
+        <td>yes</td>
+        <td>3</td>
+        <td>1</td>
+        <td>2</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Student Name</td>
+        <td>Co</td>
+        <td>12</td>
+        <td>yes</td>
+        <td>3</td>
+        <td>1</td>
+        <td>2</td>
+        <td>1</td>
+    </tr>
+    </tbody>
+</table>
+
+<script type="text/javascript" src="\file\instructor\Jquery\jquery-3.6.0.min.js"></script>
+<script src="\file\instructor\Jquery\jquery-For-home-page.js"></script>
+<script type="text/javascript" src="\file\instructor\bootstrap-3.4.1-dist\js\bootstrap.min.js"></script>
+</body>
+</html>

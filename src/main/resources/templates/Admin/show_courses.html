@@ -2,8 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>the Cousres</title>
-    <div th:replace="Admin/base :: header"></div>
-    <link rel="stylesheet" type="text/css" href="\file\admin\CSS\Edit-Cousre-css.css">
+    <link rel="stylesheet" type="text/css" href="\file\admin\bootstrap-3.4.1-dist\css\bootstrap.css">
+    <link rel="stylesheet" href="\file\admin\fontawesome-free\css\all.min.css">
+    <link rel="stylesheet" type="text/css" href="\file\admin\CSS\Delete-Cousre-css.css">
 </head>
 <body>
 <!--sliderbar-->
@@ -11,46 +12,46 @@
 <!--end sliderbar-->
 
 <!--nav bar-->
-<!--<div th:replace="Admin/base :: navbar"></div>-->
 <div class="navbar" id="contant">
-    <form th:action="@{/logout}" method="post">
+    <form>
         <!--forms-->
         <div class="forms">
             <div class="menu-icons">
                 <i class="fas fa-bars"></i>
             </div>
-            <input type="search" class="search_textfield" placeholder="Search">
-            <input type="submit" value="Logout" id="Logout">
+            <form>
+                <input type="search" class="search_textfield" placeholder="Search">
+            </form>
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="Logout" id="Logout" class="logout">
+            </form>
         </div>
     </form>
 </div>
-
 <!--end nav bar-->
 
 
 <!--center div -->
 <div class="the-center-div">
-
-
-  <h3 class="update"> Cousres</h3>
-  <table>
-    <thead>
-    <tr>
-        <th>Course ID</th>
-        <th>Course Name</th>
-<!--        <th>Number of Exam</th>-->
-        <th>Delete</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="course,itr: ${CoursesList}">
-        <td><input type="text" class="ID" name="id" th:value="${course.id}" disabled></td>
-        <td><input type="text" class="Course-name"  name="Course-name"  th:value="${course.CourseName}" disabled></td>
-<!--        <td><input type="text" class="Instrucor-name" name="Instrucor-name"  th:value="${course.getInstructor().getName()}" disabled></td>-->
-      <td><a th:href="@{'/admin/delete-course/'+${course.id}}" class="Delete">Delete</a></td>
-    </tr>
-    </tbody>
-  </table>
+    <h3 class="update"> Courses</h3>
+    <table class="closetable">
+        <thead>
+        <tr>
+            <th>Course ID</th>
+            <th>Course Name</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody class="closetbody">
+        <div th:each="course,itr: ${CoursesList}">
+            <tr>
+                <td><input type="text" class="ID" name="id" th:value="${course.id}" disabled></td>
+                <td><input type="text" class="Course-name" name="Course-name" th:value="${course.CourseName}" disabled></td>
+                <td><a th:href="@{'/admin/delete-course/'+${course.id}}" class="Delete">Delete</a></td>
+            </tr>
+        </div>
+        </tbody>
+    </table>
 </div>
 
 <!--POPUP-->
@@ -59,7 +60,8 @@
 
 <!--footer-->
 <script type="text/javascript" src="\file\admin\Jquery\jquery-3.6.0.min.js"></script>
-<script src="\file\admin\Jquery\jquery-For-Edit-Course.js"></script>
+<script src="\file\admin\Jquery\jquery-For-Delete-Course.js"></script>
 <script type="text/javascript" src="\file\admin\bootstrap-3.4.1-dist\js\bootstrap.min.js"></script>
+
 </body>
 </html>

@@ -144,12 +144,12 @@ vertical-align: middle;
 }
 th:first-child
 {
-  border-radius: 10px 0px 0px 0px;
+  border-radius: 1vw 0px 0px 0px;
 
 }
 th:last-child
 {
-  border-radius: 0px 10px 0px 0px;
+  border-radius: 0px 1vw 0px 0px;
 }
 tbody
 {  
@@ -157,7 +157,7 @@ tbody
   overflow: auto;
   height: 47vh;
   display: block;
-  border-radius: 0px 10px 10px 10px;
+  border-radius: 0px 1vw 1vw 1vw;
 }
 
 thead 

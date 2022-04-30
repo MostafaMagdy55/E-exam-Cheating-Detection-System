@@ -48,15 +48,15 @@ public class LoginController {
         UserPrincipal user = (UserPrincipal)auth.getPrincipal();
         int userId = user.getId();
         if(role.contains("ROLE_ADMIN")){
-            response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/admin/index"));
+            response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/admin/dashbord"));
         }
         else if(role.contains("ROLE_INSTRUCTOR")) {
-            response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/instructor/index/"));
+            response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/instructor/profile/"));
         }
         else
         {
 
-            response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/student/index/"+userId));
+            response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/student/profile/"+userId));
         }
     }
 

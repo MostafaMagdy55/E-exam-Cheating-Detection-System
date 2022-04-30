@@ -2,8 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>ProblemsPage</title>
-    <div th:replace="Admin/base :: header"></div>
-    <link rel="stylesheet" type="text/css" href="\file\admin\CSS\problems.css">
+
+    <link rel="stylesheet" type="text/css" href="\file\admin\bootstrap-3.4.1-dist\css\bootstrap.css">
+    <link rel="stylesheet" href="\file\admin\fontawesome-free\css\all.min.css">
+    <link rel="stylesheet" type="text/css" href="\file\admin\CSS/problems.css">
 </head>
 <body>
 <!--sliderbar-->
@@ -26,18 +28,6 @@
         <tr>
             <td><a name="Course-name" th:href="@{'/admin/show_message/'+${message.id}}"  th:text="${message.getStudent().getName()} +':'+ ${message.getTitle()}"></a></td>
         </tr>
-<!--        <tr>-->
-<!--            <td><a name="Course-name" href="#">Bulk action : what is the problem ?</a></td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <td><a name="Course-name" href="#">Bulk action : what is the problem ?</a></td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <td><a name="Course-name" href="#">Bulk action : what is the problem ?</a></td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <td><a name="Course-name" href="#">Bulk action : what is the problem ?</a></td>-->
-<!--        </tr>-->
         </div>
         </tbody>
     </table>
@@ -51,5 +41,69 @@
 <script type="text/javascript" src="\file\admin\Jquery\jquery-3.6.0.min.js"></script>
 <script src="\file\admin\Jquery\Jquery-Problems.js"></script>
 <script type="text/javascript" src="\file\admin\bootstrap-3.4.1-dist\js\bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ProblemsPage</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap-3.4.1-dist\css\bootstrap.css">
+    <link rel="stylesheet" href="fontawesome-free\css\all.min.css">
+    <link rel="stylesheet" type="text/css" href="CSS/problems.css">
+</head>
+<body>
+<!--center div -->
+<div class="the-center-div">
+    <h3 class="update">Problems</h3>
+    <table>
+        <tbody class="tableQue">
+        <tr>
+            <td><a name="Course-name" href="ReadProb.html">Bulk action : what is the problem ?</a></td>
+        </tr>
+        <tr>
+            <td><a name="Course-name" href="ReadProb.html">Bulk action : what is the problem ?</a></td>
+        </tr>
+        <tr>
+            <td><a name="Course-name" href="#">Bulk action : what is the problem ?</a></td>
+        </tr>
+        <tr>
+            <td><a name="Course-name" href="#">Bulk action : what is the problem ?</a></td>
+        </tr>
+        <tr>
+            <td><a name="Course-name" href="#">Bulk action : what is the problem ?</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<!--POPUP-->
+<div id="popup1" class="overlay">
+    <div class="popup">
+        <h2>Add Course</h2>
+        <a class="close" href="#">&times;</a>
+
+        <div class="info-Containerx">
+            <form>
+                <div>
+
+                    <input id="coursename" type="text"  placeholder="CourseName" required>
+                </div>
+                <input type="submit" value="Add">
+
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="Jquery\jquery-3.6.0.min.js"></script>
+<script src="Jquery/Jquery-Problems.js"></script>
+<script type="text/javascript" src="bootstrap-3.4.1-dist\js\bootstrap.min.js"></script>
 </body>
 </html>

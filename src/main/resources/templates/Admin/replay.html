@@ -31,8 +31,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Read Problem </title>
-    <div th:replace="Admin/base :: header"></div>
-    <link rel="stylesheet" type="text/css" href="\file\admin\CSS\ReadProb.css">
+    <link rel="stylesheet" type="text/css" href="\file\admin\bootstrap-3.4.1-dist\css\bootstrap.css">
+    <link rel="stylesheet" href="\file\admin\fontawesome-free\css\all.min.css">
+    <link rel="stylesheet" type="text/css" href="\file\admin\CSS/ReadProb.css">
+
 
 </head>
 <body>
@@ -65,7 +67,7 @@
     <div class="FormChat">
         <form class="RplayForm" th:action="@{/admin/send_replay/__${message.getId()}__}" th:object="${replay}">
             <input type="hidden" th:field="*{id}"/>
-            <input type="text" th:field="*{content}" placeholder="replay"/>
+            <input class="TexInp" type="text" th:field="*{content}" placeholder="replay"/>
             <input type="submit" value="Replay">
         </form>
     </div>
@@ -73,12 +75,45 @@
 </div>
 
 
+
+
+<!--<div class="the-center-div">-->
+<!--    <div class="Massageprob">-->
+<!--        <h3>Title</h3>-->
+<!--        <p>Problem is profile..., problem in navbar ,Problem is profile..., problem in navbar-->
+<!--            i have some issues in my exam...,Problem is profile..., problem in navbar ,Problem is profile...,-->
+<!--            problem in navbar,  i have some issues in my exam...-->
+<!--        </p>-->
+<!--    </div>-->
+
+<!--    <div class="ReplayMessage">-->
+<!--        <p>solution  profile..., solution in navbar ,solution is profile..., solution in navbar-->
+<!--            i have some issues in my exam...,solution is profile..., solution in navbar ,solution is profile...,-->
+<!--            solution in navbar,  i have some issues in my exam...-->
+<!--        </p>-->
+<!--    </div>-->
+
+<!--    <div class="FormChat">-->
+<!--        <form class="RplayForm" action="#">-->
+<!--            <input class="TexInp" type="text" placeholder="Write answer...">-->
+<!--            <input type="submit" value="Replay">-->
+<!--        </form>-->
+<!--    </div>-->
+
+<!--</div>-->
+
+
+
+
+
 <!--POPUP-->
 <div th:replace="Admin/base :: POPUP"></div>
 
 
 <script type="text/javascript" src="\file\admin\Jquery\jquery-3.6.0.min.js"></script>
-<script src="\file\admin\Jquery\jquery.js"></script>
+<script src="\file\admin\Jquery/ReadPro.js"></script>
 <script type="text/javascript" src="\file\admin\bootstrap-3.4.1-dist\js\bootstrap.min.js"></script>
+
+
 </body>
 </html>

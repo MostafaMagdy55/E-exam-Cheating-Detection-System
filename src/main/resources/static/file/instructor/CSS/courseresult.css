@@ -145,92 +145,111 @@ body, html {
   
   input:focus{outline:0;}
   
-  table
-  {
-    position: absolute;	
-    border-collapse: collapse;
-    text-align:center;
-    width: 95vw;
-    margin-left:2vw;
-    margin-top:-74vh;
-    background:#97A7E2;
-    overflow: scroll;
-    border-radius: 1vw 1vw 1vw 1vw;
   
-  
-  }
+table
+{
+  position: absolute;	
+  border-collapse: collapse;
+  width: 50vw;
+  margin-left:6vw;
+  margin-top:-72vh;
+  background-color: #CBCBCB;
+  overflow: scroll;
+  border-radius: 10px 10px 10px 10px;
 
-  tbody
-  {  
-    width: 95vw;
-    overflow: auto;
-    height: 50vh;
-    display: block;
-    border-radius: 0px 1vw 1vw 1vw;
-  }
-table thead th:nth-of-type(2)
+}
+tr:nth-child(even)
+{
+	background-color:#436E8E;;
+	color: rgb(0, 0, 0);
+	border:none;
+	font-size: 1.3vw;
+  text-align: center;
+  vertical-align: middle;
+  word-wrap: break-word;
+
+}
+
+
+tr:nth-child(odd)
+{
+
+	color: rgb(0, 0, 0);
+	border:none;
+	background:#CBCBCB;
+	font-size: 1.3vw;
+  text-align: center;
+  vertical-align: middle;
+}
+
+table thead th:nth-of-type(1)
 {
   padding-left: 3vw;
 }
-table thead th:nth-of-type(3)
+
+table tbody tr td:nth-of-type(2)
 {
-  padding-left: 6vw;
-}
-table thead th:nth-of-type(4)
-{
-  padding-left: 4vw;
-}
-table thead th:nth-of-type(5)
-{
-  padding-left: 4vw;
+    padding-left: 6vw;
 }
 
-  tr:nth-child(even)
-  {
-      background-color:#436E8E;
-      color: rgb(0, 0, 0);
-      border:none;
-      font-size: 1vw;
+table tbody tr td a
+{
+    color: #000;
+    cursor: pointer;
+    text-decoration: none;
+}
 
-    }
+table tbody tr td a:hover
+{
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+    text-decoration: none;
+}
+td
+{
   
-  tr:nth-child(odd)
-  {
-      color: rgb(0, 0, 0);
-      border:none;
-      background:#97A7E2;
-      font-size: 1vw;
-  
-  }
-  td, th
-  {
-    
-    padding: 1vh;
-    width: 40vw;
-    line-height: 8vh;
-    font-weight: 600;
-  }
-  th:first-child
-  {
-    border-radius: 1vw 0px 0px 0px;
-    padding-left: 3vw;
-  
-  }
-  th:last-child
-  {
-    border-radius: 0px 1vw 0px 0px;
-  }
- 
-  
-  thead 
-  {
-    display: block;
-  }
-  th
-  {
-    border-bottom: 0;
-    color: #fff;
-    font-size:1.2vw;
-    padding:1.9vh; 
-    background-color: #436E8E;
-  }  
+  width: 60vw;
+  line-height: 8vh;
+  font-weight: 600;
+  padding: 1vw;
+
+}
+th{
+width: 60vw;
+height: 10vh;
+text-align: center;
+vertical-align: middle;
+
+
+}
+th:first-child
+{
+  border-radius: 1vw 0px 0px 0px;
+
+}
+th:last-child
+{
+  border-radius: 0px 1vw 0px 0px;
+}
+tbody
+{  
+  width: 50vw;
+  overflow: auto;
+  height: 47vh;
+  display: block;
+  border-radius: 0px 1vw 1vw 1vw;
+}
+
+thead 
+{
+  display: block;
+}
+th
+{ 
+  text-align:center;
+  border-bottom: 0;
+  color: #fff;
+  font-size:1.6vw;
+  padding:5vh; 
+  background-color: #436E8E;;
+}

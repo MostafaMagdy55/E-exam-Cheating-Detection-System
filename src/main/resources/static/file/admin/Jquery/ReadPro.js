@@ -30,11 +30,10 @@ $(document).ready(function()
         
         $('.menu-icons').css("visibility","hidden");
         $('.logout').addClass('logoutaddclass');
-        $('.add').addClass('addclass');
-        $('.closetable').addClass('opentable');
-        $('.closetbody').addClass('opentbody');
-        $('.search_textfield').addClass('addsearch_textfield');
         $('.info-Container').addClass('info-Containeraddedclass');
+        $('.TexInp').addClass('FormAdd');
+        $('.ReplayMessage').addClass('ReplayAdd');
+        $('.Massageprob').addClass('MassageAdd');
        
     });
 
@@ -49,10 +48,13 @@ $(document).ready(function()
         $('.change-img').removeClass('change-imgaddedclass');
         $('.menu-icons').css("visibility","visible");
         $('.logout').removeClass('logoutaddclass');
-$('.closetable').removeClass('opentable');
-$('.closetbody').removeClass('opentbody');
-$('.search_textfield').removeClass('addsearch_textfield');
-        $('.info-Container').removeClass('info-Containeraddedclass');    });
+        $('.info-Container').removeClass('info-Containeraddedclass');
+        $('.TexInp').removeClass('FormAdd');
+        $('.ReplayMessage').removeClass('ReplayAdd');
+        $('.Massageprob').removeClass('MassageAdd');
+
+
+        });
     
     /*to make the text field able to edit it */
     $('.pen-name').click(function()

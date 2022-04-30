@@ -19,13 +19,14 @@ body{
 	opacity: .7;
 	transition: 0.7s ease-out;	
 
-}*/
+}
 
 .nav {
     background-color: #2C2C2C;
     list-style-type: none;
     margin: -8px;
     padding: 0;
+    margin-top: -9px;
   }
   
   .nav li {
@@ -49,12 +50,74 @@ body{
 .nav li:hover a {
 	color: #89D5E8;
   
-}
+}*/
 
 .nav .Clicked{
     color: #89D5E8;
     font: bold 15px/20px sans-serif;
 }
+
+html , body 
+{
+	height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+.nav {
+  background-color: #2C2C2C;
+  list-style-type: none;
+  padding: 0vw;
+}
+
+.nav li {
+  display: inline-block;
+  padding: 1.5vw;
+  margin-left: 4vw;  
+}
+
+.nav a{
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+  text-align: left;
+  font-size: 1.2vw;
+  transition: all .25s ease;
+  font-weight: 500;
+
+ 
+}
+
+.nav li:hover a {
+color: #89D5E8;
+
+}
+
+.nav .Clicked{
+  color: #89D5E8;
+  font-size: 1.3vw;
+  font-weight: 500;
+}
+
+.logout
+{
+  border: none;
+  background-color: rgb(255,255,255); /* Fallback color */
+  background-color: #2C2C2C;
+  color: #FFF;
+  margin-left: 1.3vw;
+  margin-top: 1vh;
+  font-size: 1.2vw;
+  font-weight: 533;
+  cursor: pointer;
+}
+.nav li:hover input {
+  color: #89D5E8;
+  
+  }
 
 
 
@@ -62,47 +125,47 @@ body{
 /*div*/
 .MassForm{
     position: relative;
-    margin-top: 5%;
+    margin-top: 11vh;
     transform: translate(8%);
     background-color: rgba(0, 0, 0, 0.571);
-    width: 85%;
-    height: 73%;
+    width: 84vw;
+    height: 73vh;
+    padding-top: 1.3vh;
 }
 
 
 /*Form*/
 .MassForm input[type=text]{
         transform: translate(10%);
-        width: 77%;
-		border-radius: 7px;
-		margin-top: 4%;
+        width: 65vw;
+		border-radius: 1vh;
+		margin-top: 5vh;
 		color: #000;
-		font-size: small;
-		padding: 13px 20px 15px 51px;
+		padding: 2vh 1.9vw 1.9vh 3vw;
         border: none;
-        font-size: medium;
+        font-size: 2.7vh;
 }
 
 textarea{
     transform: translate(10%);
-        width: 77%;
-    border-radius: 7px;
+        width: 65vw;
+    border-radius: 1vh;
 	border: none;
-    padding: 15px 20px 51px 51px;
-    font-size: large;
-    margin-top: 2%;
+    padding: 3vh 1.9vw 7vh 3vw;
+    font-size: 2.5vh;
+    margin-top: 3.9vh;
 }
 
 
 .MassForm input[type="submit"]{
     transform: translate(70%);
-    margin-left: 35%;
-       width:12%;
-    border-radius: 5px;
+    margin-left: 31vw;
+       width: 9.7vw;
+    border-radius: 1vh;
 	border: none;
-    padding: 12px 25px 12px 25px;
-    font-size: small;
-    margin-top: 2%;
+    padding: 2vh 1.5vw 1.9vh 1.5vw;
+    font-size: 2.5vh;
+    margin-top: 3.3vh;
     background-color: #2AB4D5;
-    margin-bottom: 2%;
+    margin-bottom: 1.9vh;
 }

@@ -27,8 +27,9 @@ $(document).ready(function()
         $('.img-container').addClass('img-containeraddclass');
         $('.change-img').addClass('change-imgaddedclass');
         $('.menu-icons').css("visibility","hidden");
-        $('.tableQue').addClass('tableQue-divaddedClass');
+        $('table').addClass('tableQue-divaddedClass');
         $('.update').addClass('update-divaddedClass');
+        $('.logout').addClass('logoutaddclass');
        
     });
 
@@ -42,8 +43,9 @@ $(document).ready(function()
          $('.img-container').removeClass('img-containeraddclass');
           $('.change-img').removeClass('change-imgaddedclass');
         $('.menu-icons').css("visibility","visible");
-        $('.tableQue').removeClass('tableQue-divaddedClass');
+        $('table').removeClass('tableQue-divaddedClass');
         $('.update').removeClass('update-divaddedClass');
+        $('.logout').removeClass('logoutaddclass');
     });
 
 });

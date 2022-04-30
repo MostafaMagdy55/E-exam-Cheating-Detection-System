@@ -43,7 +43,7 @@ public class AdminController {
 //        return "Admin/index";
 //    }
     public ModelAndView passParametersWithModelAndView() {
-        ModelAndView modelAndView = new ModelAndView("Admin/index");
+        ModelAndView modelAndView = new ModelAndView("Admin/profile");
         modelAndView.addObject("course", new Course());
         return modelAndView;
     }
@@ -57,10 +57,10 @@ public class AdminController {
         List<Course> courses= courseService.findAll();
 
 
-         Long examNum= exams.stream().count();
-         Long studentNum= students.stream().count();
-         Long instructorNum= instructors.stream().count();
-         Long courseNum= courses.stream().count();
+        Long examNum= exams.stream().count();
+        Long studentNum= students.stream().count();
+        Long instructorNum= instructors.stream().count();
+        Long courseNum= courses.stream().count();
 
         model.addAttribute("course",new Course());
 

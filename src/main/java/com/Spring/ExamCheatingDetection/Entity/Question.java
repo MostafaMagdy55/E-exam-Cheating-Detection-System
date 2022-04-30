@@ -23,6 +23,9 @@ public class Question {
     @Column(name = "time_for_cheating")
     private int TimeForCheating;
 
+
+    @Column(name = "question_time")
+    private int QuestionTime;
     @Column(name = "question_head")
     private  String QuestionHead;
 
@@ -161,6 +164,22 @@ public class Question {
 
     public void setExam(Exam exam) {
         this.exam = exam;
+    }
+
+    public boolean isType() {
+        return Type;
+    }
+
+    public boolean isEyeMovment() {
+        return EyeMovment;
+    }
+
+    public int getQuestionTime() {
+        return QuestionTime;
+    }
+
+    public void setQuestionTime(int questionTime) {
+        QuestionTime = questionTime;
     }
 
     @Override

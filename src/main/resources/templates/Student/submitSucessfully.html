@@ -2,10 +2,19 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/file/student/css/seeresult.css">
+    <title>See Grades</title>
 </head>
 <body>
-you answer will evaluate
-<a th:href="@{'/student/evaluate_exam/'+${examID}}">see result</a>
+<div class="background-img">
+    <img class="background-img" src="/file/student/Img/grades.jpg">
+    <div class="forms">
+        <h3>Click Here To See Your Grade</h3>
+        <button> <a th:href="@{'/student/evaluate_exam/'+${examID}}">Grades</a></button>
+    </div>
+</div>
+
 </body>
 </html>

@@ -81,9 +81,8 @@ table
   background-color: #CBCBCB;
   overflow: scroll;
   border-radius: 10px 10px 10px 10px;
-
-
 }
+
 tr:nth-child(even)
 {
 	background-color:#66A4B3;

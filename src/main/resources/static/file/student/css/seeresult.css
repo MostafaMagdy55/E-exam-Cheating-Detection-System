@@ -1,0 +1,40 @@
+html , body
+{
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.background-img
+{
+    width: 45vw;
+    height: 92vh;
+    margin-left: 22vw;
+}
+.forms
+{
+    margin-top: -69vh;
+    margin-left: -9vw;
+}
+
+.forms h3
+{
+    font-size: 2.5vw;
+    margin-left: -3vw;
+}
+
+.forms button
+{
+    width: 10vw;
+    height: 7vh;
+    margin-top: 2vw;
+    margin-left: 4vw;
+    background-color: #CB3D12;
+    color: #fff;
+    border-radius: 2vw 0vw 2vw 2vw ;
+    border: none;
+    box-shadow: 2vw 3vw 13vw #cb3d1281;
+    font-size: 1.1vw;
+}

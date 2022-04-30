@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Show Instructor</title>
+    <title>Show Students</title>
+    <link rel="stylesheet" type="text/css" href="/file/admin/bootstrap-3.4.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/file/admin/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/file/admin/CSS/show-student.css">
 
-    <div th:replace="Admin/base :: header"></div>
-    <link rel="stylesheet" type="text/css" href="\file\admin/CSS\show-instructor.css">
 </head>
 <body>
 <!--sliderbar-->
@@ -13,14 +14,18 @@
 
 <!--nav bar-->
 <div class="navbar" id="contant">
-    <form th:action="@{/search}" method="post">
+    <form>
         <!--forms-->
         <div class="forms">
             <div class="menu-icons">
                 <i class="fas fa-bars"></i>
             </div>
-            <input type="search" class="search_textfield" placeholder="Search">
-            <input type="submit" value="Logout" id="Logout">
+            <form th:action="@{/admin/search}" method="post">
+                <input type="search" class="search_textfield" placeholder="Search">
+            </form>
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="Logout" id="Logout" class="logout">
+            </form>
         </div>
     </form>
 </div>
@@ -28,8 +33,8 @@
 
 <div class="the-center-div">
 
-    <h3 class="update">Show Instuctor</h3>
-    <table>
+    <h3 class="update">Show Instructor</h3>
+    <table class="closetable">
         <thead>
         <tr>
             <th>Student-Pic</th>
@@ -38,61 +43,21 @@
             <th>Phone</th>
         </tr>
         </thead>
-        <tbody>
-        <tr th:each="instructor,itr: ${instructorList}">
-            <td>   <img class="img-class" th:src="@{${'/target/images/'+instructor.name+'/'+instructor.getImage()+'/'}}"></td>
-<!--            <td><img class="img-class" th:src="@{${'/images/'+instructor.name+'/'+instructor.getImage()+'/'}}"></td>-->
-<!--            <td><img class="img-class" src="/file/admin/Img\Profile_img.jpg"></td>-->
-            <td><input type="text" class="Name"  name="student-name" th:value="${instructor.name}" disabled></td>
-            <td><input type="text" class="Email" name="Email" th:value="${instructor.email}" disabled></td>
-            <td><input type="Phone" class ="Phone" name="Phone" th:value="${instructor.phone}" disabled></td>
-            <td>  <a th:href="@{'/admin/edit-instructor/'+${instructor.id}}" class="fas fa-user-edit classedit"></a>
-                <span>/</span>
-                <a th:href="@{'/admin/delete-instructor/'+${instructor.id}}" class="fas fa-user-times classdelete"></a>
-            </td>
-        </tr>
-        <!--        <tr>-->
-        <!--            <td><img class="img-class" src="Img\Profile_img.jpg"></td>-->
-        <!--            <td><input type="text" class="Name"  name="student-name" value="manar aitallah" disabled></td>-->
-        <!--            <td><input type="text" class="Email" name="Email" value="Manaraitallah@gmail.com" disabled></td>-->
-        <!--            <td><input type="Phone" class ="Phone" name="Phone" value="01117699022" disabled></td>-->
-        <!--            <td><i class="fas fa-user-edit classedit"></i><span>/</span><i class="fas fa-user-times classdelete"></i></td>-->
-        <!--        </tr>-->
-        <!--        <tr>-->
-        <!--            <td><img class="img-class" src="Img\Profile_img.jpg"></td>-->
-        <!--            <td><input type="text" class="Name"  name="student-name" value="manar aitallah" disabled></td>-->
-        <!--            <td><input type="text" class="Email" name="Email" value="Manaraitallah@gmail.com" disabled></td>-->
-        <!--            <td><input type="Phone" class ="Phone" name="Phone" value="01117699022" disabled></td>-->
-        <!--            <td><i class="fas fa-user-edit classedit"></i><span>/</span><i class="fas fa-user-times classdelete"></i></td>-->
-        <!--        </tr>-->
-        <!--        <tr>-->
-        <!--            <td><img class="img-class" src="Img\Profile_img.jpg"></td>-->
-        <!--            <td><input type="text" class="Name"  name="student-name" value="manar aitallah" disabled></td>-->
-        <!--            <td><input type="text" class="Email" name="Email" value="Manaraitallah@gmail.com" disabled></td>-->
-        <!--            <td><input type="Phone" class ="Phone" name="Phone" value="01117699022" disabled></td>-->
-        <!--            <td><i class="fas fa-user-edit classedit"></i><span>/</span><i class="fas fa-user-times classdelete"></i></td>-->
-        <!--        </tr>-->
-        <!--        <tr>-->
-        <!--            <td><img class="img-class" src="Img\Profile_img.jpg"></td>-->
-        <!--            <td><input type="text" class="Name"  name="student-name" value="manar aitallah" disabled></td>-->
-        <!--            <td><input type="text" class="Email" name="Email" value="Manaraitallah@gmail.com" disabled></td>-->
-        <!--            <td><input type="Phone" class ="Phone" name="Phone" value="01117699022" disabled></td>-->
-        <!--            <td><i class="fas fa-user-edit classedit"></i><span>/</span><i class="fas fa-user-times classdelete"></i></td>-->
-        <!--        </tr>-->
-        <!--        <tr>-->
-        <!--            <td><img class="img-class" src="Img\Profile_img.jpg"></td>-->
-        <!--            <td><input type="text" class="Name"  name="student-name" value="manar aitallah" disabled></td>-->
-        <!--            <td><input type="text" class="Email" name="Email" value="Manaraitallah@gmail.com" disabled></td>-->
-        <!--            <td><input type="Phone" class ="Phone" name="Phone" value="01117699022" disabled></td>-->
-        <!--            <td><i class="fas fa-user-edit classedit"></i><span>/</span><i class="fas fa-user-times classdelete"></i></td>-->
-        <!--        </tr>-->
-        <!--        <tr>-->
-        <!--            <td><img class="img-class" src="Img\Profile_img.jpg"></td>-->
-        <!--            <td><input type="text" class="Name"  name="student-name" value="manar aitallah" disabled></td>-->
-        <!--            <td><input type="text" class="Email" name="Email" value="Manaraitallah@gmail.com" disabled></td>-->
-        <!--            <td><input type="Phone" class ="Phone" name="Phone" value="01117699022" disabled></td>-->
-        <!--            <td><i class="fas fa-user-edit classedit"></i><span>/</span><i class="fas fa-user-times classdelete"></i></td>-->
-        <!--        </tr>-->
+        <tbody class="closetbody">
+        <div th:each="instructor,itr: ${instructorList}">
+            <tr>
+                <td>   <img class="img-class" th:src="@{${'/target/images/'+instructor.name+'/'+instructor.getImage()+'/'}}"></td>
+                <td th:text="${instructor.name}"></td>
+                <td  th:text="${instructor.email}"></td>
+                <td  th:text="${instructor.phone}"></td>
+                <td><a th:href="@{'/admin/edit-instructor/'+${instructor.id}}" class="fas fa-user-edit classedit"></a>
+                    <span>/</span>
+                    <a th:href="@{'/admin/delete-instructor/'+${instructor.id}}" class="fas fa-user-times classdelete"></a>
+                </td>
+            </tr>
+        </div>
+
+
         </tbody>
     </table>
 </div>
@@ -102,7 +67,6 @@
 
 
 <!--footer-->
-
 
 
 <script type="text/javascript" src="\file\admin\Jquery\jquery-3.6.0.min.js"></script>

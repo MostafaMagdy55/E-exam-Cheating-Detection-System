@@ -33,7 +33,7 @@ $(document).ready(function()
         $('.quary').addClass('quaryaddedClass');
         $('.info-top').addClass('info-topOpen');
         $('.inlinee').addClass('inlineeOpen');
-       
+        $('.logout').addClass('logoutaddclass');
     });
 
 	/*to close slide bar */
@@ -50,6 +50,7 @@ $(document).ready(function()
         $('.quary').removeClass('quaryaddedClass');
         $('.info-top').removeClass('info-topOpen');
         $('.inlinee').removeClass('inlineeOpen');
+        $('.logout').removeClass('logoutaddclass');
     });
     
     /*to make the text field able to edit it */

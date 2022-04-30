@@ -68,11 +68,25 @@ input
 
 #countdown
 {
-	margin-left: 43vw;
+	margin-left: 3vw;
 	font-size: 1.4vw;
 	position: fixed;
 }
+.eye-time
+{
+	margin-left: 41.3vw;
+	display: inline;
+	font-size: 1.4vw;
+	position: fixed;
+	margin-bottom: 0.5vh;
+}
 
+#timeofeye
+{
+	margin-left: 44vw;
+	font-size: 1.4vw;
+	position: fixed;
+}
 .qa-set h4 
 {
 	margin: 7vh 5vw 5vh;

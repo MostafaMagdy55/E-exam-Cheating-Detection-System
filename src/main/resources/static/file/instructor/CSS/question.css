@@ -24,7 +24,7 @@ body, html {
   z-index: 2;
   margin-top:-96vh;
   margin-left: 30vw;
-  width:64vw; 
+  width:64vw;
   height:11vh;
   border-radius: 0.6vw;
   box-shadow: 25px 25px 60px #9C9C9C;
@@ -39,10 +39,10 @@ body, html {
 
 .nav a
 {
-	text-decoration: none ;
-	color: #000;
-	font-weight:bold;
-	margin-left: 1.7vw;
+  text-decoration: none ;
+  color: #000;
+  font-weight:bold;
+  margin-left: 1.7vw;
   font-size: 1.2vw;
   margin-bottom: 2vw;
 }
@@ -57,20 +57,20 @@ body, html {
 }
 .nav .Clicked
 {
-	color: #FF0909;
+  color: #FF0909;
 }
 
 .nav li:hover input {
   color: #ff0000;
   cursor: pointer;
-  
-  }
+
+}
 .nav li:hover a {
-      color: #ff0000;
-      background-color: rgb(255,255,255); /* Fallback color */
-      background-color: rgba(255,255,255, 0.01);
-    
-       }
+  color: #ff0000;
+  background-color: rgb(255,255,255); /* Fallback color */
+  background-color: rgba(255,255,255, 0.01);
+
+}
 /*putting exam form */
 
 .putting-exam-form
@@ -99,9 +99,9 @@ body, html {
 
 .true-or-false-div label
 {
-   padding-left: 1vw;
-   font-size: 1.1vw;
-} 
+  padding-left: 1vw;
+  font-size: 1.1vw;
+}
 
 .true-or-false , .mcq
 {
@@ -115,9 +115,9 @@ body, html {
 
 .mcq-div label
 {
-   padding-left: 1vw;
-   font-size: 1.1vw;
-} 
+  padding-left: 1vw;
+  font-size: 1.1vw;
+}
 .eyemov
 {
   width: 2vw;
@@ -130,7 +130,7 @@ input:focus{outline:0;}
 {
   font-size:1vw;
   color: #000;
-  opacity: 0.8; 
+  opacity: 0.8;
 }
 /*eyessss*/
 .eye-div
@@ -147,12 +147,22 @@ input:focus{outline:0;}
 .timeallowed
 {
   margin-top: 1vh;
-  width: 81vw;
+  width: 36vw;
   height: 6vh;
   padding-left: 2vw;
   border-radius:0.5vw;
   border :none;
-} 
+}
+.timeofquestion
+{
+  margin-top: 1vh;
+  width: 36vw;
+  height: 6vh;
+  padding-left: 2vw;
+  border-radius:0.5vw;
+  border :none;
+  margin-left: 9vw;
+}
 
 /*qu*/
 .qusetion-itself
@@ -162,7 +172,7 @@ input:focus{outline:0;}
   margin-left: -1vw;
 }
 
-.qusetion-itself input 
+.qusetion-itself input
 {
   display: block;
   margin: 1vw;
@@ -186,15 +196,18 @@ input:focus{outline:0;}
 #droplistcorrectanswer:focus{outline:0;}
 /*Answers-to-true-or-false*/
 
+.Answers
+{
+  margin-top: 52vh;
+}
 .Answersaddedclass
 {
- margin-top: -39vh;
- margin-left: 1vw;
+  margin-top: 14vh;
+  margin-left: 1vw;
 }
-.Answers-to-true 
+.Answers-to-true
 {
-  position: absolute;
-  margin-top: -2vw;
+  position: fixed;
 }
 .Answers-to-true label ,.Answers-to-false label
 {
@@ -203,16 +216,16 @@ input:focus{outline:0;}
 }
 .Answers-to-false
 {
-  margin-top: 26vw;
+  position: fixed;
+  margin-top: 4vh;
 }
 /*button*/
 
 .button
 {
-  position: absolute;
-  margin-top: -7vh;
-  margin-left: 69vw;
-
+  position: fixed;
+  margin-top: 1vh;
+  margin-left: 65vw;
 }
 #go-to-next
 {
@@ -228,15 +241,23 @@ input:focus{outline:0;}
 .buttonaddedclasstotrueandfalse
 {
   position: absolute;
-  margin-top: -3vh;
+  margin-top: 2vh;
   margin-left: 64vw;
 
 }
 
 .buttonaddedclasstoMCQ
 {
-  position: absolute;
+  position: fixed;
   margin-top: 54vh;
   margin-left: 65vw;
 
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(53, 53, 53);
+  opacity: 1; /* Firefox */
+  font-size: 1vw;
+  position: fixed;
+  margin-top: 1.6vh;
 }

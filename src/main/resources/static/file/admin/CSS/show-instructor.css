@@ -1,88 +1,114 @@
 body 
 {
 	background-color: #151D30;
+    color: #fff;
 }
-/*icon to open slide bar*/
 .menu-icons
 {
 	position: absolute;
 	color: #fff;
-	font-size: 27px;
-	margin-left:37px;
-	margin-top: 13px;
+	font-size: 2vw;
+	margin-left:2.5vw;
+	margin-top: 2vh;
 	cursor: pointer;
 }
 /*div for navigation bar */
 .navbar
 {
 	background-color: #292F45;
-	width: 1360px;
-	height: 68px;
-	opacity: .7;
+	width: 99vw;
+	height: 10vh;
 	transition: 0.7s ease-out;	
+	margin-bottom: 4vh;
 
 }
 /* added class to jquert for navigation bar */
 .navbaraddclass
 {
-	margin-left: 310px;
-	width: 1055px;
+	margin-left: 22.6vw;
+	width: 76vw;
 	transition: 0.5s ease-in;	
 }
-/*search text field */
-.search_textfield
-{
 
-	margin-left: 915px;
-    margin-top: 14px;
-    width:240px; 
-    height: 39px;
-    border-radius:5px;
-    padding: 12px;
-    background-color: #4B5680;
-    border-color:#535E8C;
-    color: #fff;
-	border: none;
-}
-/*added class to text box to jquery */
-.search_textfieldaddedclass
-{
-	margin-left: 640px;
-	width:200px; 
-    height: 39px;
-}
-/*to prevent focous on press the button  */
-input:focus{outline:0;}
-
-/*change placeholder color*/
-::placeholder
-{
-	color: #fff;
-}
 /* logout button */
-#Logout
+.logout
 {
-	height: 38px;
-    width: 114px;
-    margin-left: 10px;
-    border-radius: 8px;
+	height: 5.9vh;
+    width: 9vw;
+    margin-left: 88vw;
+    border-radius: 0.3vw;
     background-color: #4B5680;
     border-color:#535E8C;
     color: #fff;
     font-weight:500;
+	margin-top: 2.1vh;
+	font-size: 1.1vw;
 	border: none;
 }
+
+/* add classlogout button */
+.logoutaddclass
+{
+	height: 5.9vh;
+    width: 9vw;
+    margin-left: 64vw;
+    border-radius: 0.3vw;
+    background-color: #4B5680;
+    border-color:#535E8C;
+    color: #fff;
+    font-weight:500;
+	margin-top: 2vh;
+	font-size: 1.1vw;
+	border: none;
+}
+
+.search_textfield
+{
+	width: 21vw;
+	height: 6vh;
+	background-color: #535E8C;
+	border-radius: 0.2vw;
+	border: none;
+	margin-left: 65vw;
+	margin-top: 2vh;
+	padding-left: 1vw;
+	color: rgb(255, 255, 255);
+	position: fixed;
+}
+
+.addsearch_textfield
+{
+	width: 17vw;
+	height: 6vh;
+	background-color: #535E8C;
+	border-radius: 0.2vw;
+	border: none;
+	margin-left: 45vw;
+	margin-top: 2vh;
+	padding-left: 1vw;
+	color: rgb(255, 255, 255);
+	position: fixed;
+}
+
+input:focus{outline:0;}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: rgb(255, 255, 255);
+	opacity: 1; /* Firefox */
+	font-size: 1vw;
+	position: fixed;
+	margin-top: 1.6vh;
+  }
 /*the main div in slide bar */
 .side-bar
 {
 	z-index: 1;
 	background:rgba(255,255,255,0.1);
-	backdrop-filter: blur(15px);
-    width: 290px;
-    height: 700px;
+	backdrop-filter: blur(7vw);
+    width: 21.6vw;
+    height: 120vh;
     position: fixed;
     top: 0;
-    left: -100%;
+    left: -50vw;
     overflow-y:auto;
     transition: 0.8s snap;
     transition-property: left;
@@ -90,7 +116,7 @@ input:focus{outline:0;}
 /*jquery class when silde bar is open */
 .side-bar.active
 {
-    left: 0;
+    left: 0vw;
 }
 /*menu*/
 .header
@@ -98,22 +124,24 @@ input:focus{outline:0;}
 	position: absolute;
 	color: #fff;
 	left:0; 
-	margin-left:-230px;
-	margin-top: -3px;
+	font-size: 2.2vw;
+	position: fixed;
+	margin-left:1.6vw ;
+	margin-top: -0.5vh;
 }
-
 
 /*course menu inside silde bar */
 .side-bar .menu 
 {
-	width: 100%;
-	margin-top:80px;
+	width: 21.6vw;
+	margin-top:14vh;
+	font-size: 1.9vw;
+	font-weight: 200;
 
 }
 /*course menu item inside silde bar */
 .side-bar .menu .item
 {
-
 position: relative;
 cursor: pointer;
 } 
@@ -121,11 +149,11 @@ cursor: pointer;
 .side-bar .menu .item a 
 {
 	color: #fff;
-	font-size: 16px;
+	font-size: 1.2vw;
 	text-decoration:none;
 	display: block;
-	padding: 5px 30px;
-	line-height: 40px;
+	padding: 1.4vh 2vw;
+	line-height: 2.4vw;
 }
 /*course menu backgroun while touch it inside silde bar */
 .side-bar .menu .item a:hover
@@ -135,15 +163,15 @@ cursor: pointer;
 } 
 .side-bar .menu .item i
 {
-	margin-right: 15px;
+	margin-right: 1.7vw;
+	margin-top: 1.3vh;
 }
 /*icons arrows */
 .side-bar .menu .item a .dropdown
 {
 	position: absolute;
 	right: 0;
-	margin-left: 20px;
-	margin-top:13px; 
+	margin-left: 4vw;
     transition:0.3s ease;
 }
 /*arrows icons while click */
@@ -151,7 +179,7 @@ cursor: pointer;
 {
 	transform: rotate(90deg);
 } 
-/*design for inside menu */
+/*design for inside menu*/
 .side-bar .menu .item .sub-menu
 {
 	background:rgba(255,255,255,0.1);
@@ -159,7 +187,8 @@ cursor: pointer;
 }
 .side-bar .menu .item .sub-menu a 
 {
-	padding-left: 80px;
+	padding-left: 6vw;
+	font-size: 1.2vw;
 }
 /*show members drop down menu*/
 .side-bar .menu .item .sub-menuFor-Member
@@ -169,7 +198,8 @@ cursor: pointer;
 }
 .side-bar .menu .item .sub-menuFor-Member a 
 {
-	padding-left: 80px;
+	padding-left: 6vw;
+	font-size: 1.2vw;	
 }
 
 .side-bar .menu .item .sub-menuFor-addMember
@@ -179,16 +209,17 @@ cursor: pointer;
 }
 .side-bar .menu .item .sub-menuFor-addMember a 
 {
-	padding-left: 80px;
+	padding-left: 6vw;
+	font-size: 1.2vw;
 }
 /*close icon in slider*/
 .close-btn
 {
 	position: absolute;
 	color: #fff;
-	font-size: 20px;
+	font-size: 1.5vw;
 	right: 0;
-	margin: 20px;
+	margin: 1.9vw;
 	cursor: pointer;
 }
 /*central container div */
@@ -196,10 +227,10 @@ cursor: pointer;
 {
 	position: relative;
 	background-color:#292F45;
-	width: 1300px;
-	height: 520px;
-	margin-left: 26px;
-	border-radius: 7px;
+	width: 97vw;
+	height: 85vh;
+	margin-left: 1.5vw;
+	border-radius: 0.7vw;
 	transition: 0.7s ease-out;	
 
 }
@@ -207,133 +238,184 @@ cursor: pointer;
 .the-center-divaddedClass
 {
 	
-	width: 1000px;
-	height: 520px;
-	margin-left:310px;
-	border-radius: 7px;
+	width: 76vw;
+	height: 85vh;
+	margin-left:0.2vw;
+	border-radius: 0.7vw;
 	transition: 0.5s ease-in;	
 
 }
-.update
-{
-	color: #fff;
-	font-weight: bold;
-	margin-left:4%;
-	padding-top:3%;
-	padding-bottom: 1%;
+/*text*/
+.update{
+    position: absolute;
+    color:#fff;
+    font-weight: bold;
+    margin-left: 7vw;
+	margin-top: 6vh;
+	font-size: 1.9vw;
+    
 }
-table
+/*added class*/
+.updateclass{
+    position: absolute;
+    color:#fff;
+    font-weight: bold;
+    margin-left: 7vw;
+	margin-top: 6vh;
+	font-size: 1.8vw;
+    
+}
+
+.closetable
 {
   position: absolute;	
-  border-collapse:collapse;
-  text-align:center;
-  width: 95%;
-  margin-left:4%;
-  max-width: 95%;
+  border-collapse: collapse;
+  width: 83vw;
+  margin-left:7vw;
+  margin-top:15vh;
   background-color: #362E82;
-  border-radius: 10px 10px 10px 10px;
+  overflow: scroll;
+  border-radius: 1vw 1vw 1vw 1vw;
 }
 
-tr:nth-child(even) input 
+.opentable
+{
+  position: absolute;	
+  border-collapse: collapse;
+  width: 67vw;
+  margin-left:7vw;
+  margin-top:15vh;
+  background-color: #362E82;
+  overflow: scroll;
+  border-radius: 1vw 1vw 1vw 1vw;
+
+}
+tr:nth-child(even)
 {
 	background-color: #362E82;
-	margin-left: 34%;
 	color: #fff;
 	border:none;
-	font-size: 16px	
+	font-size: 1.2vw;
+    text-align: center;
+    vertical-align: middle;
+    word-wrap: break-word;
+
 }
 
-tr:nth-child(odd) input 
+
+tr:nth-child(odd)
 {
+
 	color: #fff;
-	margin-left: 34%;
 	border:none;
-	background: #171C2D;
-	font-size: 16px;	
+	background-color: #171C2D;
+	font-size: 1.2vw;
+    text-align: center;
+    vertical-align: middle;
+}
+table thead tr th:nth-of-type(4)
+{
 
+	padding-left: 6vw;
 }
 
-td, th
+table thead tr th:nth-of-type(3)
 {
-  padding: 2%;
-  width: 400px;
-  line-height: 10px;
-  font-weight: 290;
+	
+	padding-left: 3vw;
 }
-tr td a:hover 
+
+table tbody tr td:nth-of-type(3)
 {
-	color: #B10B0B;
-	text-decoration: none;
+  max-width: 24vw;
+}
+
+td
+{
+  
+  width: 60vw;
+  line-height: 8vh;
+  font-weight: 500;
+  padding: 1vw;
+
+}
+th{
+width: 60vw;
+height: 10vh;
+text-align: center;
+vertical-align: middle;
+font-weight: 300;
+}
+
+th:first-child
+{
+  border-radius: 1vw 0px 0px 0px;
+
+}
+th:last-child
+{
+  border-radius: 0px 1vw 0px 0px;
+}
+.closetbody
+{  
+  width: 83vw;
+  overflow: auto;
+  height: 47vh;
+  display: block;
+  border-radius: 0px 1vw 1vw 1vw;
+}
+
+.opentbody
+{  
+  width: 67vw;
+  overflow: auto;
+  height: 47vh;
+  display: block;
+  border-radius: 0px 1vw 1vw 1vw;
 }
 
 thead 
 {
   display: block;
-}
+  padding:2.4vh; 
 
+}
 th
-{
+{ 
+  text-align:center;
   border-bottom: 0;
   color: #fff;
-  font-size:19px;
-  padding:3% 1%; 
+  font-size:1.4vw;
+  padding:1.9vh; 
   background-color: #362E82;
-}
-
-th:last-child
-{
-  width: 34%;
-  border-radius: 0px 10px 0px 0px;
-  padding-right: -4%;
-  margin-left: 10%;
-}
-th:first-child
-{
-  border-radius: 10px 0px 0px 0px;
-  padding-left: 2%;
-}
-tbody
-{  
-  width: 100%;
-  overflow: auto;
-  height: 310px;
-  display: block;
-  border-radius: 0px 10px 10px 10px;
-}
-
-tr:nth-child(odd)
-{
-  background: #171C2D;
 }
 
 tr td .img-class
 {
-	width: 120%;
-	height: 20%;
-	border-radius:12px;
-	margin-left: 10%;
+	width: 10vw;
+	height: 21vh;
+	border-radius:1vw;
 }
+
 tr td .classedit
 {
-	margin-left:-150%;
+	margin-left:-4vw;
 	color: #fff;
-	font-size: 15px;	
+	font-size: 1.3vw;	
 	cursor: pointer;
 }
 
 tr td .classdelete
 {
 	color: #fff;
-	font-size: 15px;	
+	font-size: 1.3vw;	
 	cursor: pointer;
 }
 span
 {
 	color: #fff;
-	font-weight: bold;
-	padding: 0px 3px;
+	font-weight: 200;
 }
-
 
 
 
@@ -360,30 +442,29 @@ span
   
   .popup {
 	
-    margin: 50px auto;
-    padding: 31px;
+    margin: 3.5vw auto;
+    padding: 1.5vw;
     background-color:#292F45;
-	
-    border-radius: 9px;
-    width: 34%;
-	height: 46%;
+    border-radius: 1.5vh;
+    width: 33.9vw;
+	height: 45.9vh;
     position: relative;
-    transition: all 5s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
   
   .popup h2 {
-    margin-top: 15px;
+    margin-top: 3.9vh;
     color: #877DDC;
-	margin-left: 31%;
-	font-size: 31px;
+	margin-left: 9.5vw;
+	font-size: 2.2vw;
 	font-style: bold;
   }
   .popup .close {
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 3vh;
+    right: 1.99vw;
     transition: all 200ms;
-    font-size: 30px;
+    font-size: 2.15vw;
     font-weight: bold;
     text-decoration: none;
     color: #fff;
@@ -393,39 +474,39 @@ span
   }
   .popup .info-Containerx {
     overflow: auto;
-	padding-bottom: 50px;
+	padding-bottom: 5vh;
   }
 
 .info-Containerx input[type=text]{
-    width: 375px;
-	border-radius:2px;
+    width: 26.39vw;
+	border-radius: 0.3vh;
 	border: none;
-	margin-left: 6%;
-	margin-top: 43px;
-	font-size:23px;
-	padding: 3px 50px 3px 15px;
+	margin-left: 2.15vw;
+	margin-top: 6.5vh;
+	font-size: 1.59vw;
+	padding: 0.5vh 5vw 0.55vh 1vw;
 	color: #000;
 }
 
 
 .info-Containerx input[type=submit] {
-	font-size: 18px;
+	font-size: 1.23vw;
     background-color: #7466F1;
-	width: 377px;
-    padding: 8px 19px 3px 19px;
+	width: 26.39vw;
+    padding: 1vh 5vw 1vh 5vw;
     color: #fff;	
-	border-radius:2px;
+	border-radius: 0.3vh;
 	border: none;
-	margin-top: 20px;
-	margin-left: 6%;
+	margin-top: 3.3vh;
+	margin-left: 2.15vw;
 	text-align: center;
  
 }
 .info-Containerx input::placeholder{
 	color: #646369;
-	font-size: 16px;
+	font-size: 1.17vw;
 }
-  @media screen and (max-width: 600px){
+  @media screen and (max-width: 400px){
     .box{
       width: 70%;
     }
