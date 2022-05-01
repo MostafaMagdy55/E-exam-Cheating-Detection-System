@@ -1,25 +1,3 @@
-<!--<!DOCTYPE html>-->
-<!--<html xmlns:th="http://www.thymeleaf.org">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>My Courses</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--<div th:each="course:${instructor.getCourses()}">-->
-<!--    <span th:text="${course.getCourseName()}"></span>-->
-<!--    <br>-->
-<!--    <div th:each="student,num:${course.getStudents()}">-->
-<!--        <span th:text="${num.count}"></span>-->
-<!--    </div>-->
-
-
-<!--</div>-->
-
-<!--<div th:text="${ins}"></div>-->
-<!--</body>-->
-<!--</html>-->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,9 +24,7 @@
     <div th:each="course:${instructor.getCourses()}">
         <tr>
             <td th:text="${course.getCourseName()}"></td>
-            <div th:each="student,num:${course.getStudents()}">
-                <td th:text="${num.count}"></td>
-            </div>
+            <td th:text="${course.getStudents().size()}"></td>
         </tr>
     </div>
     </tbody>
